@@ -50,7 +50,7 @@ describe AthenaHealth::Connection do
 
     before do
       allow(connection).to receive(:authenticate) { connection.instance_variable_set(:@token, 'test_access_token') }
-      expect(Typhoeus::Request).to receive(:new).with('https://api.athenahealth.com/preview1/test_endpoint', method: :get, headers: { Authorization: 'Bearer test_access_token' }) { request }
+      expect(Typhoeus::Request).to receive(:new).with('https://api.athenahealth.com/preview1/test_endpoint', method: :get, headers: { "Authorization" => 'Bearer test_access_token' }) { request }
       expect(request).to receive(:run) { request }
     end
 
