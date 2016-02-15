@@ -21,13 +21,14 @@ module AthenaHealth
       @token = JSON.parse(response)['access_token']
     end
 
-    def call(endpoint:, method:, second_call: false)
+    def call(endpoint:, method:, params: {}, second_call: false)
       authenticate if @token.nil?
 
       request = Typhoeus::Request.new(
         "#{BASE_URL}/#{@version}/#{endpoint}",
         method: method,
-        headers: { "Authorization" => "Bearer #{@token}"}
+        headers: { "Authorization" => "Bearer #{@token}"},
+        params: params
       ).run
 
       if request.response_code == 401 && !second_call
