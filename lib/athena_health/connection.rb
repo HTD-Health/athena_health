@@ -29,7 +29,7 @@ module AthenaHealth
       request = Typhoeus::Request.new(
         "#{BASE_URL}/#{@version}/#{endpoint}",
         method: method,
-        headers: { Authorization: "Bearer #{@token}"}
+        headers: { "Authorization" => "Bearer #{@token}"}
       ).run
 
       if request.response_code == 401 && !second_call
