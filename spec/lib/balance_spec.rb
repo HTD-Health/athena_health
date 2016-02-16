@@ -14,19 +14,12 @@ describe AthenaHealth::Balance do
 
   it_behaves_like 'a model'
 
-  it 'has balance Integer attribute' do
-    expect(subject.balance).to eq 0
-  end
-
-  it 'has departmentlist String attribute' do
-    expect(subject.departmentlist).to eq '1,21'
-  end
-
-  it 'has providergroupid String attribute' do
-    expect(subject.providergroupid).to eq 1
-  end
-
-  it 'has cleanbalance Boolean attribute' do
-    expect(subject.cleanbalance).to eq true
+  it 'have proper attributes' do
+    expect(subject).to have_attributes(
+      balance: 0,
+      departmentlist: '1,21',
+      providergroupid: 1,
+      cleanbalance: true
+    )
   end
 end

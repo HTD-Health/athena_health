@@ -72,7 +72,7 @@ describe AthenaHealth::PatientCollection do
 
   it_behaves_like 'a collection'
 
-  it 'has practiceinfo Array[Patient] attribute' do
+  it 'have proper attributes' do
     expect(subject.patients.map(&:class)).to eq [AthenaHealth::Patient]
   end
 end

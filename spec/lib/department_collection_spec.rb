@@ -40,7 +40,7 @@ describe AthenaHealth::DepartmentCollection do
 
   it_behaves_like 'a collection'
 
-  it 'has practiceinfo Array[Department] attribute' do
+  it 'have proper attributes' do
     expect(subject.departments.map(&:class)).to eq [AthenaHealth::Department]
   end
 end
