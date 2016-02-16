@@ -24,21 +24,21 @@ module AthenaHealth
     def call(endpoint:, method:, params: {}, second_call: false)
       authenticate if @token.nil?
 
-      request = Typhoeus::Request.new(
+      response = Typhoeus::Request.new(
         "#{BASE_URL}/#{@version}/#{endpoint}",
         method: method,
         headers: { "Authorization" => "Bearer #{@token}"},
         params: params
       ).run
 
-      if request.response_code == 401 && !second_call
+      if response.response_code == 401 && !second_call
         authenticate
         call(endpoint: endpoint, method: method, second_call: true)
       end
 
-      AthenaHealth::Error.new(code: request.response_code).render if request.response_code != 200
+      AthenaHealth::Error.new(code: response.response_code).render if response.response_code != 200
 
-      JSON.parse(request.response_body)
+      JSON.parse(response.response_body)
     end
   end
 end

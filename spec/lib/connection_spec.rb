@@ -46,7 +46,8 @@ describe AthenaHealth::Connection do
   describe '#call' do
     let(:version)       { 'preview1' }
     let(:response_body) { '{"body":"value"}' }
-    let(:request)       { instance_double('request', response_code: response_code, response_body: response_body) }
+    let(:request)       { instance_double(Typhoeus::Request) }
+    let(:response)      { instance_double(Typhoeus::Response, response_code: response_code, response_body: response_body) }
 
     before do
       allow(connection).to receive(:authenticate) { connection.instance_variable_set(:@token, 'test_access_token') }
@@ -56,7 +57,7 @@ describe AthenaHealth::Connection do
         headers: { 'Authorization' => 'Bearer test_access_token' },
         params: {}
       ) { request }
-      expect(request).to receive(:run) { request }
+      expect(request).to receive(:run) { response }
     end
 
     context 'when response_code is 200' do
