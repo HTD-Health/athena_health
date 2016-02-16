@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Ruby wrapper for Athenahealth API.'
   spec.description   = 'Ruby wrapper for Athenahealth API. See https://developer.athenahealth.com/io-docs for more details.'
-  spec.homepage      = 'https://github.com/MatUrbanski/athena_health'
+  spec.homepage      = 'https://github.com/zywy/athena_health'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
