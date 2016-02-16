@@ -3,7 +3,6 @@ require 'spec_helper'
 describe AthenaHealth::PracticeCollection do
   let(:practice_collection_attributes) do
     {
-      'totalcount': 1,
       'next': 'next_page_url',
       'previous': 'previous_page_url',
       'practiceinfo': [
@@ -16,7 +15,8 @@ describe AthenaHealth::PracticeCollection do
           'hascollector': 'true',
           'practiceid': '195900'
         }
-      ]
+      ],
+      'totalcount': 1,
     }
   end
 

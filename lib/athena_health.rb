@@ -11,6 +11,9 @@ require 'athena_health/practice'
 require 'athena_health/practice_collection'
 require 'athena_health/department'
 require 'athena_health/department_collection'
+require 'athena_health/balance'
+require 'athena_health/patient'
+require 'athena_health/patient_collection'
 
 module AthenaHealth
 end

@@ -42,4 +42,12 @@ describe AthenaHealth::Client do
       end
     end
   end
+
+  describe '#all_patients' do
+    it 'returns instance of PatientCollection' do
+      VCR.use_cassette('all_patients') do
+        expect(client.all_patients(practice_id: 195900, department_id: 162)).to be_an_instance_of AthenaHealth::PatientCollection
+      end
+    end
+  end
 end

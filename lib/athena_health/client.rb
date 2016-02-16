@@ -23,5 +23,10 @@ module AthenaHealth
       response = @api.call(endpoint: "#{practice_id}/departments/#{department_id}", method: :get, params: params)
       Department.new(response.first)
     end
+
+    def all_patients(practice_id:, department_id:, params: {})
+      response = @api.call(endpoint: "#{practice_id}/patients", method: :get, params: params.merge!(departmentid: department_id))
+      PatientCollection.new(response)
+    end
   end
 end
