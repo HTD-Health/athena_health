@@ -1,8 +1,5 @@
 module AthenaHealth
-  class PracticeCollection
-    include Virtus.model
-
-    attribute :totalcount,   Integer
+  class PracticeCollection < BaseCollection
     attribute :practiceinfo, Array[Practice]
   end
 end

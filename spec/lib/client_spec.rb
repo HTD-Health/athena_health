@@ -12,7 +12,7 @@ describe AthenaHealth::Client do
   end
 
   describe '#all_practices' do
-    it 'returns PracticeCollection' do
+    it 'returns instance of  PracticeCollection' do
       VCR.use_cassette('all_practices') do
         expect(client.all_practices).to be_an_instance_of AthenaHealth::PracticeCollection
       end
@@ -20,9 +20,25 @@ describe AthenaHealth::Client do
   end
 
   describe '#find_practice' do
-    it 'returns PracticeCollection' do
+    it 'returns instance of Practice' do
       VCR.use_cassette('find_practice') do
         expect(client.find_practice(practice_id: 195900)).to be_an_instance_of AthenaHealth::Practice
+      end
+    end
+  end
+
+  describe '#all_departments' do
+    it 'returns instance of DepartmentCollection' do
+      VCR.use_cassette('all_departments') do
+        expect(client.all_departments(practice_id: 195900)).to be_an_instance_of AthenaHealth::DepartmentCollection
+      end
+    end
+  end
+
+  describe '#find_department' do
+    it 'returns instance of Department' do
+      VCR.use_cassette('find_department') do
+        expect(client.find_department(practice_id: 195900, department_id: 162)).to be_an_instance_of AthenaHealth::Department
       end
     end
   end

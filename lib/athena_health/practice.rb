@@ -1,7 +1,5 @@
 module AthenaHealth
-  class Practice
-    include Virtus.model
-
+  class Practice < BaseModel
     attribute :hascommunicator,       Boolean
     attribute :iscoordinatorsender,   Boolean
     attribute :iscoordinatorreceiver, Boolean

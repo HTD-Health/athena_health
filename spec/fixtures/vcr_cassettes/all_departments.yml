@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 16 Feb 2016 10:52:59 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-115.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 16 Feb 2016 10:52:59 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/departments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 16 Feb 2016 10:52:59 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - fda44f26-1fc3-4c4d-9fa4-b84d43ca489f
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-109.mashery.com
+      Content-Length:
+      - '7817'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":11,"departments":[{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"ME","portalurl":"1959-1-practice-home-url","city":"NORTH
+        YARMOUTH","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"44.41919","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"145","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-69.02124","clinicals":"ON","timezone":-5,"patientdepartmentname":"Belfast
+        Primary Care","name":"CENTRAL CITY INPT","placeofservicetypename":"OFFICE","phone":"(555)
+        482-2453","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"04097","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"NY","portalurl":"1959-1-practice-home-url","city":"BALLSTON
+        SPA","placeofservicefacility":"false","oneyearcontractmax":"1500","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"162","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","clinicals":"OFF","timezone":-5,"patientdepartmentname":"Main
+        Office","name":"MERCY HOSPITAL","placeofservicetypename":"OFFICE","phone":"(555)
+        946-3582","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"12020","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"MA","portalurl":"1959-1-practice-home-url","city":"BOSTON","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"33.12390285","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"157","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-84.29847983","clinicals":"ON","timezone":-5,"patientdepartmentname":"CommOpsDevTest","name":"CHERRY
+        STREET","placeofservicetypename":"OFFICE","phone":"(555) 940-9531","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"02106","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"ME","portalurl":"1959-1-practice-home-url","city":"BAR
+        MILLS","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"44.41919","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"150","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-69.02124","clinicals":"ON","timezone":-5,"patientdepartmentname":"7
+        Hills'' & Co. Department","name":"ST FRANCIS SURGERY","placeofservicetypename":"OFFICE","phone":"(555)
+        829-4068","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"04004","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"NY","portalurl":"1959-1-practice-home-url","city":"NEW
+        YORK","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"44.27192","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"148","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-69.37563","clinicals":"ON","timezone":-5,"patientdepartmentname":"Portal
+        Test","name":"CENTRAL CITY SURGERY","placeofservicetypename":"OFFICE","phone":"(555)
+        759-3337","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"10199","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"CO","portalurl":"1959-1-practice-home-url","city":"PAONIA","placeofservicefacility":"true","oneyearcontractmax":"1500","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"102","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"22","clinicals":"ON","timezone":-5,"patientdepartmentname":"Cardiology
+        Consults","name":"ST FRANCIS HOSP -IN PT","placeofservicetypename":"ON CAMPUS-OUTPATIENT
+        HOSPITAL","phone":"(555) 063-8553","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"81428","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"GA","portalurl":"1959-1-practice-home-url","city":"THOMSON","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"34.1649","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"21","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-84.79669","clinicals":"ON","timezone":-5,"patientdepartmentname":"Cartersville
+        Office","name":"BLUE HILL (HUB)","placeofservicetypename":"OFFICE","phone":"(555)
+        225-6052","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"30824-1111","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"GA","portalurl":"1959-1-practice-home-url","city":"CLAXTON","placeofservicefacility":"false","oneyearcontractmax":"1500","latitude":"34.25597","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"1","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","longitude":"-85.17026","clinicals":"ON","timezone":-5,"patientdepartmentname":"Rome
+        Office","name":"MAIN ST (HUB)","placeofservicetypename":"OFFICE","phone":"(555)
+        916-7897","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"30417","communicatorbrandid":"1"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"2","singleappointmentcontractmax":"3000","state":"CT","portalurl":"1959-21-practice-home-url","city":"VERNON
+        ROCKVILLE","placeofservicefacility":"false","oneyearcontractmax":"1500","providergroupname":"Family
+        Specialists","doesnotobservedst":"false","departmentid":"142","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","clinicals":"ON","timezone":-5,"patientdepartmentname":"LANGLEY
+        HOSPITAL-INPT","name":"LANGLEY HOSPITAL-INPT","placeofservicetypename":"OFFICE","phone":"(555)
+        625-9608","zip":"06066","communicatorbrandid":"21"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"2","singleappointmentcontractmax":"3000","state":"ME","portalurl":"1959-21-practice-home-url","city":"ABBOT","placeofservicefacility":"false","oneyearcontractmax":"1500","providergroupname":"Family
+        Specialists","doesnotobservedst":"false","departmentid":"164","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","clinicals":"OFF","timezone":-5,"patientdepartmentname":"WEST
+        HILL HOSPITAL","name":"WEST HILL HOSPITAL","placeofservicetypename":"OFFICE","phone":"(555)
+        586-9114","zip":"04406","communicatorbrandid":"21"},{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"2","singleappointmentcontractmax":"3000","state":"MA","portalurl":"1959-21-practice-home-url","city":"DANVERS","placeofservicefacility":"false","oneyearcontractmax":"1500","providergroupname":"Family
+        Specialists","doesnotobservedst":"false","departmentid":"62","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","clinicals":"ON","timezone":-5,"patientdepartmentname":"Blackstone
+        patient-facing name (athenaNet)","name":"NORTH CENTRAL (SPOKE)","placeofservicetypename":"OFFICE","phone":"(555)
+        314-0397","zip":"01923","communicatorbrandid":"21"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/departments
+  recorded_at: Tue, 16 Feb 2016 10:52:59 GMT
+recorded_with: VCR 3.0.1

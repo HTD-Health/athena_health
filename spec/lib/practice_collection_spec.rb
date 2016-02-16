@@ -4,6 +4,8 @@ describe AthenaHealth::PracticeCollection do
   let(:practice_collection_attributes) do
     {
       'totalcount': 1,
+      'next': 'next_page_url',
+      'previous': 'previous_page_url',
       'practiceinfo': [
         {
           'hascommunicator': 'true',
@@ -18,13 +20,11 @@ describe AthenaHealth::PracticeCollection do
     }
   end
 
-  let(:practice_collection) { AthenaHealth::PracticeCollection.new(practice_collection_attributes) }
+  subject { AthenaHealth::PracticeCollection.new(practice_collection_attributes) }
 
-  it 'has totalcount Integer attribute' do
-    expect(practice_collection.totalcount).to eq 1
-  end
+  it_behaves_like 'a collection'
 
   it 'has practiceinfo Array[Practice] attribute' do
-    expect(practice_collection.practiceinfo.map(&:class)).to eq [AthenaHealth::Practice]
+    expect(subject.practiceinfo.map(&:class)).to eq [AthenaHealth::Practice]
   end
 end

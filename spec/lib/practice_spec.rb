@@ -14,37 +14,39 @@ describe AthenaHealth::Practice do
     }
   end
 
-  let(:practice) { AthenaHealth::Practice.new(practice_attributes) }
+  subject { AthenaHealth::Practice.new(practice_attributes) }
+
+  it_behaves_like 'a model'
 
   it 'has hascommunicator Boolean attribute' do
-    expect(practice.hascommunicator).to eq true
+    expect(subject.hascommunicator).to eq true
   end
 
   it 'has iscoordinatorsender Boolean attribute' do
-    expect(practice.iscoordinatorsender).to eq false
+    expect(subject.iscoordinatorsender).to eq false
   end
 
   it 'has iscoordinatorreceiver Boolean attribute' do
-    expect(practice.iscoordinatorreceiver).to eq false
+    expect(subject.iscoordinatorreceiver).to eq false
   end
 
   it 'has hasclinicals Boolean attribute' do
-    expect(practice.hasclinicals).to eq true
+    expect(subject.hasclinicals).to eq true
   end
 
   it 'has name String attribute' do
-    expect(practice.name).to eq 'athenahealth MDP Sandbox'
+    expect(subject.name).to eq 'athenahealth MDP Sandbox'
   end
 
   it 'has hascollector Boolean attribute' do
-    expect(practice.hascollector).to eq true
+    expect(subject.hascollector).to eq true
   end
 
   it 'has publicnames Array attribute' do
-    expect(practice.publicnames).to eq ['Communicator Care Team']
+    expect(subject.publicnames).to eq ['Communicator Care Team']
   end
 
   it 'has practiceid Integer attribute' do
-    expect(practice.practiceid).to eq 195_900
+    expect(subject.practiceid).to eq 195_900
   end
 end

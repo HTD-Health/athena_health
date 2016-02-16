@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 16 Feb 2016 11:10:43 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-120.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 16 Feb 2016 11:10:43 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/departments/162
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 16 Feb 2016 11:10:44 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 71247ed1-5d8b-45cc-9272-1e9b807d0e08
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      Content-Length:
+      - '687'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"creditcardtypes":["AX","DS","MC","VI"],"medicationhistoryconsent":"false","timezoneoffset":-5,"providergroupid":"1","singleappointmentcontractmax":"3000","state":"NY","portalurl":"1959-1-practice-home-url","city":"BALLSTON
+        SPA","placeofservicefacility":"false","oneyearcontractmax":"1500","providergroupname":"Downtown
+        Health Group","doesnotobservedst":"false","departmentid":"162","address":"8762
+        STONERIDGE CT","placeofservicetypeid":"11","clinicals":"OFF","timezone":-5,"patientdepartmentname":"Main
+        Office","name":"MERCY HOSPITAL","placeofservicetypename":"OFFICE","phone":"(555)
+        946-3582","ecommercecreditcardtypes":["AX","DS","MC","VI"],"zip":"12020","communicatorbrandid":"1"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/departments/162
+  recorded_at: Tue, 16 Feb 2016 11:10:44 GMT
+recorded_with: VCR 3.0.1
