@@ -28,7 +28,8 @@ module AthenaHealth
         "#{BASE_URL}/#{@version}/#{endpoint}",
         method: method,
         headers: { "Authorization" => "Bearer #{@token}"},
-        params: params
+        params: params,
+        body: params,
       ).run
 
       if response.response_code == 401 && !second_call
@@ -36,7 +37,7 @@ module AthenaHealth
         call(endpoint: endpoint, method: method, second_call: true)
       end
 
-      AthenaHealth::Error.new(code: response.response_code).render if response.response_code != 200
+      AthenaHealth::Error.new(code: response.response_code).render unless [200, 400].include? response.response_code
 
       JSON.parse(response.response_body)
     end

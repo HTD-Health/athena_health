@@ -4,16 +4,6 @@ describe AthenaHealth::Error do
   let(:error) { AthenaHealth::Error.new(code: code) }
 
   describe '#render' do
-    context 'when response code is 400' do
-      let(:code) { 400 }
-
-      it 'raise BadRequestError' do
-        expect { error.render }.to raise_error(
-          AthenaHealth::BadRequestError
-        )
-      end
-    end
-
     context 'when response code is 401' do
       let(:code) { 401 }
 

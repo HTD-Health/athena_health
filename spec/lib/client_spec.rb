@@ -62,7 +62,27 @@ describe AthenaHealth::Client do
   describe '#delete_patient' do
     it 'returns patientid of deleted Patient' do
       VCR.use_cassette('delete_patient') do
-        expect(client.delete_patient(practice_id: 195_900, patient_id: 5309)).to eq 'patientid' => '5309'
+        expect(client.delete_patient(practice_id: 195_900, patient_id: 5309)).to eq [{ 'patientid' => '5309' }]
+      end
+    end
+  end
+
+  describe '#create_patient' do
+    context 'with wrong data' do
+      it 'returns Array of errors' do
+        VCR.use_cassette('create_patient_with_wrong_data') do
+          expect(client.create_patient(practice_id: 195_900, department_id: 1))
+            .to eq('invalidfields' => [], 'missingfields' => %w(lastname dob firstname), 'error' => 'Additional fields are required.')
+        end
+      end
+    end
+
+    context 'with wrong formatted_data' do
+      it 'returns Array of errors' do
+        VCR.use_cassette('create_patient_with_wrong_formatted_data') do
+          expect(client.create_patient(practice_id: 195_900, department_id: 1, params: { firstname: 'Mateusz', lastname: 'U.', emai: 'mat@u.com', dob: 'wrong date'}))
+            .to eq "error" => "Improper DOB."
+        end
       end
     end
   end

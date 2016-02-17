@@ -55,7 +55,8 @@ describe AthenaHealth::Connection do
         'https://api.athenahealth.com/preview1/test_endpoint',
         method: :get,
         headers: { 'Authorization' => 'Bearer test_access_token' },
-        params: {}
+        params: {},
+        body: {}
       ) { request }
       expect(request).to receive(:run) { response }
     end

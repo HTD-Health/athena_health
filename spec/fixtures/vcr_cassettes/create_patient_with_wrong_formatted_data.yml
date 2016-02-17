@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 17 Feb 2016 09:07:41 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-112.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_access_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Wed, 17 Feb 2016 09:07:42 GMT
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/patients?firstname=Mateusz&lastname=U.&emai=mat%40u.com&dob=wrong%20date&departmentid=1
+    body:
+      encoding: US-ASCII
+      string: firstname=Mateusz&lastname=U.&emai=mat@u.com&dob=wrong date&departmentid=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 17 Feb 2016 09:07:42 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 96946a91-6ef4-4b65-bf31-7cd5f3a871ba
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+
+        {"error":"Improper DOB."}
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/patients?firstname=Mateusz&lastname=U.&emai=mat%40u.com&dob=wrong%20date&departmentid=1
+  recorded_at: Wed, 17 Feb 2016 09:07:42 GMT
+recorded_with: VCR 3.0.1

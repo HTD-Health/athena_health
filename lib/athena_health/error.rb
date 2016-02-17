@@ -12,7 +12,6 @@ module AthenaHealth
 
     def errors
       {
-        400 => BadRequestError,
         401 => UnauthorizedError,
         402 => IncorrectPermissionsError,
         403 => ForbiddenError,
@@ -24,7 +23,6 @@ module AthenaHealth
     end
   end
 
-  class BadRequestError           < StandardError; end
   class UnauthorizedError         < StandardError; end
   class IncorrectPermissionsError < StandardError; end
   class ForbiddenError            < StandardError; end
