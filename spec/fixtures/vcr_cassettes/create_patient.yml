@@ -19,13 +19,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 17 Feb 2016 10:03:27 GMT
+      - Wed, 17 Feb 2016 10:08:30 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-118.mashery.com
+      - prod-j-worker-us-east-1b-112.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -36,13 +36,13 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Wed, 17 Feb 2016 10:03:27 GMT
+  recorded_at: Wed, 17 Feb 2016 10:08:31 GMT
 - request:
     method: post
     uri: https://api.athenahealth.com/preview1/195900/patients
     body:
       encoding: US-ASCII
-      string: firstname=Mateusz&lastname=U.&emai=mat@u.com&dob=wrong date&departmentid=1
+      string: firstname=Mateusz&lastname=U.&email=mat@u.com&dob=03/30/1992&departmentid=162
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -50,13 +50,17 @@ http_interactions:
       - Bearer test_access_token
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
+      Cache-Control:
+      - no-cache, no-store
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Feb 2016 10:03:27 GMT
+      - Wed, 17 Feb 2016 10:08:31 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
       nnCoection:
       - close
       Pragma:
@@ -66,21 +70,18 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 39b1d482-74ff-4bdb-bdd4-d88ebc43f05d
+      - 4325548b-bd98-400d-9b10-ddc9c6ddc296
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-108.mashery.com
-      transfer-encoding:
-      - chunked
+      - prod-j-worker-us-east-1d-110.mashery.com
+      Content-Length:
+      - '23'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |2-
-
-
-        {"error":"Improper DOB."}
+      string: '[{"patientid":"5309"}]'
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/preview1/195900/patients
-  recorded_at: Wed, 17 Feb 2016 10:03:27 GMT
+  recorded_at: Wed, 17 Feb 2016 10:08:32 GMT
 recorded_with: VCR 3.0.1

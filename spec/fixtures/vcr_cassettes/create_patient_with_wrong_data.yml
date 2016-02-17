@@ -19,15 +19,15 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 17 Feb 2016 08:54:23 GMT
+      - Wed, 17 Feb 2016 10:01:25 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-117.mashery.com
-      Content-Length:
-      - '126'
+      - prod-j-worker-us-east-1d-110.mashery.com
+      transfer-encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -36,13 +36,13 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Wed, 17 Feb 2016 08:54:23 GMT
+  recorded_at: Wed, 17 Feb 2016 10:01:25 GMT
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients?departmentid=162
+    uri: https://api.athenahealth.com/preview1/195900/patients
     body:
       encoding: US-ASCII
-      string: departmentid=1
+      string: departmentid=162
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -56,7 +56,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Feb 2016 08:54:23 GMT
+      - Wed, 17 Feb 2016 10:01:25 GMT
       nnCoection:
       - close
       Pragma:
@@ -66,9 +66,9 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 540923f7-09d5-4fd3-9435-a667dad9a82d
+      - bcfbd42f-9ee5-4828-94ed-b5ae100a9b06
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-115.mashery.com
+      - prod-j-worker-us-east-1b-109.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -81,6 +81,6 @@ http_interactions:
         {"invalidfields":[],"missingfields":["lastname","dob","firstname"],"error":"Additional fields are required."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients?departmentid=162
-  recorded_at: Wed, 17 Feb 2016 08:54:23 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/patients
+  recorded_at: Wed, 17 Feb 2016 10:01:25 GMT
 recorded_with: VCR 3.0.1

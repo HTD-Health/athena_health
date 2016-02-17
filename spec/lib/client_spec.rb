@@ -69,8 +69,22 @@ describe AthenaHealth::Client do
     end
   end
 
-
   describe '#create_patient' do
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900, department_id: 162,
+          params: { firstname: 'Mateusz', lastname: 'U.', email: 'mat@u.com', dob: '03/30/1992' }
+        }
+      end
+
+      it 'returns patientid of updated Patient' do
+        VCR.use_cassette('create_patient') do
+          expect(client.create_patient(attributes)).to eq [{ 'patientid' => '5309' }]
+        end
+      end
+    end
+
     context 'with wrong data' do
       let(:attributes) { { practice_id: 195_900, department_id: 162 } }
 
@@ -86,7 +100,7 @@ describe AthenaHealth::Client do
       let(:attributes) do
         {
           practice_id: 195_900, department_id: 1,
-          params: { firstname: 'Mateusz', lastname: 'U.', emai: 'mat@u.com', dob: 'wrong date' }
+          params: { firstname: 'Mateusz', lastname: 'U.', email: 'mat@u.com', dob: 'wrong date' }
         }
       end
 
