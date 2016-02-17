@@ -25,6 +25,6 @@ describe AthenaHealth::PracticeCollection do
   it_behaves_like 'a collection'
 
   it 'have proper attributes' do
-    expect(subject.practiceinfo.map(&:class)).to eq [AthenaHealth::Practice]
+    expect(subject.practices.map(&:class)).to eq [AthenaHealth::Practice]
   end
 end

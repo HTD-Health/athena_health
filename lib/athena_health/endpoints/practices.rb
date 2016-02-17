@@ -8,7 +8,7 @@ module AthenaHealth
 
       def find_practice(practice_id:, params: {})
         response = @api.call(endpoint: "#{practice_id}/practiceinfo", method: :get, params: params)
-        PracticeCollection.new(response).practiceinfo.first
+        PracticeCollection.new(response).practices.first
       end
     end
   end
