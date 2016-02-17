@@ -99,7 +99,7 @@ describe AthenaHealth::Client do
         }
       end
 
-      it 'returns Array of errors' do
+      it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_with_wrong_formatted_data') do
           expect(client.create_patient(attributes)).to eq 'error' => 'Improper DOB.'
         end
