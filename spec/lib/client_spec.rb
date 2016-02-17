@@ -22,7 +22,7 @@ describe AthenaHealth::Client do
   describe '#find_practice' do
     it 'returns instance of Practice' do
       VCR.use_cassette('find_practice') do
-        expect(client.find_practice(practice_id: 195900)).to be_an_instance_of AthenaHealth::Practice
+        expect(client.find_practice(practice_id: 195_900)).to be_an_instance_of AthenaHealth::Practice
       end
     end
   end
@@ -30,7 +30,7 @@ describe AthenaHealth::Client do
   describe '#all_departments' do
     it 'returns instance of DepartmentCollection' do
       VCR.use_cassette('all_departments') do
-        expect(client.all_departments(practice_id: 195900)).to be_an_instance_of AthenaHealth::DepartmentCollection
+        expect(client.all_departments(practice_id: 195_900)).to be_an_instance_of AthenaHealth::DepartmentCollection
       end
     end
   end
@@ -38,7 +38,7 @@ describe AthenaHealth::Client do
   describe '#find_department' do
     it 'returns instance of Department' do
       VCR.use_cassette('find_department') do
-        expect(client.find_department(practice_id: 195900, department_id: 162)).to be_an_instance_of AthenaHealth::Department
+        expect(client.find_department(practice_id: 195_900, department_id: 162)).to be_an_instance_of AthenaHealth::Department
       end
     end
   end
@@ -46,7 +46,7 @@ describe AthenaHealth::Client do
   describe '#all_patients' do
     it 'returns instance of PatientCollection' do
       VCR.use_cassette('all_patients') do
-        expect(client.all_patients(practice_id: 195900, department_id: 162)).to be_an_instance_of AthenaHealth::PatientCollection
+        expect(client.all_patients(practice_id: 195_900, department_id: 162)).to be_an_instance_of AthenaHealth::PatientCollection
       end
     end
   end
@@ -54,7 +54,15 @@ describe AthenaHealth::Client do
   describe '#find_patient' do
     it 'returns instance of Patient' do
       VCR.use_cassette('find_patient') do
-        expect(client.find_patient(practice_id: 195900, patient_id: 5309)).to be_an_instance_of AthenaHealth::Patient
+        expect(client.find_patient(practice_id: 195_900, patient_id: 5309)).to be_an_instance_of AthenaHealth::Patient
+      end
+    end
+  end
+
+  describe '#delete_patient' do
+    it 'returns patientid of deleted Patient' do
+      VCR.use_cassette('delete_patient') do
+        expect(client.delete_patient(practice_id: 195_900, patient_id: 5309)).to eq 'patientid' => '5309'
       end
     end
   end
