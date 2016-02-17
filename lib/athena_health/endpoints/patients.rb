@@ -15,6 +15,10 @@ module AthenaHealth
         @api.call(endpoint: "#{practice_id}/patients", method: :post, params: params.merge!(departmentid: department_id))
       end
 
+      def update_patient(practice_id:, patient_id:, params: {})
+        @api.call(endpoint: "#{practice_id}/patients/#{patient_id}", method: :put, params: params)
+      end
+
       def delete_patient(practice_id:, patient_id:, params: {})
         @api.call(endpoint: "#{practice_id}/patients/#{patient_id}", method: :put, params: params.merge!(status: 'deleted'))
       end

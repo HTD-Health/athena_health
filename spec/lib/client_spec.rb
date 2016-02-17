@@ -69,15 +69,6 @@ describe AthenaHealth::Client do
     end
   end
 
-  describe '#delete_patient' do
-    let(:attributes) { { practice_id: 195_900, patient_id: 5309 } }
-
-    it 'returns patientid of deleted Patient' do
-      VCR.use_cassette('delete_patient') do
-        expect(client.delete_patient(attributes)).to eq [{ 'patientid' => '5309' }]
-      end
-    end
-  end
 
   describe '#create_patient' do
     context 'with wrong data' do
@@ -103,6 +94,26 @@ describe AthenaHealth::Client do
         VCR.use_cassette('create_patient_with_wrong_formatted_data') do
           expect(client.create_patient(attributes)).to eq 'error' => 'Improper DOB.'
         end
+      end
+    end
+  end
+
+  describe '#update_patient' do
+    let(:attributes) { { practice_id: 195_900, patient_id: 5309, params: { lastname: 'Urb.' } } }
+
+    it 'returns patientid of updated Patient' do
+      VCR.use_cassette('update_patient') do
+        expect(client.update_patient(attributes)).to eq [{ 'patientid' => '5309' }]
+      end
+    end
+  end
+
+  describe '#delete_patient' do
+    let(:attributes) { { practice_id: 195_900, patient_id: 5309 } }
+
+    it 'returns patientid of deleted Patient' do
+      VCR.use_cassette('delete_patient') do
+        expect(client.delete_patient(attributes)).to eq [{ 'patientid' => '5309' }]
       end
     end
   end
