@@ -50,4 +50,12 @@ describe AthenaHealth::Client do
       end
     end
   end
+
+  describe '#find_patient' do
+    it 'returns instance of Patient' do
+      VCR.use_cassette('find_patient') do
+        expect(client.find_patient(practice_id: 195900, patient_id: 5309)).to be_an_instance_of AthenaHealth::Patient
+      end
+    end
+  end
 end
