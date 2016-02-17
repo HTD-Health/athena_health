@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Wed, 17 Feb 2016 08:54:23 GMT
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients?departmentid=1
+    uri: https://api.athenahealth.com/preview1/195900/patients?departmentid=162
     body:
       encoding: US-ASCII
       string: departmentid=1
@@ -81,6 +81,6 @@ http_interactions:
         {"invalidfields":[],"missingfields":["lastname","dob","firstname"],"error":"Additional fields are required."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients?departmentid=1
+      effective_url: https://api.athenahealth.com/preview1/195900/patients?departmentid=162
   recorded_at: Wed, 17 Feb 2016 08:54:23 GMT
 recorded_with: VCR 3.0.1
