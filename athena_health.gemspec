@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'typhoeus'
   spec.add_dependency 'virtus'
+  spec.add_dependency 'activemodel'
 
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'

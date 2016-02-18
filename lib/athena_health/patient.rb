@@ -1,5 +1,9 @@
+require 'active_model'
+
 module AthenaHealth
   class Patient < BaseModel
+    include ActiveModel::Model
+
     attribute :email,                          String
     attribute :occupationcode,                 String
     attribute :departmentid,                   Integer
