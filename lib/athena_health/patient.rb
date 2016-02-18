@@ -5,6 +5,7 @@ module AthenaHealth
     attribute :departmentid,                   Integer
     attribute :homephone,                      String
     attribute :guarantorstate,                 String
+    attribute :portalaccessgiven,              Boolean
     attribute :driverslicense,                 Boolean
     attribute :workphone,                      String
     attribute :ethnicitycode,                  String
@@ -36,15 +37,20 @@ module AthenaHealth
     attribute :caresummarydeliverypreference,  Boolean
     attribute :guarantorlastname,              Boolean
     attribute :firstname,                      String
+    attribute :middlename,                     String
+    attribute :sex,                            String
+    attribute :hasmobile,                      Boolean
     attribute :guarantorcountrycode,           String
     attribute :state,                          String
     attribute :patientid,                      Integer
     attribute :dob,                            String
     attribute :guarantorrelationshiptopatient, Integer
     attribute :address1,                       String
+    attribute :address2,                       String
     attribute :guarantorphone,                 String
     attribute :countrycode,                    String
     attribute :guarantoraddress1,              String
+    attribute :guarantoraddress2,              String
     attribute :consenttotext,                  Boolean
     attribute :countrycode3166,                String
     attribute :guarantorcountrycode3166,       String
