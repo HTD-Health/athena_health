@@ -19,15 +19,15 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 17 Feb 2016 10:03:27 GMT
+      - Fri, 19 Feb 2016 11:58:53 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-118.mashery.com
-      transfer-encoding:
-      - chunked
+      - prod-j-worker-us-east-1e-123.mashery.com
+      Content-Length:
+      - '126'
       Connection:
       - keep-alive
     body:
@@ -36,13 +36,13 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Wed, 17 Feb 2016 10:03:27 GMT
+  recorded_at: Fri, 19 Feb 2016 11:58:53 GMT
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients
+    uri: https://api.athenahealth.com/preview1/195900/chart/5309/problems
     body:
       encoding: US-ASCII
-      string: firstname=Mateusz&lastname=U.&emai=mat@u.com&dob=wrong date&departmentid=162
+      string: departmentid=&snomedcode=
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -56,7 +56,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Feb 2016 10:03:27 GMT
+      - Fri, 19 Feb 2016 11:58:53 GMT
       nnCoection:
       - close
       Pragma:
@@ -66,9 +66,9 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 39b1d482-74ff-4bdb-bdd4-d88ebc43f05d
+      - 4c34b068-62a6-40c0-9d62-8dd63b1b65e9
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-108.mashery.com
+      - prod-j-worker-us-east-1d-110.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -78,9 +78,9 @@ http_interactions:
       string: |2-
 
 
-        {"error":"Improper DOB."}
+        {"detailedmessage":"Expecting type integer, but value is ","error":"The data provided is invalid."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients
-  recorded_at: Wed, 17 Feb 2016 10:03:27 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/5309/problems
+  recorded_at: Fri, 19 Feb 2016 11:58:54 GMT
 recorded_with: VCR 3.0.1

@@ -44,6 +44,14 @@ module AthenaHealth
           params: { status: 'deleted' }
         )
       end
+
+      def create_patient_problem(practice_id:, department_id:, patient_id:, snomed_code:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/problems",
+          method: :post,
+          body: params.merge!(departmentid: department_id, snomedcode: snomed_code)
+        )
+      end
     end
   end
 end
