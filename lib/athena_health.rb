@@ -17,6 +17,9 @@ require 'athena_health/department_collection'
 require 'athena_health/balance'
 require 'athena_health/patient'
 require 'athena_health/patient_collection'
+require 'athena_health/event'
+require 'athena_health/patient_problem'
+require 'athena_health/patient_problem_collection'
 
 module AthenaHealth
 end

@@ -241,4 +241,21 @@ describe AthenaHealth::Client do
       end
     end
   end
+
+  describe '#find_patient_problems' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 162,
+        patient_id: 5309
+      }
+    end
+
+    it 'returns instance of PatientProblemCollection' do
+      VCR.use_cassette('find_patient_problems') do
+        expect(client.find_patient_problems(attributes))
+          .to be_an_instance_of AthenaHealth::PatientProblemCollection
+      end
+    end
+  end
 end
