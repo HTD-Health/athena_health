@@ -37,7 +37,9 @@ module AthenaHealth
         call(endpoint: endpoint, method: method, second_call: true)
       end
 
-      AthenaHealth::Error.new(code: response.response_code).render unless [200, 400].include? response.response_code
+      unless [200, 400].include? response.response_code
+        AthenaHealth::Error.new(code: response.response_code).render
+      end
 
       JSON.parse(response.response_body)
     end

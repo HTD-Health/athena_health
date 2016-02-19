@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Fri, 19 Feb 2016 12:10:51 GMT
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/5640/problems
+    uri: https://api.athenahealth.com/preview1/195900/chart/5309/problems
     body:
       encoding: US-ASCII
       string: departmentid=162&snomedcode=0
@@ -83,6 +83,6 @@ http_interactions:
         not valid."}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/5640/problems
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/5309/problems
   recorded_at: Fri, 19 Feb 2016 12:10:51 GMT
 recorded_with: VCR 3.0.1

@@ -1,14 +1,28 @@
 require 'spec_helper'
 
 describe AthenaHealth::Connection do
-  let(:connection) { AthenaHealth::Connection.new(version: version, key: 'test_key', secret: 'test_secret') }
+  let(:connection_attributes) do
+    {
+      version: version,
+      key: 'test_key',
+      secret: 'test_secret'
+    }
+  end
+
+  let(:connection) { AthenaHealth::Connection.new(connection_attributes) }
 
   it 'has defined BASE_URL constant' do
-    expect(AthenaHealth::Connection::BASE_URL).to eq 'https://api.athenahealth.com'
+    expect(AthenaHealth::Connection::BASE_URL)
+      .to eq 'https://api.athenahealth.com'
   end
 
   it 'has defined AUTH_PATH constant' do
-    expect(AthenaHealth::Connection::AUTH_PATH).to eq 'v1' => 'oauth', 'preview1' => 'oauthpreview', 'openpreview1' => 'oauthopenpreview'
+    expect(AthenaHealth::Connection::AUTH_PATH)
+      .to eq(
+        'v1' => 'oauth',
+        'preview1' => 'oauthpreview',
+        'openpreview1' => 'oauthopenpreview'
+      )
   end
 
   describe '#authenticate' do
@@ -47,10 +61,20 @@ describe AthenaHealth::Connection do
     let(:version)       { 'preview1' }
     let(:response_body) { '{"body":"value"}' }
     let(:request)       { instance_double(Typhoeus::Request) }
-    let(:response)      { instance_double(Typhoeus::Response, response_code: response_code, response_body: response_body) }
+
+    let(:response) do
+      instance_double(
+        Typhoeus::Response,
+        response_code: response_code,
+        response_body: response_body
+      )
+    end
 
     before do
-      allow(connection).to receive(:authenticate) { connection.instance_variable_set(:@token, 'test_access_token') }
+      allow(connection).to receive(:authenticate) do
+        connection.instance_variable_set(:@token, 'test_access_token')
+      end
+
       expect(Typhoeus::Request).to receive(:new).with(
         'https://api.athenahealth.com/preview1/test_endpoint',
         method: :get,
@@ -58,6 +82,7 @@ describe AthenaHealth::Connection do
         params: {},
         body: {}
       ) { request }
+
       expect(request).to receive(:run) { response }
     end
 
@@ -65,7 +90,8 @@ describe AthenaHealth::Connection do
       let(:response_code) { 200 }
 
       it 'returns parsed response_body' do
-        expect(connection.call(endpoint: 'test_endpoint', method: :get)).to eq JSON.parse(response_body)
+        expect(connection.call(endpoint: 'test_endpoint', method: :get))
+          .to eq JSON.parse(response_body)
       end
     end
 
@@ -73,9 +99,8 @@ describe AthenaHealth::Connection do
       let(:response_code) { 404 }
 
       it 'returns error' do
-        expect { connection.call(endpoint: 'test_endpoint', method: :get) }.to raise_error(
-          AthenaHealth::NotFoundError
-        )
+        expect { connection.call(endpoint: 'test_endpoint', method: :get) }
+          .to raise_error(AthenaHealth::NotFoundError)
       end
     end
   end

@@ -225,7 +225,7 @@ describe AthenaHealth::Client do
         {
           practice_id: 195_900,
           department_id: 162,
-          patient_id: 5640,
+          patient_id: 5309,
           snomed_code: 0
         }
       end
