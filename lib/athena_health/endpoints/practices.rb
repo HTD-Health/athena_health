@@ -20,16 +20,6 @@ module AthenaHealth
 
         PracticeCollection.new(response).practices.first
       end
-
-      def all_providers(practice_id:, params: {})
-        response = @api.call(
-          endpoint: "#{practice_id}/providers",
-          method: :get,
-          params: params
-        )
-
-        ProviderCollection.new(response)
-      end
     end
   end
 end

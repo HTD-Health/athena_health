@@ -8,5 +8,6 @@ module AthenaHealth
     include Endpoints::Departments
     include Endpoints::Patients
     include Endpoints::Appointments
+    include Endpoints::Providers
   end
 end
