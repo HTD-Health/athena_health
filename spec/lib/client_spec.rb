@@ -258,4 +258,15 @@ describe AthenaHealth::Client do
       end
     end
   end
+
+  describe '#all_providers' do
+    let(:attributes) { { practice_id: 195_900 } }
+
+    it 'returns instance of ProviderCollection' do
+      VCR.use_cassette('all_providers') do
+        expect(client.all_providers(attributes))
+          .to be_an_instance_of AthenaHealth::ProviderCollection
+      end
+    end
+  end
 end

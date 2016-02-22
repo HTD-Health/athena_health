@@ -20,6 +20,8 @@ require 'athena_health/patient_collection'
 require 'athena_health/event'
 require 'athena_health/patient_problem'
 require 'athena_health/patient_problem_collection'
+require 'athena_health/provider'
+require 'athena_health/provider_collection'
 
 module AthenaHealth
 end
