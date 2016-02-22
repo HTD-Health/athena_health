@@ -7,6 +7,7 @@ require 'athena_health/error'
 require 'athena_health/endpoints/practices'
 require 'athena_health/endpoints/departments'
 require 'athena_health/endpoints/patients'
+require 'athena_health/endpoints/appointments'
 require 'athena_health/client'
 require 'athena_health/base_collection'
 require 'athena_health/base_model'
@@ -22,6 +23,8 @@ require 'athena_health/patient_problem'
 require 'athena_health/patient_problem_collection'
 require 'athena_health/provider'
 require 'athena_health/provider_collection'
+require 'athena_health/appointment_type'
+require 'athena_health/appointment_type_collection'
 
 module AthenaHealth
 end
