@@ -26,6 +26,8 @@ require 'athena_health/provider'
 require 'athena_health/provider_collection'
 require 'athena_health/appointment_type'
 require 'athena_health/appointment_type_collection'
+require 'athena_health/appointment'
+require 'athena_health/appointment_collection'
 
 module AthenaHealth
 end

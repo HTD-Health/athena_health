@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 22 Feb 2016 11:04:08 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-119.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Mon, 22 Feb 2016 11:04:08 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&appointmenttypeid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Feb 2016 11:04:09 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 6ecfb3da-56f7-40ea-90ae-7976c275a84e
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-107.mashery.com
+      Content-Length:
+      - '351'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":47,"appointments":[{"date":"02\/23\/2016","appointmentid":"663560","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":30,"appointmenttypeid":"82","patientappointmenttypename":"Established
+        Patient"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&appointmenttypeid=1
+  recorded_at: Mon, 22 Feb 2016 11:04:09 GMT
+recorded_with: VCR 3.0.1

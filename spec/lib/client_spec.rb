@@ -270,13 +270,19 @@ describe AthenaHealth::Client do
     end
   end
 
-  describe '#all_appointment_types' do
-    let(:attributes) { { practice_id: 195_900 } }
+  describe '#open_appointment_slots' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        appointment_type_id: 1
+      }
+    end
 
-    it 'returns instance of AppointmentTypeCollection' do
-      VCR.use_cassette('all_appointment_types') do
-        expect(client.all_appointment_types(attributes))
-          .to be_an_instance_of AthenaHealth::AppointmentTypeCollection
+    it 'returns instance of AppointmentCollection' do
+      VCR.use_cassette('open_appointment_slots') do
+        expect(client.open_appointment_slots(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentCollection
       end
     end
   end
