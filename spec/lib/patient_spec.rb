@@ -193,7 +193,8 @@ describe AthenaHealth::Patient do
       consenttotext: false,
       consenttocall: false,
       countrycode3166: 'US',
-      guarantorcountrycode3166: 'US'
+      guarantorcountrycode3166: 'US',
+      fullname: 'Etha A. McCullough'
     )
 
     expect(subject.balances.map(&:class)).to eq [AthenaHealth::Balance]

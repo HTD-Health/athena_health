@@ -92,5 +92,9 @@ module AthenaHealth
     attribute :consenttotext,                        Boolean
     attribute :countrycode3166,                      String
     attribute :guarantorcountrycode3166,             String
+
+    def fullname
+      "#{firstname} #{middlename} #{lastname}"
+    end
   end
 end

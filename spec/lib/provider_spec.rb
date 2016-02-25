@@ -41,7 +41,8 @@ describe AthenaHealth::Provider do
       hideinportal: false,
       entitytype: 'Person',
       npi: 90635210,
-      providertype: 'MD'
+      providertype: 'MD',
+      fullname: 'Terry Ahmad'
     )
   end
 end
