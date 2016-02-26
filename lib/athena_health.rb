@@ -9,6 +9,7 @@ require 'athena_health/endpoints/departments'
 require 'athena_health/endpoints/patients'
 require 'athena_health/endpoints/appointments'
 require 'athena_health/endpoints/providers'
+require 'athena_health/endpoints/insurance_packages'
 require 'athena_health/client'
 require 'athena_health/base_collection'
 require 'athena_health/base_model'
@@ -28,6 +29,8 @@ require 'athena_health/appointment_type'
 require 'athena_health/appointment_type_collection'
 require 'athena_health/appointment'
 require 'athena_health/appointment_collection'
+require 'athena_health/insurance_package'
+require 'athena_health/insurance_package_collection'
 
 module AthenaHealth
 end

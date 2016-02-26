@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 25 Feb 2016 18:18:02 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-123.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 25 Feb 2016 18:18:03 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/misc/topinsurancepackages
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 25 Feb 2016 18:18:04 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - da2ac011-e18b-485c-b6f2-6241ed0d6044
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-119.mashery.com
+      Content-Length:
+      - '796'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"insurancepackages":[{"ranking":"1","name":"*SELF PAY*","percentage":"48.02354920100925147182506307821698906644","insurancepackageid":"0"},{"ranking":"2","name":"HUMANA
+        (PPO)","percentage":"43.98654331370899915895710681244743481918","phone":"(800)
+        558-4444","insuranceproducttypename":"PPO","state":"KY","zip":"40512-4601","city":"LEXINGTON","insurancepackageid":"31724","address":"PO
+        BOX 14601"},{"ranking":"3","name":"BCBS-MA: BCBS (PPO)","percentage":"1.64003364171572750210260723296888141295","phone":"(800)
+        882-2060","insuranceproducttypename":"PPO","state":"MA","zip":"02298-6020","city":"BOSTON","insurancepackageid":"8477","address":"PO
+        BOX 986020"},{"ranking":"4","name":"PAYMENT PLAN","percentage":"1.3877207737594617325483599663582842725","insurancepackageid":"-500"}],"totalcount":4}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/misc/topinsurancepackages
+  recorded_at: Thu, 25 Feb 2016 18:18:04 GMT
+recorded_with: VCR 3.0.1
