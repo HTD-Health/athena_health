@@ -3,7 +3,6 @@ module AthenaHealth
   class IncorrectPermissionsError < StandardError; end
   class ForbiddenError            < StandardError; end
   class NotFoundError             < StandardError; end
-  class ConflictError             < StandardError; end
   class InternalServerError       < StandardError; end
   class ServiceUnavailableError   < StandardError; end
 
@@ -22,7 +21,6 @@ module AthenaHealth
       402 => IncorrectPermissionsError,
       403 => ForbiddenError,
       404 => NotFoundError,
-      409 => ConflictError,
       500 => InternalServerError,
       503 => ServiceUnavailableError,
     }

@@ -44,16 +44,6 @@ describe AthenaHealth::Error do
       end
     end
 
-    context 'when response code is 409' do
-      let(:code) { 409 }
-
-      it 'raise NotFoundError' do
-        expect { error.render }.to raise_error(
-          AthenaHealth::ConflictError
-        )
-      end
-    end
-
     context 'when response code is 500' do
       let(:code) { 500 }
 

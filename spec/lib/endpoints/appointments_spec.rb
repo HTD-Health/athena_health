@@ -44,6 +44,32 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
 
+    context 'with wrong appointment id' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          appointment_id: 665839,
+          patient_id: 1,
+          appointment_type_id: 82
+        }
+      end
+
+      it 'raise AthenaHealth::ValidationError error' do
+        VCR.use_cassette('book_appointment_with_wrong_appointment_id') do
+          expect { client.book_appointment(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              {
+                'detailedmessage' => 'The appointment ID is already booked or is not marked as being available to be scheduled via the API.',
+                'error' => 'That appointment time was already booked or not available for booking.'
+              }
+            )
+          }
+        end
+      end
+    end
+
+
     context 'with correct data' do
       let(:attributes) do
         {
