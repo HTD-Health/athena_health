@@ -24,7 +24,8 @@ describe AthenaHealth::Endpoints::Appointments do
         {
           practice_id: 195_900,
           appointment_id: 665839,
-          patient_id: 1
+          patient_id: 1,
+          appointment_type_id: nil
         }
       end
 
@@ -39,6 +40,24 @@ describe AthenaHealth::Endpoints::Appointments do
               }
             )
           }
+        end
+      end
+    end
+
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          appointment_id: 663313,
+          patient_id: 1,
+          appointment_type_id: 82
+        }
+      end
+
+      it 'returns instance of Appointment' do
+        VCR.use_cassette('book_appointment') do
+         expect(client.book_appointment(attributes))
+          .to be_an_instance_of AthenaHealth::Appointment
         end
       end
     end

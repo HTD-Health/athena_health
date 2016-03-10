@@ -19,13 +19,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Mar 2016 12:15:01 GMT
+      - Thu, 10 Mar 2016 13:54:57 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-113.mashery.com
+      - prod-j-worker-us-east-1e-105.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -36,10 +36,10 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Thu, 10 Mar 2016 12:15:02 GMT
+  recorded_at: Thu, 10 Mar 2016 13:54:57 GMT
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&appointmenttypeid=
+    uri: https://api.athenahealth.com/preview1/195900/appointments/663313?patientid=1&appointmenttypeid=82
     body:
       encoding: US-ASCII
       string: ''
@@ -50,15 +50,19 @@ http_interactions:
       - Bearer test_access_token
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
       Content-Type:
       - application/json
       Date:
-      - Thu, 10 Mar 2016 12:15:02 GMT
-      nnCoection:
-      - close
+      - Thu, 10 Mar 2016 13:54:58 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
       Pragma:
       - No-cache
       Server:
@@ -66,21 +70,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 76891cad-b09d-4529-80df-56bb16ffd3d6
+      - 1cca2ed4-b05f-413c-90bf-9b080421b68f
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-117.mashery.com
-      transfer-encoding:
-      - chunked
+      - prod-j-worker-us-east-1e-120.mashery.com
+      Content-Length:
+      - '269'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |2-
-
-
-        {"detailedmessage":"An appointment type or reason must be provided:  1, 71, ","error":"Additional fields are required."}
+      string: '[{"date":"03\/11\/2016","appointmentid":"663313","starttime":"12:00","departmentid":"1","appointmentstatus":"f","patientid":"4923","duration":"15","appointmenttypeid":"82","appointmenttype":"Any
+        15","providerid":"71","patientappointmenttypename":"Established Patient"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&appointmenttypeid=
-  recorded_at: Thu, 10 Mar 2016 12:15:02 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/663313?patientid=1&appointmenttypeid=82
+  recorded_at: Thu, 10 Mar 2016 13:55:01 GMT
 recorded_with: VCR 3.0.1
