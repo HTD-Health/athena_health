@@ -37,11 +37,17 @@ module AthenaHealth
         call(endpoint: endpoint, method: method, second_call: true)
       end
 
-      unless [200, 400].include? response.response_code
+      body = JSON.parse(response.response_body)
+
+      if response.response_code == 400
+        fail AthenaHealth::ValidationError.new(body)
+      end
+
+      if response.response_code != 200
         AthenaHealth::Error.new(code: response.response_code).render
       end
 
-      JSON.parse(response.response_body)
+      body
     end
   end
 end

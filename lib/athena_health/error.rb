@@ -7,6 +7,15 @@ module AthenaHealth
   class InternalServerError       < StandardError; end
   class ServiceUnavailableError   < StandardError; end
 
+  class ValidationError < StandardError
+    attr_reader :details
+
+    def initialize(details)
+      @details = details
+    end
+  end
+
+
   class Error
     ERROR_TYPES = {
       401 => UnauthorizedError,

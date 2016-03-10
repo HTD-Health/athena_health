@@ -66,12 +66,16 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash of errors' do
         VCR.use_cassette('create_patient_with_wrong_data') do
-          expect(client.create_patient(attributes))
-            .to eq(
-              'invalidfields' => [],
-              'missingfields' => %w(lastname dob firstname),
-              'error' => 'Additional fields are required.'
+          expect { client.create_patient(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              {
+                'invalidfields' => [],
+                'missingfields' => %w(lastname dob firstname),
+                'error' => 'Additional fields are required.'
+              }
             )
+          }
         end
       end
     end
@@ -91,8 +95,14 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_with_wrong_formatted_data') do
-          expect(client.create_patient(attributes))
-            .to eq 'error' => 'Improper DOB.'
+          expect { client.create_patient(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              {
+               'error' => 'Improper DOB.'
+              }
+            )
+          }
         end
       end
     end
@@ -146,11 +156,15 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_problem_with_missing_data') do
-          expect(client.create_patient_problem(attributes))
-            .to eq(
-              'detailedmessage' => 'Expecting type integer, but value is ',
-              'error' => 'The data provided is invalid.'
+          expect { client.create_patient_problem(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              {
+                'detailedmessage' => 'Expecting type integer, but value is ',
+                'error' => 'The data provided is invalid.'
+              }
             )
+          }
         end
       end
     end
