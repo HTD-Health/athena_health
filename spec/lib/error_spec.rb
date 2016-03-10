@@ -1,5 +1,15 @@
 require 'spec_helper'
 
+describe AthenaHealth::ValidationError do
+  subject { AthenaHealth::ValidationError.new({ error: 'Error message' }) }
+
+  let(:error_hash) { { error: 'Error message' } }
+
+  it 'returns details' do
+    expect(subject.details).to eq(error_hash)
+  end
+end
+
 describe AthenaHealth::Error do
   let(:error) { AthenaHealth::Error.new(code: code) }
 
