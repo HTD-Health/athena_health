@@ -4,6 +4,8 @@ module AthenaHealth
     attribute :appointmentid,              Integer
     attribute :departmentid,               Integer
     attribute :appointmenttype,            String
+    attribute :appointmentstatus,          String
+    attribute :patientid,                  Integer
     attribute :providerid,                 Integer
     attribute :starttime,                  String
     attribute :duration,                   Integer
