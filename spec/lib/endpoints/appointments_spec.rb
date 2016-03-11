@@ -88,4 +88,21 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#all_patient_appointment_reasons' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        provider_id: 1
+      }
+    end
+
+    it 'returns instance of PatientAppointmentReasonCollection' do
+      VCR.use_cassette('patient_appointment_reasons') do
+        expect(client.all_patient_appointment_reasons(attributes))
+          .to be_an_instance_of AthenaHealth::PatientAppointmentReasonCollection
+      end
+    end
+  end
 end

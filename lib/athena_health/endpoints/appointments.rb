@@ -30,6 +30,16 @@ module AthenaHealth
 
         Appointment.new(response.first)
       end
+
+      def all_patient_appointment_reasons(practice_id:, department_id:, provider_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/patientappointmentreasons",
+          method: :get,
+          params: params.merge!(departmentid: department_id, providerid: provider_id)
+        )
+
+        PatientAppointmentReasonCollection.new(response)
+      end
     end
   end
 end

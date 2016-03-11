@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 11 Mar 2016 10:08:47 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-113.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Fri, 11 Mar 2016 10:08:48 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/patientappointmentreasons?departmentid=1&providerid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 11 Mar 2016 10:08:48 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 79a9f932-3006-4538-ba55-ae6340203f57
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      Content-Length:
+      - '1512'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":7,"patientappointmentreasons":[{"schedulingminhours":"48","reasontype":"existing","reason":"Follow
+        Up","description":"I need to follow up with my provider about a condition
+        or other issue I have.","reasonid":"563","schedulingmaxdays":"90"},{"schedulingminhours":"48","reasontype":"existing","reason":"Sick
+        Visit","description":"I am sick and I would like to get treatment. NOTE: If
+        you are experiencing a medical emergency, please call 911.","reasonid":"841","schedulingmaxdays":"90"},{"schedulingminhours":"24","reasontype":"existing","reason":"Annual
+        Physical","description":"It is time for me to get a check-up. Please ensure
+        that it has been at least one year between your last physical and the date
+        you schedule.","reasonid":"901","schedulingmaxdays":"90"},{"schedulingminhours":"24","reasontype":"existing","reason":"Injection\/Vaccination","description":"I
+        need to receive a vaccination or injection.","reasonid":"902","schedulingmaxdays":"90"},{"schedulingminhours":"48","reasontype":"all","reason":"Exam","description":"I
+        need my provider to examine me or do a procedure.","reasonid":"761","schedulingmaxdays":"90"},{"schedulingminhours":"1","reasontype":"new","reason":"New
+        Patient","description":"I am a new patient and I would like to schedule my
+        first visit.","reasonid":"541","schedulingmaxdays":"90"},{"schedulingminhours":"24","reasontype":"existing","reason":"Lab
+        Work","description":"I need to have blood drawn or undergo other tests.","reasonid":"565","schedulingmaxdays":"90"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/patientappointmentreasons?departmentid=1&providerid=1
+  recorded_at: Fri, 11 Mar 2016 10:08:48 GMT
+recorded_with: VCR 3.0.1
