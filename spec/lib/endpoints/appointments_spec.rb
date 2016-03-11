@@ -6,7 +6,8 @@ describe AthenaHealth::Endpoints::Appointments do
       {
         practice_id: 195_900,
         department_id: 1,
-        appointment_type_id: 1
+        provider_id: 71,
+        reason_id: 563
       }
     end
 

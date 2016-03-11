@@ -19,15 +19,15 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 22 Feb 2016 11:04:08 GMT
+      - Fri, 11 Mar 2016 11:11:19 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-119.mashery.com
-      transfer-encoding:
-      - chunked
+      - prod-j-worker-us-east-1b-106.mashery.com
+      Content-Length:
+      - '126'
       Connection:
       - keep-alive
     body:
@@ -36,10 +36,10 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Mon, 22 Feb 2016 11:04:08 GMT
+  recorded_at: Fri, 11 Mar 2016 11:11:19 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&appointmenttypeid=1
+    uri: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&providerid=71&reasonid=563
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Feb 2016 11:04:09 GMT
+      - Fri, 11 Mar 2016 11:11:20 GMT
       Expires:
       - Mon, 06 Jan 1975 16:00:00 GMT
       Pragma:
@@ -70,20 +70,280 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 6ecfb3da-56f7-40ea-90ae-7976c275a84e
+      - b4c5a223-32a4-472a-84dd-091df2905257
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-107.mashery.com
+      - prod-j-worker-us-east-1e-114.mashery.com
       Content-Length:
-      - '351'
+      - '31999'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"totalcount":47,"appointments":[{"date":"02\/23\/2016","appointmentid":"663560","departmentid":"1","appointmenttype":"Any
-        15","providerid":"71","starttime":"12:15","duration":30,"appointmenttypeid":"82","patientappointmenttypename":"Established
+      string: '{"totalcount":131,"appointments":[{"date":"03\/13\/2016","appointmentid":"659551","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"660566","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"660808","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"662061","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"662068","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"662308","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"662321","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"662325","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"663317","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"663570","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"663574","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664083","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664323","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664586","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664588","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664824","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"664827","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"665343","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"666101","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"666857","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/13\/2016","appointmentid":"667105","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"659312","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"660551","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"661066","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"661310","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"661563","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"661822","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"663579","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"663833","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"664080","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"664084","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"664584","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"664585","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"665331","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"665833","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"665836","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"665844","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"666088","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"666346","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"666601","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"666605","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/14\/2016","appointmentid":"667097","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"659307","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"659557","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661055","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661056","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661315","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661316","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661811","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661813","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"661820","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"662311","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"662811","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"662820","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"663064","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"663065","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"663323","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"663819","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664069","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664325","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664331","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664334","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664337","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664587","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"664831","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"665079","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"665083","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"665089","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"665336","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"665845","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"666343","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"666604","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/15\/2016","appointmentid":"666842","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"660553","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"660806","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"661063","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"661307","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"661322","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"661561","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"661821","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"662073","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"663066","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"663076","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"663322","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"663333","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"664074","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"665337","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"665838","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"666602","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"666607","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"667099","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/16\/2016","appointmentid":"667107","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"659317","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"659811","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"659816","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"659817","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"660057","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"660816","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"661062","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"661324","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"661807","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"662818","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"11:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"663329","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"663827","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"664341","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"664838","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"665338","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"665349","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"665850","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"666085","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/17\/2016","appointmentid":"666844","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"659803","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"659814","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"659820","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"08:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"660819","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"661060","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"09:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"662064","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"10:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"663319","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"663578","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"663581","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"663822","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"664086","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"12:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"664842","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:30","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"665080","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"665091","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"13:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"665589","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"666102","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"14:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"666345","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:00","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"666597","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:15","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"667094","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
+        Patient"},{"date":"03\/18\/2016","appointmentid":"667112","departmentid":"1","appointmenttype":"Any
+        15","providerid":"71","starttime":"15:45","duration":"15","appointmenttypeid":"82","reasonid":["563"],"patientappointmenttypename":"Established
         Patient"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&appointmenttypeid=1
-  recorded_at: Mon, 22 Feb 2016 11:04:09 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open?departmentid=1&providerid=71&reasonid=563
+  recorded_at: Fri, 11 Mar 2016 11:11:20 GMT
 recorded_with: VCR 3.0.1
