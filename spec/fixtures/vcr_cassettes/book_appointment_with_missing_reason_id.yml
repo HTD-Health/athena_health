@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Thu, 10 Mar 2016 12:15:02 GMT
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&appointmenttypeid=
+    uri: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&reasonid=
     body:
       encoding: US-ASCII
       string: ''
@@ -81,6 +81,6 @@ http_interactions:
         {"detailedmessage":"An appointment type or reason must be provided:  1, 71, ","error":"Additional fields are required."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&appointmenttypeid=
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&reasonid=
   recorded_at: Thu, 10 Mar 2016 12:15:02 GMT
 recorded_with: VCR 3.0.1

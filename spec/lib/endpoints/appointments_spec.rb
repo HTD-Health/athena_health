@@ -20,18 +20,18 @@ describe AthenaHealth::Endpoints::Appointments do
   end
 
   describe '#book_appointment' do
-    context 'with missing appointment type' do
+    context 'with missing reason id' do
       let(:attributes) do
         {
           practice_id: 195_900,
           appointment_id: 665839,
           patient_id: 1,
-          appointment_type_id: nil
+          reason_id: nil
         }
       end
 
       it 'raise AthenaHealth::ValidationError error' do
-        VCR.use_cassette('book_appointment_with_missing_appointment_type') do
+        VCR.use_cassette('book_appointment_with_missing_reason_id') do
           expect { client.book_appointment(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
@@ -51,7 +51,7 @@ describe AthenaHealth::Endpoints::Appointments do
           practice_id: 195_900,
           appointment_id: 665839,
           patient_id: 1,
-          appointment_type_id: 82
+          reason_id: 563
         }
       end
 
@@ -75,9 +75,9 @@ describe AthenaHealth::Endpoints::Appointments do
       let(:attributes) do
         {
           practice_id: 195_900,
-          appointment_id: 663313,
+          appointment_id: 659312,
           patient_id: 1,
-          appointment_type_id: 82
+          reason_id: 563
         }
       end
 

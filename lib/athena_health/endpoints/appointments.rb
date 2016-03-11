@@ -25,11 +25,11 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
-      def book_appointment(practice_id:, appointment_id:, patient_id:, appointment_type_id:, params: {})
+      def book_appointment(practice_id:, appointment_id:, patient_id:, reason_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}",
           method: :put,
-          params: params.merge(patientid: patient_id, appointmenttypeid: appointment_type_id)
+          params: params.merge(patientid: patient_id, reasonid: reason_id)
         )
 
         Appointment.new(response.first)

@@ -19,15 +19,15 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Mar 2016 13:54:57 GMT
+      - Fri, 11 Mar 2016 11:35:30 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-105.mashery.com
-      transfer-encoding:
-      - chunked
+      - prod-j-worker-us-east-1d-110.mashery.com
+      Content-Length:
+      - '126'
       Connection:
       - keep-alive
     body:
@@ -36,10 +36,10 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Thu, 10 Mar 2016 13:54:57 GMT
+  recorded_at: Fri, 11 Mar 2016 11:35:30 GMT
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/663313?patientid=1&appointmenttypeid=82
+    uri: https://api.athenahealth.com/preview1/195900/appointments/659312?patientid=1&reasonid=563
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 10 Mar 2016 13:54:58 GMT
+      - Fri, 11 Mar 2016 11:35:30 GMT
       Expires:
       - Mon, 06 Jan 1975 16:00:00 GMT
       Pragma:
@@ -70,19 +70,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 1cca2ed4-b05f-413c-90bf-9b080421b68f
+      - c4ca2932-6861-4efa-b419-23c4a7d493da
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-120.mashery.com
+      - prod-j-worker-us-east-1d-125.mashery.com
       Content-Length:
       - '269'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"date":"03\/11\/2016","appointmentid":"663313","starttime":"12:00","departmentid":"1","appointmentstatus":"f","patientid":"4923","duration":"15","appointmenttypeid":"82","appointmenttype":"Any
-        15","providerid":"71","patientappointmenttypename":"Established Patient"}]'
+      string: '[{"date":"03\/14\/2016","appointmentid":"659312","starttime":"08:00","departmentid":"1","appointmentstatus":"f","patientid":"1","duration":"15","appointmenttypeid":"42","appointmenttype":"Established","providerid":"71","patientappointmenttypename":"Established
+        Visit"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/663313?patientid=1&appointmenttypeid=82
-  recorded_at: Thu, 10 Mar 2016 13:55:01 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/659312?patientid=1&reasonid=563
+  recorded_at: Fri, 11 Mar 2016 11:35:33 GMT
 recorded_with: VCR 3.0.1
