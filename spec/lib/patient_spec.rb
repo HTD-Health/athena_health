@@ -4,6 +4,7 @@ describe AthenaHealth::Patient do
   let(:patient_attributes) do
     {
       'email': 'monroe86@hotmail.com',
+      'emailexists': 'true',
       'occupationcode': '123.123',
       'departmentid': '162',
       'homephone': '6102569611',
@@ -107,6 +108,7 @@ describe AthenaHealth::Patient do
 
   it 'have proper attributes' do
     expect(subject).to have_attributes(
+      emailexists: true,
       email: 'monroe86@hotmail.com',
       occupationcode: '123.123',
       departmentid: 162,

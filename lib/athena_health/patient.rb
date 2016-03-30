@@ -5,6 +5,7 @@ module AthenaHealth
     include ActiveModel::Model
 
     attribute :email,                                String
+    attribute :emailexists,                          Boolean
     attribute :occupationcode,                       String
     attribute :departmentid,                         Integer
     attribute :homephone,                            String
