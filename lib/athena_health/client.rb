@@ -10,5 +10,6 @@ module AthenaHealth
     include Endpoints::Appointments
     include Endpoints::Providers
     include Endpoints::InsurancePackages
+    include Endpoints::Encounters
   end
 end
