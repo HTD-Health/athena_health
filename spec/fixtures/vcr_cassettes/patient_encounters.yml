@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 30 Mar 2016 12:29:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Wed, 30 Mar 2016 12:29:00 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/encounters?departmentid=162
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 30 Mar 2016 12:29:00 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 4ce8aab0-1dbd-4e7c-ba5d-8b824f15b71a
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-123.mashery.com
+      Content-Length:
+      - '6154'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"encounters":[{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"660784","patientlocationid":"21","encounterdate":"02\/02\/2016","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"32705","lastupdated":"02\/01\/2016","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"652990","patientlocationid":"21","encounterdate":"02\/02\/2016","encountervisitname":"Sick
+        Visit","patientlocation":"Patient Rm. 1","encounterid":"32708","lastupdated":"02\/02\/2016","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"662275","patientlocationid":"21","encounterdate":"01\/20\/2016","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"32666","lastupdated":"01\/19\/2016","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"511997","patientlocationid":"21","encounterdate":"11\/07\/2015","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"32505","lastupdated":"12\/01\/2015","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"652408","patientlocationid":"21","encounterdate":"09\/25\/2015","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"31947","lastupdated":"09\/23\/2015","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"504235","patientlocationid":"21","encounterdate":"09\/24\/2015","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"31948","lastupdated":"09\/23\/2015","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"3","stage":"EXAM","status":"OPEN","appointmentid":"500136","patientlocationid":"21","encounterdate":"03\/18\/2015","encountervisitname":"physical
+        exam","patientlocation":"Patient Rm. 1","encounterid":"28302","lastupdated":"03\/31\/2015","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"499874","patientlocationid":"21","encounterdate":"01\/27\/2015","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"26576","lastupdated":"02\/21\/2015","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"357480","patientlocationid":"21","encounterdate":"10\/08\/2014","encountervisitname":"Any
+        15","patientlocation":"Patient Rm. 1","encounterid":"22449","lastupdated":"10\/18\/2014","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"1","stage":"INTAKE","status":"OPEN","appointmentid":"357456","patientlocationid":"21","encounterdate":"09\/03\/2014","encountervisitname":"Established","patientlocation":"Patient
+        Rm. 1","encounterid":"22022","lastupdated":"09\/23\/2014","patientstatus":"Ready
+        For Staff"},{"encountertype":"VISIT","patientstatusid":"3","stage":"EXAM","status":"OPEN","appointmentid":"324354","patientlocationid":"21","encounterdate":"04\/21\/2014","encountervisitname":"physical
+        exam","patientlocation":"Patient Rm. 1","encounterid":"18822","lastupdated":"05\/01\/2014","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"3","stage":"EXAM","status":"OPEN","appointmentid":"278210","patientlocationid":"21","encounterdate":"02\/13\/2014","encountervisitname":"Consult","patientlocation":"Patient
+        Rm. 1","encounterid":"16722","lastupdated":"02\/18\/2014","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"4","status":"OPEN","appointmentid":"314152","patientlocationid":"21","encounterdate":"01\/09\/2014","encountervisitname":"Consult","patientlocation":"Patient
+        Rm. 1","encounterid":"16422","lastupdated":"02\/01\/2014","patientstatus":"Checked
+        Out"},{"encountertype":"VISIT","patientstatusid":"4","status":"OPEN","appointmentid":"225749","encounterdate":"07\/21\/2013","encountervisitname":"physical
+        exam","encounterid":"12262","lastupdated":"07\/31\/2013","patientstatus":"Checked
+        Out"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"250360","encounterdate":"07\/15\/2013","encountervisitname":"physical
+        exam","encounterid":"12342","lastupdated":"08\/05\/2013","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"226766","patientlocationid":"2","encounterdate":"07\/10\/2013","encountervisitname":"Office
+        Visit","patientlocation":"Office 2","encounterid":"12189","lastupdated":"07\/26\/2013","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"4","status":"OPEN","appointmentid":"228277","encounterdate":"06\/07\/2013","encountervisitname":"New
+        Patient Appointment","encounterid":"11728","lastupdated":"06\/24\/2013","patientstatus":"Checked
+        Out"},{"encountertype":"VISIT","patientstatusid":"4","status":"OPEN","appointmentid":"227244","encounterdate":"05\/30\/2013","encountervisitname":"New
+        Patient Appointment","encounterid":"11522","lastupdated":"06\/11\/2013","patientstatus":"Checked
+        Out"},{"encountertype":"VISIT","patientstatusid":"4","status":"OPEN","appointmentid":"244133","encounterdate":"05\/29\/2013","encountervisitname":"physical
+        exam","encounterid":"11729","lastupdated":"06\/24\/2013","patientstatus":"Checked
+        Out"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"156377","encounterdate":"08\/19\/2012","encountervisitname":"Cardiology","encounterid":"4943","lastupdated":"08\/21\/2012","patientstatus":"Ready
+        For Provider"},{"encountertype":"VISIT","patientstatusid":"3","stage":"INTAKE","status":"OPEN","appointmentid":"114613","encounterdate":"10\/13\/2011","encountervisitname":"Office
+        Visit","encounterid":"1723","lastupdated":"10\/19\/2011","patientstatus":"Ready
+        For Provider"}],"totalcount":21}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/encounters?departmentid=162
+  recorded_at: Wed, 30 Mar 2016 12:29:01 GMT
+recorded_with: VCR 3.0.1
