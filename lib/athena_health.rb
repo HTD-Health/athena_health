@@ -33,6 +33,8 @@ require 'athena_health/insurance_package'
 require 'athena_health/insurance_package_collection'
 require 'athena_health/patient_appointment_reason'
 require 'athena_health/patient_appointment_reason_collection'
+require 'athena_health/encounter'
+require 'athena_health/encounter_collection'
 
 module AthenaHealth
 end
