@@ -36,6 +36,8 @@ require 'athena_health/patient_appointment_reason'
 require 'athena_health/patient_appointment_reason_collection'
 require 'athena_health/encounter'
 require 'athena_health/encounter_collection'
+require 'athena_health/order'
+require 'athena_health/order_collection'
 
 module AthenaHealth
 end

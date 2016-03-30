@@ -6,8 +6,17 @@ module AthenaHealth
           endpoint: "#{practice_id}/chart/encounter/#{encounter_id}",
           method: :get
         )
-        puts response
+
         Encounter.new(response.first)
+      end
+
+      def encounter_orders(practice_id:, encounter_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/orders",
+          method: :get
+        )
+
+        OrderCollection.new(response.first)
       end
     end
   end
