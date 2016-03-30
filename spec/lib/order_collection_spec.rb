@@ -11,8 +11,8 @@ describe AthenaHealth::OrderCollection do
         'classdescription': 'durable medical equipment',
         'orderingprovider': 'khaworth0',
         'assigneduser': 'khaworth0',
-        'dateordered': '03\/30\/2016 05:46 AM',
-        'class': 'DME'
+        'ordertype': 'DME',
+        'documents': []
       }],
       'diagnosis': 'Carpal tunnel syndrome',
       'diagnosissnomed': '57406009'

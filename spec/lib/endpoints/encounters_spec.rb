@@ -32,4 +32,21 @@ describe AthenaHealth::Endpoints::Encounters do
       end
     end
   end
+
+  describe '#encounter_order' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        encounter_id: 28302,
+        order_id: 116881
+      }
+    end
+
+    it 'returns instance of Encounter' do
+      VCR.use_cassette('encounter_order') do
+        expect(client.encounter_order(attributes))
+          .to be_an_instance_of AthenaHealth::Order
+      end
+    end
+  end
 end

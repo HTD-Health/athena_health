@@ -11,7 +11,8 @@ describe AthenaHealth::Order do
       'orderingprovider': 'khaworth0',
       'assigneduser': 'khaworth0',
       'dateordered': '03\/30\/2016 05:46 AM',
-      'class': 'DME'
+      'ordertype': 'DME',
+      'documents': []
     }
   end
 
@@ -29,6 +30,8 @@ describe AthenaHealth::Order do
       orderingprovider: 'khaworth0',
       assigneduser: 'khaworth0',
       dateordered: '03\/30\/2016 05:46 AM',
+      ordertype: 'DME',
+      documents: []
     )
   end
 end
