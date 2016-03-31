@@ -40,6 +40,8 @@ require 'athena_health/order'
 require 'athena_health/order_collection'
 require 'athena_health/lab_result'
 require 'athena_health/lab_result_collection'
+require 'athena_health/question'
+require 'athena_health/question_collection'
 
 module AthenaHealth
 end
