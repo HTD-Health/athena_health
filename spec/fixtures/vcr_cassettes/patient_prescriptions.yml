@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 31 Mar 2016 07:40:29 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-122.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 31 Mar 2016 07:40:29 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/patients/1/documents/prescriptions?departmentid=162
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 31 Mar 2016 07:40:29 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - b34b7958-0517-4930-a6ea-67a9f3d9df42
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-113.mashery.com
+      Content-Length:
+      - '448'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":1,"prescriptions":[{"prescriptionid":"107266","priority":"2","assignedto":"wcenteno0","documentclass":"PRESCRIPTION","createddatetime":"2015-05-20T13:39:21-04:00","documentroute":"FAX","documentsource":"UPLOAD","createddate":"05\/20\/2015","status":"DATAENTRY","documentdescription":"prescription
+        - renewal","encounterdate":"05\/20\/2015","lastmodifieddatetime":"2015-05-20T13:39:21-04:00","documentsubclass":"PRESCRIPTION_RENEWAL"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/documents/prescriptions?departmentid=162
+  recorded_at: Thu, 31 Mar 2016 07:40:29 GMT
+recorded_with: VCR 3.0.1

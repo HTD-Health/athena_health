@@ -92,6 +92,16 @@ module AthenaHealth
 
         QuestionCollection.new(response)
       end
+
+      def patient_prescriptions(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/prescriptions",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        PrescriptionCollection.new(response)
+      end
     end
   end
 end
