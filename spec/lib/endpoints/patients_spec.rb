@@ -241,4 +241,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_medical_history' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 162,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of QuestionCollection' do
+      VCR.use_cassette('patient_medical_history') do
+        expect(client.patient_medical_history(attributes))
+          .to be_an_instance_of AthenaHealth::QuestionCollection
+      end
+    end
+  end
 end

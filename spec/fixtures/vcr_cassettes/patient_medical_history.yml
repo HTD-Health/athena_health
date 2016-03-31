@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 31 Mar 2016 07:26:08 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-104.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 31 Mar 2016 07:26:08 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/labresults?departmentid=162
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 31 Mar 2016 07:26:08 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - b73d553e-a50d-416a-8c90-e2d5febea484
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-106.mashery.com
+      Content-Length:
+      - '7566'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":41,"results":[{"labresultnote":"sample note","labresultid":"2563","analytes":[{"analytename":"CBC","analyteid":"1","description":"LOINC","analytedate":"10\/02\/2009"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"2663","analytes":[],"description":"chem
+        7 profile (renal)"},{"labresultnote":"sample note","labresultid":"2803","analytes":[{"analytename":"some
+        lab","analyteid":"121","description":"LOINC","analytedate":"10\/09\/2009"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"3265","analytes":[],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"3383","analytes":[],"description":"Abreva
+        10 % topical cream"},{"labresultnote":"sample note","labresultid":"3403","analytes":[],"description":"culture,
+        beta strep"},{"labresultnote":"sample note","labresultid":"3423","analytes":[],"description":"Dermarest
+        Psoriasis 3 % topical gel"},{"labresultnote":"sample note","labresultid":"3543","analytes":[],"description":"back
+        pain exercise education"},{"labresultnote":"sample note","labresultid":"3583","analytes":[],"description":"elbow
+        bow"},{"labresultnote":"sample note","labresultid":"3584","analytes":[],"description":"cat
+        scratch disease"},{"labresultid":"3983","analytes":[],"description":"CBC"},{"labresultnote":"sample
+        note","labresultid":"4825","analytes":[],"description":"group B strep by DNA
+        probe"},{"labresultnote":"sample note","labresultid":"4826","analytes":[],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"4843","analytes":[],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"4844","analytes":[],"description":"culture,
+        beta strep"},{"labresultid":"8103","analytes":[{"analytename":"HDL","analyteid":"402","description":"LOINC","analytedate":"06\/18\/2010"},{"analytename":"LDL","analyteid":"401","description":"LOINC","analytedate":"06\/18\/2010"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"11084","analytes":[{"value":"1000","description":"lipid
+        panel","analytename":"total cholesterol","analyteid":"481","analytedate":"09\/17\/2010"},{"value":"30","description":"lipid
+        panel","analytename":"triglycerides","analyteid":"482","analytedate":"09\/17\/2010"},{"value":"500","description":"lipid
+        panel","analytename":"HDL","analyteid":"483","analytedate":"09\/17\/2010"},{"value":"500","description":"lipid
+        panel","analytename":"LDL","analyteid":"484","analytedate":"09\/17\/2010"}],"description":"lipid
+        panel"},{"labresultdate":"04\/21\/2011","labresultid":"17444","analytes":[],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"20147","analytes":[{"analytename":"some
+        lab","analyteid":"821","description":"LOINC","analytedate":"07\/29\/2011"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"20167","analytes":[{"analytename":"test
+        test","analyteid":"841","description":"LOINC","analytedate":"07\/29\/2011"}],"description":"lab
+        result"},{"labresultid":"21727","analytes":[{"analytename":"foo","analyteid":"921","description":"LOINC","analytedate":"09\/12\/2011"}],"description":"lab
+        result"},{"labresultid":"22027","analytes":[{"analytename":"test","analyteid":"941","description":"LOINC","analytedate":"09\/15\/2011"}],"description":"lab
+        result"},{"labresultid":"22307","analytes":[{"analytename":"HDL","analyteid":"962","description":"LOINC","analytedate":"09\/23\/2011"},{"analytename":"LDL","analyteid":"961","description":"LOINC","analytedate":"09\/23\/2011"}],"description":"lab
+        result"},{"labresultdate":"09\/23\/2011","labresultid":"22308","analytes":[{"value":"3","description":"INR-outside
+        cm clinic","analytename":"INR","analyteid":"963","analytedate":"09\/23\/2011"}],"description":"INR-outside
+        cm clinic"},{"labresultdate":"09\/23\/2011","labresultid":"22309","analytes":[{"value":"20","description":"prothrombin
+        time","analytename":"prothrombin time","analyteid":"964","analytedate":"09\/23\/2011"}],"description":"prothrombin
+        time"},{"labresultnote":"sample note","labresultid":"25927","analytes":[],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"29367","analytes":[{"analytename":"death","analyteid":"1121","description":"LOINC","analytedate":"06\/06\/2012"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"29387","analytes":[{"analytename":"death
+        by sms","analyteid":"1141","description":"LOINC","analytedate":"06\/07\/2012"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"29967","analytes":[{"analytename":"test","analyteid":"1201","description":"LOINC","analytedate":"06\/21\/2012"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"29987","analytes":[{"analytename":"insanity","analyteid":"1221","description":"LOINC","analytedate":"06\/22\/2012"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"30067","analytes":[{"analytename":"test","analyteid":"1241","description":"LOINC","analytedate":"06\/23\/2012"}],"description":"lab
+        result"},{"labresultdate":"08\/20\/2012","labresultid":"31827","analytes":[{"value":"23","description":"hemoglobin
+        A1C","analytename":"A1C","analyteid":"1321","analytedate":"08\/20\/2012"}],"description":"hemoglobin
+        A1C"},{"labresultdate":"10\/16\/2014","labresultnote":"sample note","labresultid":"31847","analytes":[{"analytename":"A1C","analyteid":"1341","description":"LOINC","analytedate":"10\/16\/2014"},{"analytename":"INR","analyteid":"1381","description":"LOINC","analytedate":"10\/16\/2014"}],"description":"lab
+        result"},{"labresultnote":"sample note","labresultid":"31848","analytes":[{"analytename":"A1C","analyteid":"1342","description":"LOINC","analytedate":"08\/21\/2012"}],"description":"lab
+        result"},{"labresultdate":"01\/17\/2014","labresultid":"53563","analytes":[{"value":"4","description":"INR
+        in Platelet poor plasma by Coagulation assay","loinc":"6301-6","analytename":"INR","analyteid":"2181","analytedate":"01\/17\/2014"}],"description":"INR,
+        plasma"},{"labresultdate":"01\/17\/2014","labresultid":"53564","analytes":[{"value":"16","description":"PT\/INR","analytename":"prothrombin
+        time","analyteid":"2182","analytedate":"01\/17\/2014"}],"description":"PT\/INR"},{"labresultdate":"01\/17\/2010","labresultid":"53565","analytes":[{"value":"7000","description":"Leukocytes
+        [#\/volume] in Blood by Automated count","loinc":"6690-2","analytename":"WBC","analyteid":"2183","analytedate":"01\/17\/2010"}],"description":"wbc,
+        auto, blood"},{"labresultdate":"01\/17\/2011","labresultid":"53566","analytes":[{"value":"7150","description":"Leukocytes
+        [#\/volume] in Blood by Automated count","loinc":"6690-2","analytename":"WBC","analyteid":"2184","analytedate":"01\/17\/2011"}],"description":"wbc,
+        auto, blood"},{"labresultdate":"01\/17\/2012","labresultid":"53567","analytes":[{"value":"7100","description":"Leukocytes
+        [#\/volume] in Blood by Automated count","loinc":"6690-2","analytename":"WBC","analyteid":"2185","analytedate":"01\/17\/2012"}],"description":"wbc,
+        auto, blood"},{"labresultdate":"01\/17\/2013","labresultid":"53568","analytes":[{"value":"7200","description":"Leukocytes
+        [#\/volume] in Blood by Automated count","loinc":"6690-2","analytename":"WBC","analyteid":"2186","analytedate":"01\/17\/2013"}],"description":"wbc,
+        auto, blood"},{"labresultdate":"01\/17\/2014","labresultid":"53569","analytes":[{"value":"7150","description":"Leukocytes
+        [#\/volume] in Blood by Automated count","loinc":"6690-2","analytename":"WBC","analyteid":"2187","analytedate":"01\/17\/2014"}],"description":"wbc,
+        auto, blood"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/labresults?departmentid=162
+  recorded_at: Thu, 31 Mar 2016 07:26:08 GMT
+recorded_with: VCR 3.0.1

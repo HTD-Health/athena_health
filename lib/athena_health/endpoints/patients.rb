@@ -82,6 +82,16 @@ module AthenaHealth
 
         LabResultCollection.new(response)
       end
+
+      def patient_medical_history(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/labresults",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        QuestionCollection.new(response)
+      end
     end
   end
 end
