@@ -85,7 +85,7 @@ module AthenaHealth
 
       def patient_medical_history(practice_id:, department_id:, patient_id:)
         response = @api.call(
-          endpoint: "#{practice_id}/chart/#{patient_id}/labresults",
+          endpoint: "#{practice_id}/chart/#{patient_id}/medicalhistory",
           method: :get,
           params: { departmentid: department_id }
         )
