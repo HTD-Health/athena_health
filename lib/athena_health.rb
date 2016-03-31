@@ -42,6 +42,8 @@ require 'athena_health/lab_result'
 require 'athena_health/lab_result_collection'
 require 'athena_health/question'
 require 'athena_health/question_collection'
+require 'athena_health/prescription'
+require 'athena_health/prescription_collection'
 
 module AthenaHealth
 end
