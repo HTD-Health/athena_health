@@ -72,6 +72,16 @@ module AthenaHealth
 
         EncounterCollection.new(response)
       end
+
+      def patient_lab_results(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/labresults",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        LabResultCollection.new(response)
+      end
     end
   end
 end
