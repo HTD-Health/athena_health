@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 04 Apr 2016 12:11:28 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Mon, 04 Apr 2016 12:11:28 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/analytes?departmentid=162
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 87p3cg772u5299e7n4cyvtjx
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 04 Apr 2016 12:11:29 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - ea2b5c24-3a53-4d2f-87da-663b5db89ca4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-107.mashery.com
+      Content-Length:
+      - '2814'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"analytes":[{"value":"1","analytename":"CBC","analyteid":"1","analytedate":"10\/02\/2009"},{"value":"1234","analytename":"some
+        lab","analyteid":"121","analytedate":"10\/09\/2009"},{"value":"80","analytename":"HDL","analyteid":"402","analytedate":"06\/18\/2010"},{"value":"75","analytename":"LDL","analyteid":"401","analytedate":"06\/18\/2010"},{"value":"1000","analytename":"total
+        cholesterol","analyteid":"481","analytedate":"09\/17\/2010"},{"value":"30","analytename":"triglycerides","analyteid":"482","analytedate":"09\/17\/2010"},{"value":"500","analytename":"HDL","analyteid":"483","analytedate":"09\/17\/2010"},{"value":"500","analytename":"LDL","analyteid":"484","analytedate":"09\/17\/2010"},{"value":"1","analytename":"some
+        lab","analyteid":"821","analytedate":"07\/29\/2011"},{"value":"1","analytename":"test
+        test","analyteid":"841","analytedate":"07\/29\/2011"},{"value":"1","analytename":"foo","analyteid":"921","analytedate":"09\/12\/2011"},{"value":"100","analytename":"test","analyteid":"941","analytedate":"09\/15\/2011"},{"value":"400","analytename":"HDL","analyteid":"962","analytedate":"09\/23\/2011"},{"value":"400","analytename":"LDL","analyteid":"961","analytedate":"09\/23\/2011"},{"value":"3","analytename":"INR","analyteid":"963","analytedate":"09\/23\/2011"},{"value":"20","analytename":"prothrombin
+        time","analyteid":"964","analytedate":"09\/23\/2011"},{"value":"false","note":"you''re
+        alive!","analytename":"death","analyteid":"1121","analytedate":"06\/06\/2012"},{"note":"we''ll
+        see","analytename":"death by sms","analyteid":"1141","analytedate":"06\/07\/2012"},{"analytename":"test","analyteid":"1201","analytedate":"06\/21\/2012"},{"note":"repeating
+        test and hoping for a different result","analytename":"insanity","analyteid":"1221","analytedate":"06\/22\/2012"},{"analytename":"test","analyteid":"1241","analytedate":"06\/23\/2012"},{"value":"23","analytename":"A1C","analyteid":"1321","analytedate":"08\/20\/2012"},{"value":"6","analytename":"A1C","analyteid":"1341","analytedate":"08\/21\/2012"},{"value":"7","analytename":"INR","analyteid":"1381","analytedate":"10\/13\/2012"},{"value":"6","analytename":"A1C","analyteid":"1342","analytedate":"08\/21\/2012"},{"value":"4","analytename":"INR","analyteid":"2181","analytedate":"01\/17\/2014"},{"value":"16","analytename":"prothrombin
+        time","analyteid":"2182","analytedate":"01\/17\/2014"},{"value":"7000","analytename":"WBC","analyteid":"2183","analytedate":"01\/17\/2014"},{"value":"7150","analytename":"WBC","analyteid":"2184","analytedate":"01\/17\/2014"},{"value":"7100","analytename":"WBC","analyteid":"2185","analytedate":"01\/17\/2014"},{"value":"7200","analytename":"WBC","analyteid":"2186","analytedate":"01\/17\/2014"},{"value":"7150","analytename":"WBC","analyteid":"2187","analytedate":"01\/17\/2014"}],"totalcount":32}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/analytes?departmentid=162
+  recorded_at: Mon, 04 Apr 2016 12:11:29 GMT
+recorded_with: VCR 3.0.1

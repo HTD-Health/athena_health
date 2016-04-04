@@ -102,6 +102,16 @@ module AthenaHealth
 
         PrescriptionCollection.new(response)
       end
+
+      def patient_analytes(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/analytes",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        AnalyteCollection.new(response)
+      end
     end
   end
 end

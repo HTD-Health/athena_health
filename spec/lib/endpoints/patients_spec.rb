@@ -275,4 +275,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_analytes' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 162,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of AnalyteCollection' do
+      VCR.use_cassette('patient_analytes') do
+        expect(client.patient_analytes(attributes))
+          .to be_an_instance_of AthenaHealth::AnalyteCollection
+      end
+    end
+  end
 end
