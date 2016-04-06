@@ -19,27 +19,27 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 11 Mar 2016 11:35:30 GMT
+      - Wed, 06 Apr 2016 09:33:04 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-110.mashery.com
-      Content-Length:
-      - '126'
+      - prod-j-worker-us-east-1d-125.mashery.com
+      transfer-encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+      string: '{"access_token":"p2exu7dv8gxzp8gux49zy8nm","token_type":"bearer","expires_in":3600,"refresh_token":"v6gcdy29z3skmjy6jxxr9c2t"}'
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Fri, 11 Mar 2016 11:35:30 GMT
+  recorded_at: Wed, 06 Apr 2016 09:33:04 GMT
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/659312?patientid=1&reasonid=563
+    uri: https://api.athenahealth.com/preview1/195900/appointments/659324?appointmenttypeid=82&patientid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -47,7 +47,7 @@ http_interactions:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
-      - Bearer test_access_token
+      - Bearer p2exu7dv8gxzp8gux49zy8nm
   response:
     status:
       code: 200
@@ -60,7 +60,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 11 Mar 2016 11:35:30 GMT
+      - Wed, 06 Apr 2016 09:33:04 GMT
       Expires:
       - Mon, 06 Jan 1975 16:00:00 GMT
       Pragma:
@@ -70,19 +70,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - c4ca2932-6861-4efa-b419-23c4a7d493da
+      - 8c51f219-fcb9-45f2-b4df-3f7c0fc77ed4
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-125.mashery.com
+      - prod-j-worker-us-east-1d-119.mashery.com
       Content-Length:
-      - '269'
+      - '266'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"date":"03\/14\/2016","appointmentid":"659312","starttime":"08:00","departmentid":"1","appointmentstatus":"f","patientid":"1","duration":"15","appointmenttypeid":"42","appointmenttype":"Established","providerid":"71","patientappointmenttypename":"Established
-        Visit"}]'
+      string: '[{"date":"04\/07\/2016","appointmentid":"659324","starttime":"08:00","departmentid":"1","appointmentstatus":"f","patientid":"1","duration":"15","appointmenttypeid":"82","appointmenttype":"Any
+        15","providerid":"71","patientappointmenttypename":"Established Patient"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/659312?patientid=1&reasonid=563
-  recorded_at: Fri, 11 Mar 2016 11:35:33 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/659324?appointmenttypeid=82&patientid=1
+  recorded_at: Wed, 06 Apr 2016 09:33:08 GMT
 recorded_with: VCR 3.0.1

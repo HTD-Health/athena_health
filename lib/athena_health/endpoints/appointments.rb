@@ -11,25 +11,24 @@ module AthenaHealth
         AppointmentTypeCollection.new(response)
       end
 
-      def open_appointment_slots(practice_id:, department_id:, provider_id:, reason_id:, params: {})
+      def open_appointment_slots(practice_id:, department_id:, provider_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/open",
           method: :get,
           params: params.merge(
             departmentid: department_id,
             providerid: provider_id,
-            reasonid: reason_id
           )
         )
 
         AppointmentCollection.new(response)
       end
 
-      def book_appointment(practice_id:, appointment_id:, patient_id:, reason_id:, params: {})
+      def book_appointment(practice_id:, appointment_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}",
           method: :put,
-          params: params.merge(patientid: patient_id, reasonid: reason_id)
+          params: params.merge(patientid: patient_id)
         )
 
         Appointment.new(response.first)

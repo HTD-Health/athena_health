@@ -19,13 +19,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 11 Mar 2016 11:33:51 GMT
+      - Wed, 06 Apr 2016 09:31:17 GMT
       Pragma:
       - no-cache
       Server:
       - Mashery Proxy
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-105.mashery.com
+      - prod-j-worker-us-east-1b-118.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -36,10 +36,10 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Fri, 11 Mar 2016 11:33:51 GMT
+  recorded_at: Wed, 06 Apr 2016 09:31:17 GMT
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&reasonid=563
+    uri: https://api.athenahealth.com/preview1/195900/appointments/665839?reasonid=563&patientid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 11 Mar 2016 11:33:51 GMT
+      - Wed, 06 Apr 2016 09:31:17 GMT
       Pragma:
       - No-cache
       Server:
@@ -66,9 +66,9 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 8e7d1ce8-bcbb-4d70-ac42-9f442737cc99
+      - 213f98a3-5617-4b26-b399-d9f953d22335
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-124.mashery.com
+      - prod-j-worker-us-east-1b-115.mashery.com
       transfer-encoding:
       - chunked
       Connection:
@@ -81,6 +81,6 @@ http_interactions:
         {"detailedmessage":"The appointment ID is already booked or is not marked as being available to be scheduled via the API.","error":"That appointment time was already booked or not available for booking."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665839?patientid=1&reasonid=563
-  recorded_at: Fri, 11 Mar 2016 11:33:51 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665839?reasonid=563&patientid=1
+  recorded_at: Wed, 06 Apr 2016 09:31:18 GMT
 recorded_with: VCR 3.0.1

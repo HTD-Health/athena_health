@@ -7,7 +7,7 @@ describe AthenaHealth::Endpoints::Appointments do
         practice_id: 195_900,
         department_id: 1,
         provider_id: 71,
-        reason_id: 563
+        params: { reasonid: 563 }
       }
     end
 
@@ -20,38 +20,13 @@ describe AthenaHealth::Endpoints::Appointments do
   end
 
   describe '#book_appointment' do
-    context 'with missing reason id' do
-      let(:attributes) do
-        {
-          practice_id: 195_900,
-          appointment_id: 665839,
-          patient_id: 1,
-          reason_id: nil
-        }
-      end
-
-      it 'raise AthenaHealth::ValidationError error' do
-        VCR.use_cassette('book_appointment_with_missing_reason_id') do
-          expect { client.book_appointment(attributes) }.to raise_error { |error|
-            expect(error).to be_a(AthenaHealth::ValidationError)
-            expect(error.details).to eq(
-              {
-                'detailedmessage' => 'An appointment type or reason must be provided:  1, 71, ',
-                'error' => 'Additional fields are required.'
-              }
-            )
-          }
-        end
-      end
-    end
-
     context 'with wrong appointment id' do
       let(:attributes) do
         {
           practice_id: 195_900,
           appointment_id: 665839,
           patient_id: 1,
-          reason_id: 563
+          params: { reasonid: 563 }
         }
       end
 
@@ -70,14 +45,13 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
 
-
     context 'with correct data' do
       let(:attributes) do
         {
           practice_id: 195_900,
-          appointment_id: 659312,
+          appointment_id: 659324,
           patient_id: 1,
-          reason_id: 563
+          params: { appointmenttypeid: 82 }
         }
       end
 
