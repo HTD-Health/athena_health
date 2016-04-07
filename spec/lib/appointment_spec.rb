@@ -36,4 +36,56 @@ describe AthenaHealth::Appointment do
       patientappointmenttypename: 'Established Patient'
     )
   end
+
+  describe '#appointment_status' do
+    before { subject.appointmentstatus = status }
+
+    context 'when appointmentstatus = x' do
+      let(:status) { 'x' }
+
+      it 'returns cancelled' do
+        expect(subject.appointment_status).to eq 'Cancelled'
+      end
+    end
+
+    context 'when appointmentstatus = f' do
+      let(:status) { 'f' }
+
+      it 'returns future' do
+        expect(subject.appointment_status).to eq 'Future'
+      end
+    end
+
+    context 'when appointmentstatus = o' do
+      let(:status) { 'o' }
+
+      it 'returns open' do
+        expect(subject.appointment_status).to eq 'Open'
+      end
+    end
+
+    context 'when appointmentstatus = 2' do
+      let(:status) { '2' }
+
+      it 'returns open' do
+        expect(subject.appointment_status).to eq 'Checked in'
+      end
+    end
+
+    context 'when appointmentstatus = 3' do
+      let(:status) { '3' }
+
+      it 'returns open' do
+        expect(subject.appointment_status).to eq 'Checked out'
+      end
+    end
+
+    context 'when appointmentstatus = 4' do
+      let(:status) { '4' }
+
+      it 'returns open' do
+        expect(subject.appointment_status).to eq 'Charge entered'
+      end
+    end
+  end
 end
