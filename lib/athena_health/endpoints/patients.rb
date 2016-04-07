@@ -112,6 +112,16 @@ module AthenaHealth
 
         AnalyteCollection.new(response)
       end
+
+      def patient_appointments(practice_id:, patient_id:, params: {})
+          response = @api.call(
+            endpoint: "#{practice_id}/patients/#{patient_id}/appointments",
+            method: :get,
+            params: params
+          )
+
+          AppointmentCollection.new(response)
+      end
     end
   end
 end

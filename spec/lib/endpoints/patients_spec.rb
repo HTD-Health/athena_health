@@ -292,4 +292,20 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_appointments' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of AppointmentCollection' do
+      VCR.use_cassette('patient_appointments') do
+        expect(client.patient_appointments(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentCollection
+      end
+    end
+  end
 end

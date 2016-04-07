@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 07 Apr 2016 12:55:49 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-115.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 07 Apr 2016 12:55:49 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/patients/1/appointments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Apr 2016 12:55:49 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 7b4e72a8-eab7-4615-bbfd-762ab44694ae
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-108.mashery.com
+      Content-Length:
+      - '1252'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":5,"appointments":[{"date":"04\/07\/2016","copay":0,"appointmenttypeid":"1","appointmentid":"660077","appointmenttype":"Follow
+        Up","starttime":"08:45","patientappointmenttypename":"Follow Up Appointment","departmentid":"1","providerid":"71","appointmentstatus":"f"},{"date":"04\/07\/2016","copay":0,"appointmenttypeid":"82","appointmentid":"659324","appointmenttype":"Any
+        15","starttime":"08:00","patientappointmenttypename":"Established Patient","departmentid":"1","providerid":"71","appointmentstatus":"f"},{"date":"04\/08\/2016","copay":0,"appointmenttypeid":"82","appointmentid":"661338","appointmenttype":"Any
+        15","starttime":"10:00","patientappointmenttypename":"Established Patient","departmentid":"1","providerid":"71","appointmentstatus":"f"},{"date":"04\/08\/2016","copay":0,"appointmenttypeid":"82","appointmentid":"660321","appointmenttype":"Any
+        15","starttime":"09:00","patientappointmenttypename":"Established Patient","departmentid":"1","providerid":"71","appointmentstatus":"f"},{"date":"04\/08\/2016","copay":0,"appointmenttypeid":"82","appointmentid":"659568","appointmenttype":"Any
+        15","starttime":"08:15","patientappointmenttypename":"Established Patient","departmentid":"1","providerid":"71","appointmentstatus":"f"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/appointments
+  recorded_at: Thu, 07 Apr 2016 12:55:50 GMT
+recorded_with: VCR 3.0.1
