@@ -32,7 +32,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"access_token":"p2exu7dv8gxzp8gux49zy8nm","token_type":"bearer","expires_in":3600,"refresh_token":"v6gcdy29z3skmjy6jxxr9c2t"}'
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://api.athenahealth.com/oauthpreview/token
@@ -47,7 +47,7 @@ http_interactions:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
-      - Bearer p2exu7dv8gxzp8gux49zy8nm
+      - Bearer test_access_token
   response:
     status:
       code: 200

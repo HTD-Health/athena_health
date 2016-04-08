@@ -13,7 +13,9 @@ describe AthenaHealth::Appointment do
       'starttime': '12:15',
       'duration': 30,
       'appointmenttypeid': '82',
-      'patientappointmenttypename': 'Established Patient'
+      'patientappointmenttypename': 'Established Patient',
+      'lastmodified': '04\/02\/2016 20:00:54',
+      'scheduleddatetime': '04\/02\/2016 20:00:54'
     }
   end
 
@@ -33,7 +35,9 @@ describe AthenaHealth::Appointment do
       starttime: '12:15',
       duration: 30,
       appointmenttypeid: 82,
-      patientappointmenttypename: 'Established Patient'
+      patientappointmenttypename: 'Established Patient',
+      lastmodified: '04\/02\/2016 20:00:54',
+      scheduleddatetime: '04\/02\/2016 20:00:54'
     )
   end
 

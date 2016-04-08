@@ -43,6 +43,20 @@ module AthenaHealth
 
         PatientAppointmentReasonCollection.new(response)
       end
+
+      def booked_appointments(practice_id:, department_id:, start_date:, end_date:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/booked",
+          method: :get,
+          params: params.merge!(
+            departmentid: department_id,
+            startdate: start_date,
+            enddate: end_date
+          )
+        )
+
+        AppointmentCollection.new(response)
+      end
     end
   end
 end

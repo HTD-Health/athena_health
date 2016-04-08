@@ -80,4 +80,22 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#booked_appointments' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        start_date: '03/30/2016',
+        end_date: '04/30/2016'
+      }
+    end
+
+    it 'returns instance of PatientAppointmentCollection' do
+      VCR.use_cassette('booked_appointments') do
+        expect(client.booked_appointments(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentCollection
+      end
+    end
+  end
 end
