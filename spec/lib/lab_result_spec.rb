@@ -6,7 +6,15 @@ describe AthenaHealth::LabResult do
       'labresultdate': '04\/21\/2011',
       'labresultnote': 'sample note',
       'labresultid': '3265',
-      'analytes': [],
+      'analytes': [
+        {
+          'value': '30',
+          'description': 'lipid panel',
+          'analytename': 'triglycerides',
+          'analyteid': '482',
+          'analytedate': '09\/17\/2010'
+        }
+      ],
       'description': 'lab result'
     }
   end
@@ -20,8 +28,9 @@ describe AthenaHealth::LabResult do
       labresultdate: '04\/21\/2011',
       labresultnote: 'sample note',
       labresultid: 3265,
-      analytes: [],
       description: 'lab result'
     )
+
+    expect(subject.analytes.map(&:class)).to eq [AthenaHealth::Analyte]
   end
 end

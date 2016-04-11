@@ -38,14 +38,14 @@ require 'athena_health/encounter'
 require 'athena_health/encounter_collection'
 require 'athena_health/order'
 require 'athena_health/order_collection'
+require 'athena_health/analyte'
+require 'athena_health/analyte_collection'
 require 'athena_health/lab_result'
 require 'athena_health/lab_result_collection'
 require 'athena_health/question'
 require 'athena_health/question_collection'
 require 'athena_health/prescription'
 require 'athena_health/prescription_collection'
-require 'athena_health/analyte'
-require 'athena_health/analyte_collection'
 
 module AthenaHealth
 end

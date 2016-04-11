@@ -3,7 +3,7 @@ module AthenaHealth
     attribute :labresultdate,      String
     attribute :labresultnote,      String
     attribute :labresultid,        Integer
-    attribute :analytes,           Array
+    attribute :analytes,           Array[Analyte]
     attribute :description,        String
   end
 end
