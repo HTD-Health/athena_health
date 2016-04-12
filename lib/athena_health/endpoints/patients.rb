@@ -95,7 +95,7 @@ module AthenaHealth
 
       def patient_prescriptions(practice_id:, department_id:, patient_id:)
         response = @api.call(
-          endpoint: "#{practice_id}/patients/#{patient_id}/documents/prescriptions",
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/prescription",
           method: :get,
           params: { departmentid: department_id }
         )
@@ -121,6 +121,16 @@ module AthenaHealth
           )
 
           AppointmentCollection.new(response)
+      end
+
+      def patient_documents(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents",
+          method: :get,
+          params: params.merge!(departmentid: department_id)
+        )
+
+        DocumentCollection.new(response)
       end
     end
   end

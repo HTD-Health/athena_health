@@ -308,4 +308,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_documents' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of DocumentCollection' do
+      VCR.use_cassette('patient_documents') do
+        expect(client.patient_documents(attributes))
+          .to be_an_instance_of AthenaHealth::DocumentCollection
+      end
+    end
+  end
 end

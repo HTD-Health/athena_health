@@ -46,6 +46,8 @@ require 'athena_health/question'
 require 'athena_health/question_collection'
 require 'athena_health/prescription'
 require 'athena_health/prescription_collection'
+require 'athena_health/document'
+require 'athena_health/document_collection'
 
 module AthenaHealth
 end
