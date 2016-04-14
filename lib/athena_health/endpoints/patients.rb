@@ -93,21 +93,21 @@ module AthenaHealth
         QuestionCollection.new(response)
       end
 
-      def patient_prescriptions(practice_id:, department_id:, patient_id:)
+      def patient_prescriptions(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/documents/prescription",
           method: :get,
-          params: { departmentid: department_id }
+          params: params.merge!(departmentid: department_id)
         )
 
         PrescriptionCollection.new(response)
       end
 
-      def patient_analytes(practice_id:, department_id:, patient_id:)
+      def patient_analytes(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/analytes",
           method: :get,
-          params: { departmentid: department_id }
+          params: params.merge!(departmentid: department_id)
         )
 
         AnalyteCollection.new(response)
