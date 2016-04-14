@@ -23,7 +23,7 @@ describe AthenaHealth::Analyte do
 
   it 'have proper attributes' do
     expect(subject).to have_attributes(
-      value: 80,
+      value: '80',
       analytename: 'HDL',
       analyteid: 402,
       analytedate: '06\/18\/2010',

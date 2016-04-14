@@ -3,7 +3,7 @@ module AthenaHealth
     attribute :analyteid,      Integer
     attribute :analytename,    String
     attribute :loinc,          String
-    attribute :value,          Integer
+    attribute :value,          String
     attribute :units,          String
     attribute :analytedate,    String
     attribute :description,    String
