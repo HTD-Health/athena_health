@@ -1,0 +1,176 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 19 Apr 2016 10:42:03 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"qseyzkequ9nbaa7ykccexekf","token_type":"bearer","expires_in":3600,"refresh_token":"97pdpem2cmnxcbf923kvcuyw"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 19 Apr 2016 10:42:04 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer qseyzkequ9nbaa7ykccexekf
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Apr 2016 10:42:04 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 59a602e7-5eae-47dd-95b1-9d9745d28bda
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      Content-Length:
+      - '9135'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"distance":"122.4","state":"NY","address":"5 E 84TH ST","name":"GERALD
+        ZELIKOVSKY","facilityid":"11242953","faxnumber":"(212) 744-8619","city":"NEW
+        YORK","zipcode":"29425","phonenumber":"(212) 744-0700"},{"distance":"215.7","state":"FL","address":"120
+        E NEW YORK AVE","name":"RITTERS TOWNE PHARMACY","facilityid":"10939249","faxnumber":"(386)
+        734-1004","pharmacytype":"RETAIL","city":"DELAND","zipcode":"32724","phonenumber":"(386)
+        734-6666"},{"distance":"215.7","state":"FL","address":"300 E NEW YORK AVE","name":"WALGREENS
+        DRUG STORE 13678","facilityid":"10955326","faxnumber":"(386) 943-4259","pharmacytype":"RETAIL","city":"DELAND","zipcode":"32724","phonenumber":"(386)
+        943-4011"},{"distance":"221.5","state":"FL","address":"1050 W NEW YORK AVE","name":"WINN
+        DIXIE #2343","facilityid":"10829857","faxnumber":"(386) 740-1333","pharmacytype":"RETAIL","city":"DELAND","zipcode":"32720","phonenumber":"(386)
+        738-5429"},{"distance":"290.2","state":"FL","address":"2400 NEW YORK ST","name":"SALUS","facilityid":"11666813","faxnumber":"(407)
+        777-9896","city":"MELBOURNE","zipcode":"32904","phonenumber":"(321) 473-8471"},{"distance":"297.6","state":"TN","address":"200
+        NEW YORK AVE","name":"COMPREHENSIVE PAIN SPECIALISTS","facilityid":"11719966","faxnumber":"(865)
+        835-5197","city":"OAK RIDGE","zipcode":"37830","phonenumber":"(865) 835-5196"},{"distance":"310.5","state":"NY","address":"510
+        E 80TH ST","name":"BENJAMIN ZAREMSKI","facilityid":"11242950","faxnumber":"(212)
+        288-3951","city":"NEW YORK","zipcode":"27713","phonenumber":"(212) 517-0022"},{"distance":"502.2","state":"TN","address":"4
+        NEWBERN HWY STE A   POB 155","name":"WOUND CARE RESOURCES","facilityid":"11664167","faxnumber":"(877)
+        287-2007","city":"YORKVILLE","zipcode":"38389","phonenumber":"(888) 287-9797"},{"distance":"548.8","state":"NY","address":"137
+        W 96TH ST","name":"REHANA ZAMAN","facilityid":"11242947","faxnumber":"(212)
+        864-4336","city":"NEW YORK","zipcode":"20015","phonenumber":"(212) 749-7400"},{"distance":"603.6","state":"PA","address":"5675
+        YORK ROAD","name":"RITE AID-5675 YORK RD","facilityid":"10846984","faxnumber":"(717)
+        624-4719","pharmacytype":"RETAIL","city":"NEW OXFORD","zipcode":"17350","phonenumber":"(717)
+        624-8080"},{"distance":"625.9","state":"IL","address":"825 NEW YORK DR STE
+        2","name":"MURTUZA BAHRAINWALA,M.D.","facilityid":"11803094","faxnumber":"(618)
+        283-2951","city":"VANDALIA","zipcode":"62471","phonenumber":"(618) 283-5545"},{"distance":"625.9","state":"IL","address":"825
+        NEW YORK DR","name":"THE WELLNESS CENTER (PHYSICAL THERAPY)","facilityid":"11906156","faxnumber":"(618)
+        283-8774","city":"VANDALIA","zipcode":"62471","phonenumber":"(618) 283-5548"},{"distance":"629.2","state":"PA","address":"560
+        OLD YORK RD","name":"CVS\/PHARMACY #6916","facilityid":"10880748","faxnumber":"(717)
+        932-0245","pharmacytype":"RETAIL","city":"NEW CUMBERLAND","zipcode":"17070","phonenumber":"(717)
+        932-0226"},{"distance":"629.2","state":"PA","address":"130 OLD YORK ROAD","name":"GIANT
+        PHARMACY 6253","facilityid":"10847361","faxnumber":"(717) 909-4322","pharmacytype":"RETAIL","city":"NEW
+        CUMBERLAND","zipcode":"17070","phonenumber":"(717) 909-4320"},{"distance":"629.2","state":"PA","address":"105
+        OLD YORK ROAD","name":"RITE AID - 105 OLD YORK RD","facilityid":"10846220","faxnumber":"(717)
+        774-2810","pharmacytype":"RETAIL","city":"NEW CUMBERLAND","zipcode":"17070","phonenumber":"(717)
+        774-0261"},{"distance":"653.4","state":"NJ","address":"1 EAST NEW YORK AVENUE","name":"SHORE
+        MEDICAL CENTER (PHARMACY)","facilityid":"10973624","faxnumber":"(609) 653-3272","pharmacytype":"RETAIL","city":"SOMERS
+        POINT","zipcode":"08244","phonenumber":"(609) 653-3434"},{"distance":"661.8","state":"NJ","address":"10
+        RENAISSANCE PLZ,NEW YORK+ATLANT","name":"CVS\/PHARMACY #0472","facilityid":"10842832","faxnumber":"(609)
+        345-4210","pharmacytype":"RETAIL","city":"ATLANTIC CITY","zipcode":"08401","phonenumber":"(609)
+        345-7418"},{"distance":"667.7","state":"NJ","address":"1 S. NEW YORK RD VILLAGE
+        SHOPS","name":"CVS\/PHARMACY #1033","facilityid":"10843015","faxnumber":"(609)
+        748-1490","pharmacytype":"RETAIL","city":"SMITHVILLE","zipcode":"08205","phonenumber":"(609)
+        748-0648"},{"distance":"667.7","state":"NJ","address":"506 S NEW YORK RD","name":"ANTHONY
+        T HOLVICK DC","facilityid":"11829255","faxnumber":"(609) 748-0270","city":"GALLOWAY","zipcode":"08205","phonenumber":"(609)
+        748-0222"},{"distance":"667.7","state":"NJ","address":"622 S NEW YORK RD RT
+        9","name":"JERSEY SHORE PAIN MANAGEMENT","facilityid":"12087154","faxnumber":"(609)
+        788-4798","city":"GALLOWAY","zipcode":"08205","phonenumber":"(609) 788-4779"},{"distance":"687.7","state":"PA","address":"5524
+        NEW FALLS RD.","name":"YORKE PHARMACY","facilityid":"10939317","faxnumber":"(215)
+        946-4801","pharmacytype":"RETAIL","city":"LEVITTOWN","zipcode":"19056","phonenumber":"(215)
+        945-5700"},{"distance":"745.5","state":"NY","address":"6112 FIFTH AVENUE","name":"NEW
+        YORK DRUGS & SURGICALS, INC.","facilityid":"11027351","faxnumber":"(718) 439-4972","pharmacytype":"RETAIL","city":"BROOKLYN","zipcode":"11220","phonenumber":"(718)
+        439-4966"},{"distance":"746.2","state":"NY","address":"2202 AVENUE U","name":"NEW
+        YORK BEST PHARMACY, INC.","facilityid":"11171367","faxnumber":"(718) 743-0004","pharmacytype":"RETAIL","city":"BROOKLYN","zipcode":"11229","phonenumber":"(718)
+        743-0033"},{"distance":"749.1","state":"NY","address":"3307 CHURCH AVE","name":"NEW
+        YORK AVENUE PHARMACY","facilityid":"10945483","faxnumber":"(718) 469-0424","pharmacytype":"RETAIL","city":"BROOKLYN","zipcode":"11203","phonenumber":"(718)
+        856-8048"},{"distance":"750.2","state":"NY","address":"131 WALKER STREET","name":"NEW
+        YORK PHARMACY, INC.","facilityid":"10966692","faxnumber":"(212) 219-3288","pharmacytype":"RETAIL","city":"NEW
+        YORK","zipcode":"10013","phonenumber":"(212) 219-3287"},{"distance":"750.9","state":"NY","address":"77
+        CHRISTOPHER ST","name":"NEW YORK CHEMISTS INC.","facilityid":"12007589","faxnumber":"(212)
+        255-2524","pharmacytype":"RETAIL","city":"NEW YORK","zipcode":"10014","phonenumber":"(212)
+        255-2525"},{"distance":"751.5","state":"NY","address":"310 E 14TH STREET","name":"NEW
+        YORK EYE AND EAR","facilityid":"11020531","faxnumber":"(212) 614-8238","pharmacytype":"RETAIL","city":"NEW
+        YORK","zipcode":"10003","phonenumber":"(212) 979-4757"},{"distance":"753.7","state":"NY","address":"875
+        THIRD AVE., M-105","name":"NEW YORK RX, INC.","facilityid":"10922014","faxnumber":"(212)
+        838-3605","pharmacytype":"RETAIL","city":"NEW YORK","zipcode":"10022","phonenumber":"(212)
+        838-3606"},{"distance":"734.3","state":"NY","address":"132 E 76TH ST 2A","name":"DOMINGO
+        NUNEZ","facilityid":"11242295","faxnumber":"(212) 879-4912","city":"NEW YORK","zipcode":"10312","phonenumber":"(212)
+        879-5559"},{"distance":"734.3","state":"NY","address":"55 E 34TH ST 3RD FL","name":"MARC
+        OBADIA","facilityid":"11242296","faxnumber":"(212) 252-6164","city":"NEW YORK","zipcode":"10312","phonenumber":"(212)
+        252-6162"},{"distance":"756.4","state":"NY","address":"2021 FIRST AVENUE","name":"NEW
+        YORK HEALTH FIRST PHARMACY","facilityid":"11518907","faxnumber":"(212) 987-0701","pharmacytype":"RETAIL","city":"NEW
+        YORK","zipcode":"10029","phonenumber":"(212) 987-0700"},{"distance":"737.6","state":"NY","address":"84
+        BOWERY 4TH FL","name":"DUSTIN NGUYEN","facilityid":"11242283","faxnumber":"(212)
+        334-5702","city":"NEW YORK","zipcode":"10306","phonenumber":"(212) 334-7475"},{"distance":"737.6","state":"NY","address":"CONTINUUM
+        HEALTH","name":"JAMES NGUYEN","facilityid":"11242284","faxnumber":"(212) 460-7850","city":"NEW
+        YORK","zipcode":"10306","phonenumber":"(212) 460-7800"},{"distance":"759.3","state":"NY","address":"157-10
+        NORTHERN BLVD","name":"NEW YORK FLUSHING PHARMACY","facilityid":"12254674","faxnumber":"(718)
+        461-7212","pharmacytype":"RETAIL","city":"FLUSHING","zipcode":"11354","phonenumber":"(718)
+        461-7200"},{"distance":"739.5","state":"NJ","address":"232 60TH STREET","name":"PAN
+        AMERICAN PHARMACY","facilityid":"11232343","faxnumber":"(201) 868-7945","pharmacytype":"RETAIL","city":"WEST
+        NEW YORK","zipcode":"07083","phonenumber":"(201) 861-7966"},{"distance":"740.9","state":"NY","address":"109
+        LAFAYETTE ST STE 206","name":"HUNG FAI NG","facilityid":"11242276","faxnumber":"(212)
+        343-2184","city":"NEW YORK","zipcode":"10304","phonenumber":"(212) 226-2923"},{"distance":"741.6","state":"NY","address":"425
+        W 59TH ST","name":"HENRY NOVACK","facilityid":"11242291","faxnumber":"(212)
+        376-3190","city":"NEW YORK","zipcode":"10310","phonenumber":"(212) 376-3180"},{"distance":"741.9","state":"NY","address":"COLUMBIA
+        PRESBYTERIAN","name":"JONATHAN NEWMAN","facilityid":"11242273","faxnumber":"(212)
+        305-6279","city":"NEW YORK","zipcode":"10301","phonenumber":"(212) 305-6354"},{"distance":"743.8","state":"NY","address":"885
+        PARK AVE","name":"STEPHEN RUBENSTEIN","facilityid":"11242530","faxnumber":"(212)
+        794-7295","city":"NEW YORK","zipcode":"11214","phonenumber":"(212) 737-6993"},{"distance":"744.1","state":"NY","address":"435
+        E 57TH ST","name":"JOHN RODMAN","facilityid":"11242498","faxnumber":"(212)
+        888-1435","city":"NEW YORK","zipcode":"11209","phonenumber":"(212) 752-3043"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
+  recorded_at: Tue, 19 Apr 2016 10:42:07 GMT
+recorded_with: VCR 3.0.1

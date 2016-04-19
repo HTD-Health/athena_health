@@ -11,6 +11,7 @@ require 'athena_health/endpoints/appointments'
 require 'athena_health/endpoints/providers'
 require 'athena_health/endpoints/insurance_packages'
 require 'athena_health/endpoints/encounters'
+require 'athena_health/endpoints/configurations'
 require 'athena_health/client'
 require 'athena_health/base_collection'
 require 'athena_health/base_model'
@@ -48,6 +49,7 @@ require 'athena_health/prescription'
 require 'athena_health/prescription_collection'
 require 'athena_health/document'
 require 'athena_health/document_collection'
+require 'athena_health/facility'
 
 module AthenaHealth
 end
