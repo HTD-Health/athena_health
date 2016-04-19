@@ -98,7 +98,16 @@ describe AthenaHealth::Patient do
       'consenttotext': 'false',
       'consenttocall': 'false',
       'countrycode3166': 'US',
-      'guarantorcountrycode3166': 'US'
+      'guarantorcountrycode3166': 'US',
+      'lastemail': 'demo@athenahealth.com',
+      'employerid': '1',
+      'employercity': 'SOUTHBRIDGE',
+      'employerstate': 'MA',
+      'employerzip': '01550',
+      'guarantorsuffix': 'IV',
+      'guarantoremployerid': '1',
+      'employername': 'RAQUEL DOUGHTY',
+      'employeraddress': '8762 STONERIDGE CT'
     }
   end
 
@@ -196,7 +205,16 @@ describe AthenaHealth::Patient do
       consenttocall: false,
       countrycode3166: 'US',
       guarantorcountrycode3166: 'US',
-      fullname: 'Etha A. McCullough'
+      fullname: 'Etha A. McCullough',
+      lastemail: 'demo@athenahealth.com',
+      employerid: 1,
+      employercity: 'SOUTHBRIDGE',
+      employerstate: 'MA',
+      employerzip: '01550',
+      guarantorsuffix: 'IV',
+      guarantoremployerid: 1,
+      employername: 'RAQUEL DOUGHTY',
+      employeraddress: '8762 STONERIDGE CT'
     )
 
     expect(subject.balances.map(&:class)).to eq [AthenaHealth::Balance]

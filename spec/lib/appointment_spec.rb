@@ -15,7 +15,9 @@ describe AthenaHealth::Appointment do
       'appointmenttypeid': '82',
       'patientappointmenttypename': 'Established Patient',
       'lastmodified': '04\/02\/2016 20:00:54',
-      'scheduleddatetime': '04\/02\/2016 20:00:54'
+      'scheduleddatetime': '04\/02\/2016 20:00:54',
+      'scheduledby': 'API-2553',
+      'templateappointmentid': '4'
     }
   end
 
@@ -37,7 +39,9 @@ describe AthenaHealth::Appointment do
       appointmenttypeid: 82,
       patientappointmenttypename: 'Established Patient',
       lastmodified: '04\/02\/2016 20:00:54',
-      scheduleddatetime: '04\/02\/2016 20:00:54'
+      scheduleddatetime: '04\/02\/2016 20:00:54',
+      'scheduledby': 'API-2553',
+      'templateappointmentid': 4
     )
   end
 

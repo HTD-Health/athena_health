@@ -93,6 +93,15 @@ module AthenaHealth
     attribute :consenttotext,                        Boolean
     attribute :countrycode3166,                      String
     attribute :guarantorcountrycode3166,             String
+    attribute :lastemail,                            String
+    attribute :employerid,                           Integer
+    attribute :employercity,                         String
+    attribute :employerstate,                        String
+    attribute :employerzip,                          String
+    attribute :guarantorsuffix,                      String
+    attribute :guarantoremployerid,                  Integer
+    attribute :employername,                         String
+    attribute :employeraddress,                      String
 
     def fullname
       "#{firstname} #{middlename} #{lastname}"
