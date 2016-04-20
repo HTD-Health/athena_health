@@ -40,8 +40,8 @@ describe AthenaHealth::Appointment do
       patientappointmenttypename: 'Established Patient',
       lastmodified: '04\/02\/2016 20:00:54',
       scheduleddatetime: '04\/02\/2016 20:00:54',
-      'scheduledby': 'API-2553',
-      'templateappointmentid': 4
+      scheduledby: 'API-2553',
+      templateappointmentid: 4
     )
   end
 
