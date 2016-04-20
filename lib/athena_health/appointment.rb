@@ -13,6 +13,9 @@ module AthenaHealth
     attribute :patientappointmenttypename, String
     attribute :lastmodified,               String
     attribute :scheduleddatetime,          String
+    attribute :scheduledby,                String
+    attribute :templateappointmentid,      Integer
+    attribute :encounterstatus,            String
 
     def appointment_status
         {
