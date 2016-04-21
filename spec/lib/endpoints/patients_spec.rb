@@ -69,11 +69,9 @@ describe AthenaHealth::Endpoints::Patients do
           expect { client.create_patient(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
-              {
-                'invalidfields' => [],
-                'missingfields' => %w(lastname dob firstname),
-                'error' => 'Additional fields are required.'
-              }
+              'invalidfields' => [],
+              'missingfields' => %w(lastname dob firstname),
+              'error' => 'Additional fields are required.'
             )
           }
         end
@@ -98,9 +96,7 @@ describe AthenaHealth::Endpoints::Patients do
           expect { client.create_patient(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
-              {
-               'error' => 'Improper DOB.'
-              }
+              'error' => 'Improper DOB.'
             )
           }
         end
@@ -159,10 +155,8 @@ describe AthenaHealth::Endpoints::Patients do
           expect { client.create_patient_problem(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
-              {
-                'detailedmessage' => 'Expecting type integer, but value is ',
-                'error' => 'The data provided is invalid.'
-              }
+              'detailedmessage' => 'Expecting type integer, but value is ',
+              'error' => 'The data provided is invalid.'
             )
           }
         end
@@ -339,6 +333,26 @@ describe AthenaHealth::Endpoints::Patients do
       VCR.use_cassette('patient_default_pharmacy') do
         expect(client.patient_default_pharmacy(attributes))
           .to be_an_instance_of AthenaHealth::Pharmacy
+      end
+    end
+  end
+
+  describe '#set_patient_default_pharmacy' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        params: {
+          clinicalproviderid: 11_242_674
+        }
+      }
+    end
+
+    it 'returns succes => true' do
+      VCR.use_cassette('set_patient_default_pharmacy') do
+        expect(client.set_patient_default_pharmacy(attributes))
+          .to eq 'success' => 'true'
       end
     end
   end
