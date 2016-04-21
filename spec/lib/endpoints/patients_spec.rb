@@ -373,4 +373,24 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#add_patient_preferred_pharmacy' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        params: {
+          clinicalproviderid: 11_242_674
+        }
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('add_patient_prefferred_pharmacy') do
+        expect(client.add_patient_preferred_pharmacy(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
