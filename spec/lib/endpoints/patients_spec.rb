@@ -356,4 +356,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_preferred_pharmacies' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of PharmacyCollection' do
+      VCR.use_cassette('patient_prefferred_pharmacies') do
+        expect(client.patient_preferred_pharmacies(attributes))
+          .to be_an_instance_of AthenaHealth::PharmacyCollection
+      end
+    end
+  end
 end

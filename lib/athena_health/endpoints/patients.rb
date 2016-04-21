@@ -150,6 +150,17 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id)
         )
       end
+
+      def patient_preferred_pharmacies(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/pharmacies/preferred",
+          method: :get,
+          params: params.merge!(departmentid: department_id)
+        )
+
+        PharmacyCollection.new(response)
+      end
+
     end
   end
 end

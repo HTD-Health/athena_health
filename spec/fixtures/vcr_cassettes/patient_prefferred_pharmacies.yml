@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 21 Apr 2016 09:24:51 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-109.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"j6abg7tradvssnvumrhr3cg3","token_type":"bearer","expires_in":3600,"refresh_token":"x2kkmu4z44kbrxfe4denp4zm"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 21 Apr 2016 09:24:52 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/pharmacies/preferred?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer j6abg7tradvssnvumrhr3cg3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 21 Apr 2016 09:24:52 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 2564e2d7-f7d9-4b4a-a815-7efcd3a5603b
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-126.mashery.com
+      Content-Length:
+      - '230'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"pharmacies":[{"state":"NY","city":"New York","clinicalproviderid":"11242674","zip":"11235","phonenumber":"2122654500","clinicalprovidername":"Himani
+        Shishodia","address1":"645 10th Ave","faxnumber":"2122658900"}],"totalcount":1}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/pharmacies/preferred?departmentid=1
+  recorded_at: Thu, 21 Apr 2016 09:24:52 GMT
+recorded_with: VCR 3.0.1
