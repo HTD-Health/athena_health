@@ -132,6 +132,16 @@ module AthenaHealth
 
         DocumentCollection.new(response)
       end
+
+      def patient_default_pharmacy(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/pharmacies/default",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        Pharmacy.new(response)
+      end
     end
   end
 end

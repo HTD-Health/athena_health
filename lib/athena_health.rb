@@ -50,6 +50,7 @@ require 'athena_health/prescription_collection'
 require 'athena_health/document'
 require 'athena_health/document_collection'
 require 'athena_health/facility'
+require 'athena_health/pharmacy'
 
 module AthenaHealth
 end
