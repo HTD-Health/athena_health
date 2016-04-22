@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 22 Apr 2016 07:09:05 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-124.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"afrtnzjtpgtsq9yeybqvteuc","token_type":"bearer","expires_in":3600,"refresh_token":"m6ebhmc465cquf6hnpcsmyke"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Fri, 22 Apr 2016 07:09:05 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/reference/allergies?searchvalue=asp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer afrtnzjtpgtsq9yeybqvteuc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 22 Apr 2016 07:09:05 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 3582394e-509f-4d05-8256-c99433e0f5f0
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-107.mashery.com
+      Content-Length:
+      - '515'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"allergy":"asparaginase","allergyid":"14041"},{"allergy":"asparaginase
+        (Erwinia chrysan)","allergyid":"15363"},{"allergy":"Asparaginase - PEG, E.
+        Coli","allergyid":"24947"},{"allergy":"asparagus","allergyid":"17034"},{"allergy":"aspartame","allergyid":"13988"},{"allergy":"Asper-Flex","allergyid":"65905"},{"allergy":"Aspercreme","allergyid":"12410"},{"allergy":"Aspercreme
+        (lidocaine)","allergyid":"93273"},{"allergy":"Aspercreme Heat","allergyid":"27025"},{"allergy":"Aspercreme
+        with Aloe","allergyid":"24640"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/reference/allergies?searchvalue=asp
+  recorded_at: Fri, 22 Apr 2016 07:09:05 GMT
+recorded_with: VCR 3.0.1
