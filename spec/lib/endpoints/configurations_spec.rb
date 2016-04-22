@@ -20,4 +20,20 @@ describe AthenaHealth::Endpoints::Configurations do
       end
     end
   end
+
+  describe '#all_medications' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        search_value: 'asp'
+      }
+    end
+
+    it 'returns array of Medication instances' do
+      VCR.use_cassette('all_medications') do
+        medications = client.all_medications(parameters)
+        expect(medications.map(&:class).uniq).to eq [AthenaHealth::Medication]
+      end
+    end
+  end
 end

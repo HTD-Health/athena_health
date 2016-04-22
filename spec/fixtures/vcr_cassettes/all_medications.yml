@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 22 Apr 2016 06:40:34 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"4gfeeu8puz3cxd6nyhzzxgqd","token_type":"bearer","expires_in":3600,"refresh_token":"dvqavcdfvvc7rbgyd93mvksh"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Fri, 22 Apr 2016 06:40:35 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/reference/medications?searchvalue=asp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 4gfeeu8puz3cxd6nyhzzxgqd
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 22 Apr 2016 06:40:35 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 56bcc551-3679-45ea-bd9e-b15ab97b9f66
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-119.mashery.com
+      Content-Length:
+      - '705'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"medicationid":"362851","medication":"asparaginase (Erwinia chrysan)"},{"medicationid":"362812","medication":"asparaginase
+        (Erwinia chrysanthemi) 10,000 unit solution for injection"},{"medicationid":"328863","medication":"asparagine
+        monohydrate (bulk)"},{"medicationid":"362777","medication":"asparagine monohydrate
+        (bulk) 100 % crystals"},{"medicationid":"301539","medication":"aspartame"},{"medicationid":"232857","medication":"aspartame
+        powder"},{"medicationid":"379050","medication":"aspartic acid (bulk)"},{"medicationid":"225094","medication":"aspartic
+        acid (bulk) powder"},{"medicationid":"343475","medication":"Asper-Flex"},{"medicationid":"343191","medication":"Asper-Flex
+        10 % topical cream"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/reference/medications?searchvalue=asp
+  recorded_at: Fri, 22 Apr 2016 06:40:35 GMT
+recorded_with: VCR 3.0.1
