@@ -34,7 +34,7 @@ module AthenaHealth
 
       if response.response_code == 401 && !second_call
         authenticate
-        return call(endpoint: endpoint, method: method, second_call: true)
+        return call(endpoint: endpoint, method: method, second_call: true, body: body, params: params)
       end
 
       body = response.response_body
