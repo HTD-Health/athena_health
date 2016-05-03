@@ -54,6 +54,7 @@ require 'athena_health/pharmacy'
 require 'athena_health/pharmacy_collection'
 require 'athena_health/medication'
 require 'athena_health/allergy'
+require 'athena_health/laboratory'
 
 module AthenaHealth
 end
