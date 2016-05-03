@@ -410,4 +410,24 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#set_patient_default_laboratory' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        params: {
+          clinicalproviderid: 11_242_674
+        }
+      }
+    end
+
+    it 'returns succes => true' do
+      VCR.use_cassette('set_patient_default_laboratory') do
+        expect(client.set_patient_default_laboratory(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
