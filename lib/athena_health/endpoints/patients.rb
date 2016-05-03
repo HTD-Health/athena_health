@@ -168,6 +168,16 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id)
         )
       end
+
+      def patient_default_laboratory(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/labs/default",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        Laboratory.new(response)
+      end
     end
   end
 end
