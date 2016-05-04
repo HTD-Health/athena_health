@@ -320,6 +320,27 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#create_patient_document' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        params: {
+          documentsubclass: 'ADMIN_BILLING',
+          attachmentcontents: File.open('spec/fixtures/file.pdf', 'r')
+        }
+      }
+    end
+
+    it 'returns documentid' do
+      VCR.use_cassette('create_patient_document') do
+        expect(client.create_patient_document(attributes))
+          .to eq 'documentid' => '117707'
+      end
+    end
+  end
+
   describe '#patient_default_pharmacy' do
     let(:attributes) do
       {

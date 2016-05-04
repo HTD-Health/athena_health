@@ -29,7 +29,7 @@ module AthenaHealth
         method: method,
         headers: { "Authorization" => "Bearer #{@token}"},
         params: params,
-        body: body,
+        body: body
       ).run
 
       if response.response_code == 401 && !second_call
