@@ -27,5 +27,10 @@ module AthenaHealth
           '4' => 'Charge entered'
         }[appointmentstatus]
     end
+
+    def full_time
+      appointment_time = "#{date} #{starttime}"
+      Time.strptime(appointment_time, '%m/%d/%Y %I:%M')
+    end
   end
 end

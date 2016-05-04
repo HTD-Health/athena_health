@@ -3,7 +3,7 @@ require 'spec_helper'
 describe AthenaHealth::Appointment do
   let(:appointment_attributes) do
     {
-      'date': '02\/23\/2016',
+      'date': '02/23/2016',
       'appointmentid': '663560',
       'departmentid': '1',
       'appointmenttype': 'Any 15',
@@ -27,7 +27,7 @@ describe AthenaHealth::Appointment do
 
   it 'have proper attributes' do
     expect(subject).to have_attributes(
-      date: '02\/23\/2016',
+      date: '02/23/2016',
       appointmentid: 663560,
       departmentid: 1,
       appointmenttype: 'Any 15',
@@ -94,6 +94,13 @@ describe AthenaHealth::Appointment do
       it 'returns open' do
         expect(subject.appointment_status).to eq 'Charge entered'
       end
+    end
+  end
+
+  describe 'full_time' do
+    it 'returns properly formated time' do
+      expect(subject.full_time)
+        .to eq Time.strptime("#{subject.date} #{subject.starttime}", '%m/%d/%Y %I:%M')
     end
   end
 end
