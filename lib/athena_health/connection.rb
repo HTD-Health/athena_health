@@ -5,10 +5,11 @@ module AthenaHealth
     BASE_URL    = 'https://api.athenahealth.com'.freeze
     AUTH_PATH   = { 'v1' => 'oauth', 'preview1' => 'oauthpreview', 'openpreview1' => 'oauthopenpreview' }
 
-    def initialize(version:, key:, secret:)
+    def initialize(version:, key:, secret:, token: nil)
       @version = version
       @key = key
       @secret = secret
+      @token = token
     end
 
     def authenticate
