@@ -11,6 +11,16 @@ module AthenaHealth
         AppointmentTypeCollection.new(response)
       end
 
+      def find_appointment_type(practice_id:, appointment_type_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointmenttypes/#{appointment_type_id}",
+          method: :get,
+          params: params
+        )
+
+        AppointmentType.new(response.first)
+      end
+
       def open_appointment_slots(practice_id:, department_id:, provider_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/open",

@@ -98,4 +98,20 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#find_appointment_type' do
+    let(:attributes) do
+      {
+        practice_id: 195944,
+        appointment_type_id: 2
+      }
+    end
+
+    it 'returns instance of AppointmentType' do
+      VCR.use_cassette('appointment_type') do
+        expect(client.find_appointment_type(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentType
+      end
+    end
+  end
 end
