@@ -26,7 +26,8 @@ describe AthenaHealth::Practice do
       'phone': '(555) 946-3582',
       'ecommercecreditcardtypes': ['AX', 'DS', 'MC', 'VI'],
       'zip': '12020',
-      'communicatorbrandid': '1'
+      'communicatorbrandid': '1',
+      'providerlist': ['1', '2']
     }
   end
 
@@ -59,7 +60,8 @@ describe AthenaHealth::Practice do
       phone: '(555) 946-3582',
       ecommercecreditcardtypes: ['AX', 'DS', 'MC', 'VI'],
       zip: '12020',
-      communicatorbrandid: 1
+      communicatorbrandid: 1,
+      providerlist: ['1', '2']
     )
   end
 end
