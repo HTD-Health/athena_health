@@ -26,5 +26,6 @@ module AthenaHealth
     attribute :ecommercecreditcardtypes,     Array
     attribute :zip,                          String
     attribute :communicatorbrandid,          Integer
+    attribute :providerlist,                 Array
   end
 end
