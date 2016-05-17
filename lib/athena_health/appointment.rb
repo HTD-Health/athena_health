@@ -1,21 +1,25 @@
 module AthenaHealth
   class Appointment < BaseModel
-    attribute :date,                       String
     attribute :appointmentid,              Integer
-    attribute :departmentid,               Integer
-    attribute :appointmenttype,            String
     attribute :appointmentstatus,          String
+    attribute :appointmenttype,            String
+    attribute :appointmenttypeid,          Integer
+    attribute :coordinatorenterprise,      Boolean
+    attribute :date,                       String
+    attribute :departmentid,               Integer
+    attribute :duration,                   Integer
+    attribute :encounterstatus,            String
+    attribute :frozen,                     Boolean
+    attribute :lastmodified,               String
+    attribute :patient,                    Patient
+    attribute :patientappointmenttypename, String
     attribute :patientid,                  Integer
     attribute :providerid,                 Integer
-    attribute :starttime,                  String
-    attribute :duration,                   Integer
-    attribute :appointmenttypeid,          Integer
-    attribute :patientappointmenttypename, String
-    attribute :lastmodified,               String
-    attribute :scheduleddatetime,          String
+    attribute :rescheduledappointmentid,   Integer
     attribute :scheduledby,                String
+    attribute :scheduleddatetime,          String
+    attribute :starttime,                  String
     attribute :templateappointmentid,      Integer
-    attribute :encounterstatus,            String
 
     def appointment_status
         {

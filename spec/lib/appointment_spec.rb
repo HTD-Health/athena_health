@@ -8,6 +8,8 @@ describe AthenaHealth::Appointment do
       'departmentid': '1',
       'appointmenttype': 'Any 15',
       'appointmentstatus': 'f',
+      'frozen': nil,
+      'patient': nil,
       'patientid': '1',
       'providerid': '71',
       'starttime': '12:15',
@@ -17,7 +19,8 @@ describe AthenaHealth::Appointment do
       'lastmodified': '04\/02\/2016 20:00:54',
       'scheduleddatetime': '04\/02\/2016 20:00:54',
       'scheduledby': 'API-2553',
-      'templateappointmentid': '4'
+      'templateappointmentid': '4',
+      'rescheduledappointmentid': '1',
     }
   end
 
@@ -32,6 +35,8 @@ describe AthenaHealth::Appointment do
       departmentid: 1,
       appointmenttype: 'Any 15',
       appointmentstatus: 'f',
+      frozen: nil,
+      patient: nil,
       patientid: 1,
       providerid: 71,
       starttime: '12:15',
@@ -41,7 +46,8 @@ describe AthenaHealth::Appointment do
       lastmodified: '04\/02\/2016 20:00:54',
       scheduleddatetime: '04\/02\/2016 20:00:54',
       scheduledby: 'API-2553',
-      templateappointmentid: 4
+      templateappointmentid: 4,
+      rescheduledappointmentid: 1,
     )
   end
 
