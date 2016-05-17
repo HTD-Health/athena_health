@@ -114,4 +114,20 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#appointment_notes' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_id: 665_874
+      }
+    end
+
+    it 'returns instance of NoteCollection' do
+      VCR.use_cassette('appointment_notes') do
+        expect(client.appointment_notes(attributes))
+          .to be_an_instance_of AthenaHealth::NoteCollection
+      end
+    end
+  end
 end

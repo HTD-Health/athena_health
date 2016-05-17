@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 17 May 2016 13:23:34 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-124.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 17 May 2016 13:23:34 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/appointments/665874/notes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 May 2016 13:23:35 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 833aaa4e-d8ac-4559-916d-932106428e00
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      Content-Length:
+      - '1448'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"notes":[{"notetext":"sadasdsadasdasdasd","noteid":"40341","created":"05\/17\/2016
+        08:20:08","createdby":"API-2789"},{"notetext":"sadasdsadasdasdasd","noteid":"40342","created":"05\/17\/2016
+        08:20:27","createdby":"API-2789"},{"notetext":"sadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasd","noteid":"40343","created":"05\/17\/2016
+        08:20:35","createdby":"API-2789"},{"notetext":"sadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasdsadasdsadasdasdasd","noteid":"40344","created":"05\/17\/2016
+        08:21:17","createdby":"API-2789"}],"totalcount":4}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/665874/notes
+  recorded_at: Tue, 17 May 2016 13:23:35 GMT
+recorded_with: VCR 3.0.1

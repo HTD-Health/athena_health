@@ -67,6 +67,16 @@ module AthenaHealth
 
         AppointmentCollection.new(response)
       end
+
+      def appointment_notes(practice_id:, appointment_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/notes",
+          method: :get,
+          params: params
+        )
+
+        NoteCollection.new(response)
+      end
     end
   end
 end
