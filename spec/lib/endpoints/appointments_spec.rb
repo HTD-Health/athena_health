@@ -130,4 +130,21 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe 'create_appointment_note' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_id: 665_874,
+        note_text: 'Sample note'
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('create_appointment_note') do
+        expect(client.create_appointment_note(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
