@@ -5,7 +5,11 @@ describe AthenaHealth::Question do
     {
       'question': 'dementia',
       'answer': 'N',
-      'questionid': '101'
+      'questionid': '101',
+      'templateid': '78',
+      'key': 'ADVANCEDIRECTIVE',
+      'ordering': '11',
+      'lastupdated': '05/19/2016'
     }
   end
 
@@ -17,7 +21,11 @@ describe AthenaHealth::Question do
     expect(subject).to have_attributes(
       question: 'dementia',
       answer: 'N',
-      questionid: 101
+      questionid: 101,
+      templateid: 78,
+      key: 'ADVANCEDIRECTIVE',
+      ordering: 11,
+      lastupdated: '05/19/2016'
     )
   end
 end
