@@ -504,4 +504,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_social_history' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of SocialHistory' do
+      VCR.use_cassette('patient_social_history') do
+        expect(client.patient_social_history(parameters))
+          .to be_an_instance_of AthenaHealth::SocialHistory
+      end
+    end
+  end
 end

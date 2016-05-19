@@ -220,6 +220,16 @@ module AthenaHealth
           params: { departmentid: department_id, questions: questions.to_json }
         )
       end
+
+      def patient_social_history(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory",
+          method: :get,
+          params: params.merge!(departmentid: department_id)
+        )
+
+        SocialHistory.new(response)
+      end
     end
   end
 end
