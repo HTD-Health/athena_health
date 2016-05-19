@@ -57,6 +57,7 @@ require 'athena_health/allergy'
 require 'athena_health/laboratory'
 require 'athena_health/note'
 require 'athena_health/note_collection'
+require 'athena_health/template'
 
 module AthenaHealth
 end
