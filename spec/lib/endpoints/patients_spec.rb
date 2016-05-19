@@ -451,4 +451,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_social_history_templates' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns array of Template instances' do
+      VCR.use_cassette('patient_social_history_templates') do
+        templates = client.patient_social_history_templates(parameters)
+        expect(templates.map(&:class).uniq).to eq [AthenaHealth::Template]
+      end
+    end
+  end
 end

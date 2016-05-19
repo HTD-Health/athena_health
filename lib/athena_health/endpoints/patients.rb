@@ -194,6 +194,16 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id)
         )
       end
+
+      def patient_social_history_templates(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory/templates",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        response.map {|template| AthenaHealth::Template.new(template) }
+      end
     end
   end
 end
