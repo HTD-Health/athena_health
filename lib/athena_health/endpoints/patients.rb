@@ -212,6 +212,14 @@ module AthenaHealth
           params: { departmentid: department_id, templateids: template_ids.join(', ') }
         )
       end
+
+      def update_patient_social_history(practice_id:, department_id:, patient_id:, questions:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory",
+          method: :put,
+          params: { departmentid: department_id, questions: questions.to_json }
+        )
+      end
     end
   end
 end
