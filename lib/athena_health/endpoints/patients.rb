@@ -204,6 +204,14 @@ module AthenaHealth
 
         response.map {|template| AthenaHealth::Template.new(template) }
       end
+
+      def set_patient_social_history_templates(practice_id:, department_id:, patient_id:, template_ids: [])
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory/templates",
+          method: :put,
+          params: { departmentid: department_id, templateids: template_ids.join(', ') }
+        )
+      end
     end
   end
 end

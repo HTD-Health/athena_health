@@ -468,4 +468,22 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#set_patient_social_history_templates' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        template_ids: [2, 78]
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('set_patient_social_history_templates') do
+        expect(client.set_patient_social_history_templates(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
