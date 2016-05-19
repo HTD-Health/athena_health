@@ -451,4 +451,74 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_social_history_templates' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns array of Template instances' do
+      VCR.use_cassette('patient_social_history_templates') do
+        templates = client.patient_social_history_templates(parameters)
+        expect(templates.map(&:class).uniq).to eq [AthenaHealth::Template]
+      end
+    end
+  end
+
+  describe '#set_patient_social_history_templates' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        template_ids: [2, 78]
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('set_patient_social_history_templates') do
+        expect(client.set_patient_social_history_templates(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe '#update_patient_social_history' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        questions: [{ key: 'SEXUALACTIVITY', answer: 'N' }]
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_social_history') do
+        expect(client.update_patient_social_history(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe '#patient_social_history' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of SocialHistory' do
+      VCR.use_cassette('patient_social_history') do
+        expect(client.patient_social_history(parameters))
+          .to be_an_instance_of AthenaHealth::SocialHistory
+      end
+    end
+  end
 end

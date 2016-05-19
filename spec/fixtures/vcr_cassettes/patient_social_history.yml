@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 19 May 2016 10:46:45 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-127.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 19 May 2016 10:46:45 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/socialhistory?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 19 May 2016 10:46:45 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 18e58533-d523-424d-99bc-ed56ef808b6d
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-126.mashery.com
+      Content-Length:
+      - '440'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"questions":[{"answer":"sdaY","templateid":"78","key":"ADVANCEDIRECTIVE","question":"Advance
+        directive","ordering":"11","lastupdated":"05\/19\/2016","questionid":"65"},{"answer":"N","templateid":"78","key":"SEXUALACTIVITY","question":"Sexually
+        active?","ordering":"10","lastupdated":"05\/19\/2016","questionid":"57"}],"templates":[{"templatename":"Urology","templateid":"78"},{"templatename":"Meaningful
+        Use - Optional","templateid":"2"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/socialhistory?departmentid=1
+  recorded_at: Thu, 19 May 2016 10:46:45 GMT
+recorded_with: VCR 3.0.1

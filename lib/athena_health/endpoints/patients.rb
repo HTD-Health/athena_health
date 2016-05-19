@@ -194,6 +194,42 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id)
         )
       end
+
+      def patient_social_history_templates(practice_id:, department_id:, patient_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory/templates",
+          method: :get,
+          params: { departmentid: department_id }
+        )
+
+        response.map {|template| AthenaHealth::Template.new(template) }
+      end
+
+      def set_patient_social_history_templates(practice_id:, department_id:, patient_id:, template_ids: [])
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory/templates",
+          method: :put,
+          params: { departmentid: department_id, templateids: template_ids.join(', ') }
+        )
+      end
+
+      def update_patient_social_history(practice_id:, department_id:, patient_id:, questions:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory",
+          method: :put,
+          params: { departmentid: department_id, questions: questions.to_json }
+        )
+      end
+
+      def patient_social_history(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/socialhistory",
+          method: :get,
+          params: params.merge!(departmentid: department_id)
+        )
+
+        SocialHistory.new(response)
+      end
     end
   end
 end
