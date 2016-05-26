@@ -253,6 +253,24 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#update_patient_medical_history' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        questions: [{ questionid: 101, answer: 'N' }]
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_medical_history') do
+        expect(client.update_patient_medical_history(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
   describe '#patient_prescriptions' do
     let(:attributes) do
       {
