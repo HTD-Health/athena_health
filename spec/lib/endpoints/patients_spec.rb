@@ -539,4 +539,22 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#add_patient_medication' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        medication_id: 362851
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('add_patient_medication') do
+        expect(client.add_patient_medication(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end

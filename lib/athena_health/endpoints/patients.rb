@@ -238,6 +238,14 @@ module AthenaHealth
 
         SocialHistory.new(response)
       end
+
+      def add_patient_medication(practice_id:, department_id:, patient_id:, medication_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/medications",
+          method: :post,
+          body: params.merge!(departmentid: department_id, medicationid: medication_id)
+        )
+      end
     end
   end
 end
