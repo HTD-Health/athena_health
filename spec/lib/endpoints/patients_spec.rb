@@ -557,4 +557,22 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#update_patient_allergies' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        allergies: [{allergenid: 24640,  allergenname: 'Aspercreme with Aloe'}]
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_allergies') do
+        expect(client.update_patient_allergies(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
