@@ -93,6 +93,14 @@ module AthenaHealth
         QuestionCollection.new(response)
       end
 
+      def update_patient_medical_history(practice_id:, department_id:, patient_id:, questions:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/medicalhistory",
+          method: :put,
+          params: { departmentid: department_id, questions: questions.to_json }
+        )
+      end
+
       def patient_prescriptions(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/documents/prescription",
