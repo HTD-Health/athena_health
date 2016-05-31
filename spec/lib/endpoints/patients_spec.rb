@@ -546,7 +546,7 @@ describe AthenaHealth::Endpoints::Patients do
         practice_id: 195_900,
         department_id: 1,
         patient_id: 1,
-        medication_id: 362851
+        medication_id: 362_851
       }
     end
 
@@ -564,7 +564,7 @@ describe AthenaHealth::Endpoints::Patients do
         practice_id: 195_900,
         department_id: 1,
         patient_id: 1,
-        allergies: [{allergenid: 24640,  allergenname: 'Aspercreme with Aloe'}]
+        allergies: [{ allergenid: 24_640, allergenname: 'Aspercreme with Aloe' }]
       }
     end
 
@@ -572,6 +572,23 @@ describe AthenaHealth::Endpoints::Patients do
       VCR.use_cassette('update_patient_allergies') do
         expect(client.update_patient_allergies(parameters))
           .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe '#verify_patient_privacy_information' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('verify_patient_privacy_information') do
+        expect(client.verify_patient_privacy_information(parameters))
+          .to eq [{ 'success' => 'true', 'patientid' => '1' }]
       end
     end
   end
