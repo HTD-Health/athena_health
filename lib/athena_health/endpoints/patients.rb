@@ -254,6 +254,14 @@ module AthenaHealth
           params: { departmentid: department_id, allergies: allergies.to_json }
         )
       end
+
+      def verify_patient_privacy_information(practice_id:, department_id:, patient_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/privacyinformationverified",
+          method: :post,
+          body: params.merge!(departmentid: department_id.to_s)
+        )
+      end
     end
   end
 end
