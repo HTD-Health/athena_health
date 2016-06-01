@@ -592,4 +592,22 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#create_patient_insurance' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        patient_id: 1,
+        insurance_package_id: 0,
+        sequence_number: 1
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('create_patient_insurance') do
+        expect(client.create_patient_insurance(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
