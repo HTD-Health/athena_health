@@ -85,6 +85,13 @@ module AthenaHealth
           body: { notetext: note_text }
         )
       end
+
+      def start_check_in(practice_id:, appointment_id:)
+        @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/startcheckin",
+          method: :post
+        )
+      end
     end
   end
 end
