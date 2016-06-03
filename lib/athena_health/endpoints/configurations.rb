@@ -30,6 +30,20 @@ module AthenaHealth
 
         response.map {|allergy| AthenaHealth::Allergy.new(allergy) }
       end
+
+      def all_insurances(practice_id:, plan_name:, member_id:, state:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/insurancepackages",
+          method: :get,
+          params: params.merge!(
+            insuranceplanname: plan_name,
+            memberid: member_id,
+            stateofcoverage: state
+          )
+        )
+
+        AthenaHealth::InsuranceCollection.new(response)
+      end
     end
   end
 end
