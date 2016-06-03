@@ -52,4 +52,22 @@ describe AthenaHealth::Endpoints::Configurations do
       end
     end
   end
+
+  describe '#all_insurances' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        plan_name: 'Wal',
+        member_id: 'asd',
+        state: 'NY'
+      }
+    end
+
+    it 'returns instance of InsuranceCollection' do
+      VCR.use_cassette('all_insurances') do
+        expect(client.all_insurances(parameters))
+          .to be_an_instance_of AthenaHealth::InsuranceCollection
+      end
+    end
+  end
 end

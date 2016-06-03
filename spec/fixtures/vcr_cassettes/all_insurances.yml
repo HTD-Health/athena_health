@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 03 Jun 2016 10:10:44 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-124.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Fri, 03 Jun 2016 10:10:44 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/insurancepackages?insuranceplanname=Wal&memberid=asd&stateofcoverage=NY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 03 Jun 2016 10:10:44 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - f0d56e6a-de6a-44fc-b0eb-d5973259819d
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      Content-Length:
+      - '6430'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"insurances":[{"affiliations":["AT&T","Bronze","Caterpillar","Chevron","Choice","Choice
+        Plus","Compass","Compass Plus","Delta","Evercare","Gold","HSA","Health Exchange","International","Kirby
+        Corporation","NTCA","NTCA Benefits","Optimum Choice","Options","Options PPO","PacifiCorp","Platinum","Railroad
+        Employees National Health & Welfare Fund","Raytheon","Silver","UHC","United
+        Healthcare","Walmart"],"insuranceplanname":"United Healthcare (PPO)","insurancepackageid":"10459","addresslist":["PO
+        BOX 740800  ATLANTA GA 30374-0800","PO BOX 740831  ATLANTA GA 30374-0831","PO
+        BOX 740803  ATLANTA GA 30374-0803","PO BOX 981502  EL PASO TX 79998-1502","PO
+        BOX 30555  SALT LAKE CITY UT 84130-0555","PO BOX  31375  SALT LAKE CITY UT
+        84131","PO BOX 30985  SALT LAKE CITY UT 84130-0985","PO BOX 869045  PLANO
+        TX 75086-9045","PO BOX 740372  ATLANTA GA 30374-0372","PO BOX 740111  ATLANTA
+        GA 30374-0111","PO BOX 31361  SALT LAKE CITY UT 84131-0361","PO BOX 31362  SALT
+        LAKE CITY UT 84131-0362","PO BOX 740806  ATLANTA GA 30374-0806","PO BOX 31359  SALT
+        LAKE CITY UT 84131-0359","PO BOX 981504  EL PASO TX 79998-1504","PO BOX 740819  ATLANTA
+        GA 30374-0819","P O BOX 30995  SALT LAKE CITY UT 84130-0995","PO BOX 31375  SALT
+        LAKE CITY UT 84131-0375","PO BOX 740809  ATLANTA GA 30374-0809","PO BOX 740813  ATLANTA
+        GA 30374-0813","PO BOX 869035  PLANO TX 75086-9035","PO BOX 740802  ATLANTA
+        GA 30374-0802","PO BOX 740800  ATLANTA GA 30374","PO BOX 30557  SALT LAKE
+        CITY UT 84130-0557","PO BOX 30551  SALT LAKE CITY UT 84130-0551","PO BOX 30884  SALT
+        LAKE CITY UT 84130-0884","PO BOX 30563  SALT LAKE CITY UT 84130-0563","PO
+        BOX 740801  ATLANTA GA 30374-0801","PO BOX 30882  SALT LAKE CITY UT 84130-0882"]},{"affiliations":["Cigna","FELRA
+        and UFCW Health and Welfare Fund","Managed Care Plan","MultiPlan","North TX
+        Network","Open Access Plus","Walt Disney World"],"insuranceplanname":"Cigna
+        (HMO)","insurancepackageid":"12652","addresslist":["PO BOX 182223  CHATTANOOGA
+        TN 37422-7223","PO BOX 25669  ANAHEIM CA 92825-5669","2223 WASHINGTON ST STE
+        200  NEWTON MA 02462-1417","PO BOX 182223  CHATTANOOGA TN 37422","PO BOX 28087  RALEIGH
+        NC 27611-8087","PO BOX 49500  ATLANTA GA 30359-1500","PO BOX 188050  CHATTANOOGA
+        TN 37422-8050","PO BOX 2041  CONCORD NH 03302","PO BOX 188004  CHATTANOOGA
+        TN 37422-8004"]},{"affiliations":["AT&T","American Family Insurance","Bronze","Brown
+        Electrical Supply","CDHP","Caterpillar","Chevron Corporation","Choice","Choice
+        Plus","Choice Plus-Definity","Choice Plus-Definity HRA","Choice Plus-HRA","Choice
+        Plus-HSA","Choice plus","Compass","Compass Plus","Evercare","Expatriate Insurance","General
+        Electric","Gold 1600","HPHC","HRA","HSA","Harley Davidson","Harvard Pilgrim
+        Health Care","Health Exchange","Health Select","IBM","JP Morgan Chase","Marketplace","Monsanto","Navigate
+        Plus","Navigator","Open Access","Oracle","Passport Connect","Pricewaterhouse
+        Coopers","Qualcomm","Railroad Claims","Select Plus","Shell Oil Co","Silver","UHC","United
+        Healthcare","Universal Health Care","University of Missouri","Vensun Pharmaceuticals
+        Inc","Walmart","Wells Fargo","YMCA"],"insuranceplanname":"United Healthcare
+        (POS)","insurancepackageid":"22045","addresslist":["PO BOX 740800  ATLANTA
+        GA 30374-0800","PO BOX 740819  ATLANTA GA 30374-0819","PO BOX 740111  ATLANTA
+        GA 30374-0111","PO BOX 740825  ATLANTA GA 30374-0825","PO BOX 31362  SALT
+        LAKE CITY UT 84131-0362","PO BOX 30555  SALT LAKE CITY UT 84130-0555","PO
+        BOX 30558  SALT LAKE CITY UT 84130-0558","PO BOX 30985  SALT LAKE CITY UT
+        84130-0985","PO BOX 740831  ATLANTA GA 30374-0831","PO BOX 981504  EL PASO
+        TX 79998-1504","PO BOX 30884  SALT LAKE CITY UT 84130-0884","PO BOX 31361  SALT
+        LAKE CITY UT 84131-0361","PO BOX 30557  SALT LAKE CITY UT 84130-0557","PO
+        BOX 981502  EL PASO TX 79998-1502","PO BOX 740818  ATLANTA GA 30374-0818","PO
+        BOX 740802  ATLANTA GA 30374-0802","PO BOX 740809  ATLANTA GA 30374-0809","PO
+        BOX 659750  SAN ANTONIO TX 78265-9750","PO BOX 740806  ATLANTA GA 30374-0806","PO
+        BOX 740801  ATLANTA GA 30374-0801","PO BOX 740372  ATLANTA GA 30374-0372","PO
+        BOX 30551  SALT LAKE CITY UT 84130-0551","PO BOX 740803  ATLANTA GA 30374-0803"]},{"affiliations":["City
+        of Norwalk","Insurance Programmers","Ironworkers Health and Welfare Fund","Metropolitan
+        District Council","New England Electrical Workers","Town of West Hartford
+        Employee Benefit Plan"],"insuranceplanname":"Insurance Programmers (Medicare
+        Supplement)","insurancepackageid":"31590","addresslist":["PO BOX 5817  WALLINGFORD
+        CT 06492-7617"]},{"affiliations":["AEXCEL","Aetna","Bank of America","Bass
+        Pro Group LLC","Beech Street","CCN","Carpenters Health and Security Plan of
+        Western Washington","Carpenters Trusts of Western Washington","Catholic Health
+        Initiatives","Choice","Choice POS II","Choice Plus","Choice plus","Connecticut
+        Laborers Health Fund","Delhaize","Exxon Mobil","First Health","Fluor Federal
+        Solutions","General Electric","Gordon Food Service","HCVM","HSA","IBM","Local
+        14","Local 919","Mars Incorporated","MultiPlan","NAP","National Advantage
+        Program","Occidental Petroleum Corporation","Open Access","PNC","Premier HSA","Railroad
+        Employees National Health & Welfare Fund","Sanmina","Stantec Consulting","TRS
+        ActiveCare","Teamsters Local Union","The Dow Chemical Company","The Hartford","UPS","Valero
+        Services Inc","Walmart","Wellstar Health Network","Western CT Health Network"],"insuranceplanname":"Aetna
+        (POS II)","insurancepackageid":"38684","addresslist":["PO BOX 981106  EL PASO
+        TX 79998-1106","PO BOX 981114  EL PASO TX 79998-1114","PO BOX 981543  EL PASO
+        TX 79998-1543","PO BOX 981106  EL PASO TX 79998-1105","PO BOX 981107  EL PASO
+        TX 79998-1107","PO BOX 981109  EL PASO TX 79998-1109","PO BOX 30258  TAMPA
+        FL 33630-3258","PO BOX 14079  LEXINGTON KY 40512-4079","PO BOX 14089  LEXINGTON
+        KY 40512-4089"]},{"affiliations":["City of Norwalk","City of Norwalk Employee
+        Benefit Plan","Insurance Programmers"],"insuranceplanname":"Insurance Programmers
+        (PPO)","insurancepackageid":"39370","addresslist":["PO BOX 5817  WALLINGFORD
+        CT 06492-7617"]},{"affiliations":["Howalt McDowell","Sanford Health Plan"],"insuranceplanname":"Sanford
+        Health Plan","insurancepackageid":"329608","addresslist":["PO BOX 91110  SIOUX
+        FALLS SD 57109-1110"]},{"affiliations":["ACP Mercy","HealthSCOPE Benefits","Walmart"],"insuranceplanname":"HealthSCOPE
+        Benefits - ACP Mercy (PPO)","insurancepackageid":"352029","addresslist":["PO
+        BOX 16367  LUBBOCK TX 79490-6367"]}],"totalcount":8}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/insurancepackages?insuranceplanname=Wal&memberid=asd&stateofcoverage=NY
+  recorded_at: Fri, 03 Jun 2016 10:10:48 GMT
+recorded_with: VCR 3.0.1
