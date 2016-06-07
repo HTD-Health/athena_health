@@ -15,7 +15,9 @@ describe AthenaHealth::Prescription do
       'documentdescription': 'prescription - renewal',
       'encounterdate': '05\/20\/2015',
       'lastmodifieddatetime': '2015-05-20T13:39:21-04:00',
-      'documentsubclass': 'PRESCRIPTION_RENEWAL'
+      'documentsubclass': 'PRESCRIPTION_RENEWAL',
+      'encounterid': '1',
+      'providerid': '1'
     }
   end
 
@@ -37,7 +39,9 @@ describe AthenaHealth::Prescription do
       documentdescription: 'prescription - renewal',
       encounterdate: '05\/20\/2015',
       lastmodifieddatetime: '2015-05-20T13:39:21-04:00',
-      documentsubclass: 'PRESCRIPTION_RENEWAL'
+      documentsubclass: 'PRESCRIPTION_RENEWAL',
+      encounterid: 1,
+      providerid: 1
     )
   end
 end

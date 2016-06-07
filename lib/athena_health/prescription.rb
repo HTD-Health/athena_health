@@ -13,5 +13,7 @@ module AthenaHealth
     attribute :encounterdate,        String
     attribute :lastmodifieddatetime, String
     attribute :documentsubclass,     String
+    attribute :providerid,           Integer
+    attribute :encounterid,          Integer
   end
 end
