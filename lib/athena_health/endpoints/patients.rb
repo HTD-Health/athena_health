@@ -270,6 +270,18 @@ module AthenaHealth
           body: params.merge!(insurancepackageid: insurance_package_id, sequencenumber: sequence_number)
         )
       end
+
+      def record_payment(practice_id:, department_id:, patient_id:, payment_method:, amount:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/recordpayment",
+          method: :post,
+          body: params.merge!(
+            departmentid: department_id.to_s,
+            paymentmethod: payment_method,
+            copayamount: amount
+          )
+        )
+      end
     end
   end
 end

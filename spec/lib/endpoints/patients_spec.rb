@@ -610,4 +610,24 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#record_payment' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        amount: 100,
+        payment_method: 'CASH'
+
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('record_payment') do
+        expect(client.record_payment(parameters))
+          .to eq [{ 'success' => 'true', 'paymentbatchid' => '5' }]
+      end
+    end
+  end
 end
