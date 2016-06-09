@@ -92,6 +92,19 @@ module AthenaHealth
           method: :post
         )
       end
+
+      def reschedule_appointment(practice_id:, patient_id:, appointment_id:, new_appointment_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/reschedule",
+          method: :put,
+          params: params.merge!(
+            patientid: patient_id,
+            newappointmentid: new_appointment_id
+          )
+        )
+
+        Appointment.new(response.first)
+      end
     end
   end
 end
