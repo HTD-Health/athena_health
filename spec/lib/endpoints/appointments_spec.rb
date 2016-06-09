@@ -24,7 +24,7 @@ describe AthenaHealth::Endpoints::Appointments do
       let(:attributes) do
         {
           practice_id: 195_900,
-          appointment_id: 665839,
+          appointment_id: 665_839,
           patient_id: 1,
           params: { reasonid: 563 }
         }
@@ -35,10 +35,8 @@ describe AthenaHealth::Endpoints::Appointments do
           expect { client.book_appointment(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
-              {
-                'detailedmessage' => 'The appointment ID is already booked or is not marked as being available to be scheduled via the API.',
-                'error' => 'That appointment time was already booked or not available for booking.'
-              }
+              'detailedmessage' => 'The appointment ID is already booked or is not marked as being available to be scheduled via the API.',
+              'error' => 'That appointment time was already booked or not available for booking.'
             )
           }
         end
@@ -49,7 +47,7 @@ describe AthenaHealth::Endpoints::Appointments do
       let(:attributes) do
         {
           practice_id: 195_900,
-          appointment_id: 659324,
+          appointment_id: 659_324,
           patient_id: 1,
           params: { appointmenttypeid: 82 }
         }
@@ -57,8 +55,8 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns instance of Appointment' do
         VCR.use_cassette('book_appointment') do
-         expect(client.book_appointment(attributes))
-          .to be_an_instance_of AthenaHealth::Appointment
+          expect(client.book_appointment(attributes))
+            .to be_an_instance_of AthenaHealth::Appointment
         end
       end
     end
@@ -102,7 +100,7 @@ describe AthenaHealth::Endpoints::Appointments do
   describe '#find_appointment_type' do
     let(:attributes) do
       {
-        practice_id: 195944,
+        practice_id: 195_944,
         appointment_type_id: 2
       }
     end
@@ -160,6 +158,24 @@ describe AthenaHealth::Endpoints::Appointments do
       VCR.use_cassette('start_check_in') do
         expect(client.start_check_in(attributes))
           .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe 'reschedule_appointment' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_id: 185_721,
+        new_appointment_id: 204_885,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of Appointment' do
+      VCR.use_cassette('reschedule_appointment') do
+        expect(client.reschedule_appointment(attributes))
+          .to be_an_instance_of AthenaHealth::Appointment
       end
     end
   end
