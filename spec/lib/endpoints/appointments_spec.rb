@@ -184,7 +184,7 @@ describe AthenaHealth::Endpoints::Appointments do
     let(:attributes) do
       {
         practice_id: 195_900,
-        appointment_id: 150_777,
+        appointment_id: 150_777
       }
     end
 
@@ -192,6 +192,24 @@ describe AthenaHealth::Endpoints::Appointments do
       VCR.use_cassette('find_appointment') do
         expect(client.find_appointment(attributes))
           .to be_an_instance_of AthenaHealth::Appointment
+      end
+    end
+  end
+
+  describe '#appointment_reminders' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        end_date: '06/27/2016',
+        start_date: '02/27/2016'
+      }
+    end
+
+    it 'returns instance of AppointmentReminderCollection' do
+      VCR.use_cassette('appointment_reminders') do
+        expect(client.appointment_reminders(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentReminderCollection
       end
     end
   end
