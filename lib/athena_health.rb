@@ -61,6 +61,7 @@ require 'athena_health/template'
 require 'athena_health/social_history'
 require 'athena_health/insurance'
 require 'athena_health/insurance_collection'
+require 'athena_health/appointment_reminder'
 
 module AthenaHealth
 end
