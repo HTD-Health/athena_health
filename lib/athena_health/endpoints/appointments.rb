@@ -105,6 +105,16 @@ module AthenaHealth
 
         Appointment.new(response.first)
       end
+
+      def find_appointment(practice_id:, appointment_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}",
+          method: :get,
+          params: params
+        )
+
+        Appointment.new(response.first)
+      end
     end
   end
 end

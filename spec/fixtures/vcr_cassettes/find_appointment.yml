@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 10 Jun 2016 06:28:57 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Fri, 10 Jun 2016 06:28:57 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/appointments/150777
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Jun 2016 06:28:57 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - b09cd048-d264-4f62-8bc1-9a29f3a2170e
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      Content-Length:
+      - '420'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"date":"06\/02\/2016","appointmentid":"150777","starttime":"12:00","departmentid":"1","appointmentstatus":"2","patientid":"7","duration":"5","encounterid":"42","startcheckin":"06\/02\/2016
+        16:04:31","copay":0,"renderingproviderid":"1","appointmenttypeid":"3","appointmenttype":"VIDEOCHAT","encounterstatus":"CHECKEDOUT","providerid":"1","stopcheckin":"06\/02\/2016
+        16:06:37","patientappointmenttypename":"VIDEO CHAT"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/150777
+  recorded_at: Fri, 10 Jun 2016 06:28:57 GMT
+recorded_with: VCR 3.0.1
