@@ -247,4 +247,20 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#delete_appointment_reminder' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_reminder_id: 14_335
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('delete_appointment_reminder') do
+        expect(client.delete_appointment_reminder(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end

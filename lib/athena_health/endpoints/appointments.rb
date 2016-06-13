@@ -151,6 +151,13 @@ module AthenaHealth
           )
         )
       end
+
+      def delete_appointment_reminder(practice_id:, appointment_reminder_id:)
+        @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders/#{appointment_reminder_id}",
+          method: :delete
+        )
+      end
     end
   end
 end
