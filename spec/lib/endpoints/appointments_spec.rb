@@ -213,4 +213,20 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#find_appointment_reminder' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_reminder_id: 13_492
+      }
+    end
+
+    it 'returns instance of AppointmentReminder' do
+      VCR.use_cassette('find_appointment_reminder') do
+        expect(client.find_appointment_reminder(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentReminder
+      end
+    end
+  end
 end

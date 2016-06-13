@@ -130,6 +130,15 @@ module AthenaHealth
 
         AppointmentReminderCollection.new(response)
       end
+
+      def find_appointment_reminder(practice_id:, appointment_reminder_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders/#{appointment_reminder_id}",
+          method: :get
+        )
+
+        AppointmentReminder.new(response)
+      end
     end
   end
 end
