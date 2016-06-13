@@ -115,6 +115,49 @@ module AthenaHealth
 
         Appointment.new(response.first)
       end
+
+
+      def appointment_reminders(practice_id:, start_date:, end_date:, department_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders",
+          method: :get,
+          params: params.merge!(
+            startdate: start_date,
+            enddate: end_date,
+            departmentid: department_id
+          )
+        )
+
+        AppointmentReminderCollection.new(response)
+      end
+
+      def find_appointment_reminder(practice_id:, appointment_reminder_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders/#{appointment_reminder_id}",
+          method: :get
+        )
+
+        AppointmentReminder.new(response)
+      end
+
+      def create_appointment_reminder(practice_id:, approximate_date:, department_id:, patient_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders",
+          method: :post,
+          body: params.merge!(
+            approximatedate: approximate_date,
+            departmentid: department_id,
+            patientid: patient_id
+          )
+        )
+      end
+
+      def delete_appointment_reminder(practice_id:, appointment_reminder_id:)
+        @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders/#{appointment_reminder_id}",
+          method: :delete
+        )
+      end
     end
   end
 end

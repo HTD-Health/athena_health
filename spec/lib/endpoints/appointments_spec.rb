@@ -184,7 +184,7 @@ describe AthenaHealth::Endpoints::Appointments do
     let(:attributes) do
       {
         practice_id: 195_900,
-        appointment_id: 150_777,
+        appointment_id: 150_777
       }
     end
 
@@ -192,6 +192,74 @@ describe AthenaHealth::Endpoints::Appointments do
       VCR.use_cassette('find_appointment') do
         expect(client.find_appointment(attributes))
           .to be_an_instance_of AthenaHealth::Appointment
+      end
+    end
+  end
+
+  describe '#appointment_reminders' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        end_date: '06/27/2016',
+        start_date: '02/27/2016'
+      }
+    end
+
+    it 'returns instance of AppointmentReminderCollection' do
+      VCR.use_cassette('appointment_reminders') do
+        expect(client.appointment_reminders(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentReminderCollection
+      end
+    end
+  end
+
+  describe '#find_appointment_reminder' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_reminder_id: 13_492
+      }
+    end
+
+    it 'returns instance of AppointmentReminder' do
+      VCR.use_cassette('find_appointment_reminder') do
+        expect(client.find_appointment_reminder(attributes))
+          .to be_an_instance_of AthenaHealth::AppointmentReminder
+      end
+    end
+  end
+
+  describe '#create_appointment_reminder' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        approximate_date: '06/27/2016',
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('create_appointment_reminder') do
+        expect(client.create_appointment_reminder(attributes))
+          .to eq 'success' => 'true', 'appointmentreminderid' => '14334'
+      end
+    end
+  end
+
+  describe '#delete_appointment_reminder' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_reminder_id: 14_335
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('delete_appointment_reminder') do
+        expect(client.delete_appointment_reminder(attributes))
+          .to eq 'success' => 'true'
       end
     end
   end
