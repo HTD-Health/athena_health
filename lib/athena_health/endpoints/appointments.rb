@@ -139,6 +139,18 @@ module AthenaHealth
 
         AppointmentReminder.new(response)
       end
+
+      def create_appointment_reminder(practice_id:, approximate_date:, department_id:, patient_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/appointmentreminders",
+          method: :post,
+          body: params.merge!(
+            approximatedate: approximate_date,
+            departmentid: department_id,
+            patientid: patient_id
+          )
+        )
+      end
     end
   end
 end
