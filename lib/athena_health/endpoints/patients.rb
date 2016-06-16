@@ -282,6 +282,16 @@ module AthenaHealth
           )
         )
       end
+
+      def patient_insurances(practice_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
+          method: :get,
+          params: params
+        )
+
+        InsuranceCollection.new(response)
+      end
     end
   end
 end

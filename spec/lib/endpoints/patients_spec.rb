@@ -630,4 +630,20 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#patient_insurances' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        patient_id: 51
+      }
+    end
+
+    it 'returns instance of InsuranceCollection' do
+      VCR.use_cassette('patient_insurances') do
+        expect(client.patient_insurances(parameters))
+          .to be_an_instance_of AthenaHealth::InsuranceCollection
+      end
+    end
+  end
 end
