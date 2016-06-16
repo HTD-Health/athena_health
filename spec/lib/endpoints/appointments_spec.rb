@@ -263,4 +263,20 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#appointment_insurances' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        appointment_id: 186_396
+      }
+    end
+
+    it 'returns instance of InsuranceCollection' do
+      VCR.use_cassette('appointment_insurances') do
+        expect(client.appointment_insurances(parameters))
+          .to be_an_instance_of AthenaHealth::InsuranceCollection
+      end
+    end
+  end
 end

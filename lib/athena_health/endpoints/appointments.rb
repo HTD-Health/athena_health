@@ -158,6 +158,16 @@ module AthenaHealth
           method: :delete
         )
       end
+
+      def appointment_insurances(practice_id:, appointment_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/insurances",
+          method: :get,
+          params: params
+        )
+
+        InsuranceCollection.new(response)
+      end
     end
   end
 end
