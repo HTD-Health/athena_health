@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 16 Jun 2016 07:30:46 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Thu, 16 Jun 2016 07:30:46 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/appointments/186396/insurances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 16 Jun 2016 07:30:46 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 36e0896e-708a-42af-8a15-a3731be858ce
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-113.mashery.com
+      Content-Length:
+      - '770'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"insurances":[{"insurancepolicyholdercountrycode":"USA","sequencenumber":"1","insuranceplanname":"THE
+        1199 NATIONAL BENEFIT FUND (PPO)","insurancetype":"Commercial","insurancepolicyholderlastname":"TEST","insurancephone":"(646)
+        473-7160","insuranceidnumber":"2324252514","relationshiptoinsuredid":"1","insuranceid":"64","insurancepolicyholder":"TEST
+        TEST","insurancepolicyholderdob":"05\/31\/1994","eligibilitylastchecked":"06\/07\/2016","relationshiptoinsured":"Self","eligibilitystatus":"Unverified","insurancepolicyholderfirstname":"TEST","insurancepolicyholderaddress1":"TEST","insurancepackageid":"49875","insurancepolicyholdersex":"M","eligibilityreason":"Athena","insurancepolicyholdercountryiso3166":"US","ircname":"1199
+        National Benefit Fund"}],"totalcount":1}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/186396/insurances
+  recorded_at: Thu, 16 Jun 2016 07:30:47 GMT
+recorded_with: VCR 3.0.1
