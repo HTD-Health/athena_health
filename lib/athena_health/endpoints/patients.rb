@@ -63,11 +63,11 @@ module AthenaHealth
         PatientProblemCollection.new(response)
       end
 
-      def patient_encounters(practice_id:, department_id:, patient_id:)
+      def patient_encounters(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/encounters",
           method: :get,
-          params: { departmentid: department_id }
+          params: params.merge!(departmentid: department_id)
         )
 
         EncounterCollection.new(response)
