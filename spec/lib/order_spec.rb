@@ -4,6 +4,7 @@ describe AthenaHealth::Order do
   let(:order_attributes) do
     {
       'status': 'REVIEW',
+      'orderid': '123',
       'description': 'Ankle Brace',
       'documentid': '116881',
       'documentationonly': 'false',
@@ -22,6 +23,7 @@ describe AthenaHealth::Order do
 
   it 'have proper attributes' do
     expect(subject).to have_attributes(
+      orderid: 123,
       status: 'REVIEW',
       description: 'Ankle Brace',
       documentid: 116881,

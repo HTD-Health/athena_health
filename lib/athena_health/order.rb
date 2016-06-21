@@ -1,5 +1,6 @@
 module AthenaHealth
   class Order < BaseModel
+    attribute :orderid,           Integer
     attribute :status,            String
     attribute :description,       String
     attribute :ordertype,         String
