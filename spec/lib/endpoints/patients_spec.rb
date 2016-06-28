@@ -628,6 +628,23 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#delete_patient_insurance' do
+    let(:parameters) do
+      {
+        practice_id: 195900,
+        patient_id: 1,
+        sequence_number: 1
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('delete_patient_insurance') do
+        expect(client.delete_patient_insurance(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
   describe '#record_payment' do
     let(:parameters) do
       {

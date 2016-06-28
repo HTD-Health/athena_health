@@ -279,6 +279,14 @@ module AthenaHealth
         )
       end
 
+      def delete_patient_insurance(practice_id:, patient_id:, sequence_number:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
+          method: :delete,
+          params: params.merge!(sequencenumber: sequence_number)
+        )
+      end
+
       def record_payment(practice_id:, department_id:, patient_id:, payment_method:, amount:, params: {})
         @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/recordpayment",
