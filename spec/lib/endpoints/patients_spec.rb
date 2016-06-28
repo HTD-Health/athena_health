@@ -631,7 +631,7 @@ describe AthenaHealth::Endpoints::Patients do
   describe '#delete_patient_insurance' do
     let(:parameters) do
       {
-        practice_id: 195900,
+        practice_id: 195_900,
         patient_id: 1,
         sequence_number: 1
       }
