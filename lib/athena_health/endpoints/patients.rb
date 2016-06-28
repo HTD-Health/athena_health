@@ -264,10 +264,18 @@ module AthenaHealth
       end
 
       def create_patient_insurance(practice_id:, patient_id:, insurance_package_id:, sequence_number:, params: {})
-        response = @api.call(
+        @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
           method: :post,
           body: params.merge!(insurancepackageid: insurance_package_id, sequencenumber: sequence_number)
+        )
+      end
+
+      def update_patient_insurance(practice_id:, patient_id:, sequence_number:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
+          method: :put,
+          params: params.merge!(sequencenumber: sequence_number)
         )
       end
 
