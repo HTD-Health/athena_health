@@ -6,8 +6,10 @@ describe AthenaHealth::Endpoints::Appointments do
       {
         practice_id: 195_900,
         department_id: 1,
-        provider_id: 71,
-        params: { reasonid: 563 }
+        params: {
+          reasonid: 563,
+          providerid: 71
+        }
       }
     end
 
