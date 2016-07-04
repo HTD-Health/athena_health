@@ -21,13 +21,12 @@ module AthenaHealth
         AppointmentType.new(response.first)
       end
 
-      def open_appointment_slots(practice_id:, department_id:, provider_id:, params: {})
+      def open_appointment_slots(practice_id:, department_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/open",
           method: :get,
           params: params.merge(
-            departmentid: department_id,
-            providerid: provider_id,
+            departmentid: department_id
           )
         )
 

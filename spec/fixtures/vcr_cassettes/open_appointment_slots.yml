@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Wed, 06 Apr 2016 09:19:07 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/appointments/open?reasonid=563&departmentid=1&providerid=71
+    uri: https://api.athenahealth.com/preview1/195900/appointments/open?reasonid=563&providerid=71&departmentid=1
     body:
       encoding: US-ASCII
       string: ''
