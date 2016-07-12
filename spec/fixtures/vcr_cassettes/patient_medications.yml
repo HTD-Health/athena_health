@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 12 Jul 2016 11:27:06 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-108.mashery.com
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 12 Jul 2016 11:27:06 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/medications?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Jul 2016 11:27:06 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - d196ddb9-c6e8-4866-be03-8f0c0f6a34b7
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-105.mashery.com
+      Content-Length:
+      - '14648'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"lastupdated":"06\/03\/2016","medications":[[{"source":"Kandi Haworth,
+        MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118016","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning."},{"source":"Kandi
+        Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118017","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagedurationvalue":"1","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning for
+        1 day."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118018","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagedurationvalue":"1","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning for
+        1 day."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118020","structuredsig":{"dosagefrequencyvalue":"24","dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagedurationvalue":"1","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagefrequencydescription":"every
+        hour","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg every hour by oral route in the
+        morning for 1 day."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118014","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning."},{"source":"Kandi
+        Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118019","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagedurationvalue":"1","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning for
+        1 day."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"236346","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118015","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosageadditionalinstructions":"in
+        the morning","dosagefrequencyunit":"per day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagedurationunit":"day"},"events":[{"eventdate":"06\/02\/2016","type":"ENTER"}],"medication":"Plavix
+        75 mg tablet","unstructuredsig":"Take 75 mg by oral route in the morning."}],[{"source":"API-2999","createdby":"API-2999","isstructuredsig":"false","medicationid":"239121","providernote":"Tell
+        him to take it easy on these.","patientnote":"Take it easy on these.","issafetorenew":"true","medicationentryid":"H5888","events":[{"eventdate":"04\/28\/2016","type":"START"},{"eventdate":"04\/28\/2016","type":"ENTER"},{"eventdate":"05\/02\/2016","type":"END"}],"medication":"aspirin
+        500 mg tablet"}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"true","medicationid":"244875","issafetorenew":"true","medicationentryid":"H462","structuredsig":{"dosagefrequencyvalue":"1","dosageroute":"oral","dosageaction":"Take","dosageadditionalinstructions":"before
+        meals","dosagefrequencyunit":"per day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagefrequencydescription":"every
+        day","dosagedurationunit":"day"},"events":[{"eventdate":"04\/20\/2011","type":"START"},{"eventdate":"06\/11\/2013","type":"HIDE"},{"eventdate":"05\/10\/2011","type":"ENTER"}],"medication":"Coumadin
+        2 mg tablet","unstructuredsig":"Take 1 tablet(s) every day by oral route before
+        meals."}],[{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"245399","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118023","structuredsig":{"dosagefrequencyvalue":"0","dosageroute":"oral","dosageaction":"TAKE","dosagedurationvalue":"2","dosagefrequencyunit":"per
+        day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagefrequencydescription":"as
+        needed","dosagedurationunit":"day"},"events":[{"eventdate":"06\/03\/2016","type":"ENTER"}],"medication":"Viagra
+        25 mg tablet","unstructuredsig":"Take 75 mg as needed by oral route for 2
+        days."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3597","isstructuredsig":"true","medicationid":"245399","refillsallowed":"0","route":"FAX","encounterid":"33016","issafetorenew":"true","medicationentryid":"C118022","structuredsig":{"dosagefrequencyvalue":"0","dosageroute":"oral","dosageaction":"TAKE","dosagedurationvalue":"1","dosagefrequencyunit":"per
+        day","dosagequantityunit":"mg","dosagequantityvalue":"75","dosagefrequencydescription":"as
+        needed","dosagedurationunit":"day"},"events":[{"eventdate":"06\/03\/2016","type":"ENTER"}],"medication":"Viagra
+        25 mg tablet","unstructuredsig":"Take 75 mg as needed by oral route for 1
+        day."}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"true","medicationid":"247358","issafetorenew":"true","medicationentryid":"H2022","structuredsig":{"dosagefrequencyvalue":"1","dosageroute":"topical","dosagefrequencyunit":"per
+        day","dosagequantityunit":"application(s)","dosagequantityvalue":"1","dosagefrequencydescription":"every
+        day","dosagedurationunit":"day"},"events":[{"eventdate":"06\/01\/2010","type":"START"},{"eventdate":"06\/11\/2013","type":"ENTER"}],"medication":"Tazorac
+        0.1 % topical cream","unstructuredsig":" 1 application(s) every day by topical
+        route."}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"true","medicationid":"278902","issafetorenew":"true","medicationentryid":"H463","structuredsig":{"dosagefrequencyvalue":"2","dosageroute":"subcutaneous","dosageaction":"Inject","dosageadditionalinstructions":"with
+        meals","dosagefrequencyunit":"per day","dosagequantityunit":"vial(s)","dosagequantityvalue":"1","dosagefrequencydescription":"twice
+        a day","dosagedurationunit":"day"},"events":[{"eventdate":"04\/20\/2011","type":"START"},{"eventdate":"06\/11\/2013","type":"HIDE"},{"eventdate":"05\/10\/2011","type":"ENTER"}],"medication":"insulin
+        aspar prt-insulin aspart 100 unit\/mL (70-30) subcutaneous soln","unstructuredsig":"Inject
+        1 vial(s) twice a day by subcutaneous route with meals."}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"true","medicationid":"281446","issafetorenew":"true","medicationentryid":"H2282","structuredsig":{"dosagefrequencyvalue":"2","dosageroute":"oral","dosagefrequencyunit":"per
+        day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagefrequencydescription":"twice
+        a day","dosagedurationunit":"day"},"events":[{"eventdate":"08\/01\/2013","type":"START"},{"eventdate":"08\/05\/2013","type":"ENTER"}],"medication":"Prilosec
+        OTC 20 mg tablet,delayed release","unstructuredsig":" 1 tablet(s) twice a
+        day by oral route."}],[{"source":"API-1709","createdby":"API-1709","isstructuredsig":"false","medicationid":"299644","issafetorenew":"true","medicationentryid":"H5784","events":[{"eventdate":"01\/27\/2016","type":"ENTER"}],"medication":"ibuprofen"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","providernote":"Test","patientnote":"Test","issafetorenew":"true","medicationentryid":"H5531","events":[{"eventdate":"06\/10\/2015","type":"START"},{"eventdate":"10\/13\/2015","type":"ENTER"}],"medication":"ibuprofen"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","providernote":"Test","patientnote":"Test","issafetorenew":"true","medicationentryid":"H5530","events":[{"eventdate":"06\/10\/2015","type":"START"},{"eventdate":"10\/13\/2015","type":"ENTER"},{"eventdate":"10\/10\/2016","type":"END"}],"medication":"ibuprofen"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","providernote":"Test","patientnote":"Test","issafetorenew":"true","medicationentryid":"H5529","events":[{"eventdate":"10\/13\/2015","type":"ENTER"}],"medication":"ibuprofen"},{"source":"jdoe","createdby":"jdoe","isstructuredsig":"false","medicationid":"299644","providernote":"sample
+        note","issafetorenew":"true","medicationentryid":"H23","events":[{"eventdate":"12\/30\/2009","type":"ENTER"}],"medication":"ibuprofen"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","providernote":"Test","patientnote":"Test","issafetorenew":"true","medicationentryid":"H5532","events":[{"eventdate":"06\/10\/2015","type":"START"},{"eventdate":"10\/13\/2015","type":"ENTER"},{"eventdate":"10\/10\/2016","type":"END"}],"medication":"ibuprofen","unstructuredsig":"1"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","issafetorenew":"true","medicationentryid":"H5527","events":[{"eventdate":"10\/13\/2015","type":"ENTER"}],"medication":"ibuprofen"},{"source":"API-1423","createdby":"API-1423","isstructuredsig":"false","medicationid":"299644","providernote":"Test","patientnote":"Test","issafetorenew":"true","medicationentryid":"H5528","events":[{"eventdate":"10\/13\/2015","type":"ENTER"}],"medication":"ibuprofen"}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"false","medicationid":"340335","issafetorenew":"true","medicationentryid":"H2023","events":[{"eventdate":"06\/01\/2010","type":"START"},{"eventdate":"06\/11\/2013","type":"ENTER"}],"medication":"Taclonex"}],[{"source":"jdoe","createdby":"jdoe","isstructuredsig":"false","medicationid":"341010","providernote":"sample
+        note","issafetorenew":"true","medicationentryid":"H22","events":[{"eventdate":"06\/11\/2013","type":"HIDE"},{"eventdate":"12\/30\/2009","type":"ENTER"}],"medication":"Cortisone
+        (hydrocortisone) 1 % topical cream"}],[{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3317","isstructuredsig":"true","medicationid":"356812","refillsallowed":"0","route":"FAX","encounterid":"32955","issafetorenew":"true","medicationentryid":"C117499","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosagefrequencyunit":"per
+        day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagedurationunit":"day"},"events":[{"eventdate":"04\/23\/2016","type":"ENTER"}],"medication":"Diabetes
+        Health Formula 500 mcg-250 mcg tablet","unstructuredsig":"Take 1 tablet(s)
+        by oral route."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3317","isstructuredsig":"true","medicationid":"356812","refillsallowed":"0","route":"FAX","encounterid":"32955","issafetorenew":"true","medicationentryid":"C117496","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosagefrequencyunit":"per
+        day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagedurationunit":"day"},"events":[{"eventdate":"04\/23\/2016","type":"ENTER"}],"medication":"Diabetes
+        Health Formula 500 mcg-250 mcg tablet","unstructuredsig":"Take 1 tablet(s)
+        by oral route."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3317","isstructuredsig":"true","medicationid":"356812","refillsallowed":"0","route":"FAX","encounterid":"32965","issafetorenew":"true","medicationentryid":"C117561","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosagefrequencyunit":"per
+        day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagedurationunit":"day"},"events":[{"eventdate":"04\/24\/2016","type":"ENTER"}],"medication":"Diabetes
+        Health Formula 500 mcg-250 mcg tablet","unstructuredsig":"Take 1 tablet(s)
+        by oral route."},{"source":"Kandi Haworth, MD","orderingmode":"PRESCRIBE","createdby":"API-3317","isstructuredsig":"true","medicationid":"356812","refillsallowed":"0","route":"FAX","encounterid":"32955","issafetorenew":"true","medicationentryid":"C117495","structuredsig":{"dosageroute":"oral","dosageaction":"TAKE","dosagefrequencyunit":"per
+        day","dosagequantityunit":"tablet(s)","dosagequantityvalue":"1","dosagedurationunit":"day"},"events":[{"eventdate":"04\/23\/2016","type":"ENTER"}],"medication":"Diabetes
+        Health Formula 500 mcg-250 mcg tablet","unstructuredsig":"Take 1 tablet(s)
+        by oral route."}],[{"source":"API-3422","createdby":"API-3422","isstructuredsig":"false","medicationid":"362851","issafetorenew":"true","medicationentryid":"H5930","events":[{"eventdate":"05\/26\/2016","type":"ENTER"}],"medication":"asparaginase
+        (Erwinia chrysan)"}],[{"source":"API-2789","createdby":"API-2789","isstructuredsig":"false","medicationid":"365909","issafetorenew":"true","medicationentryid":"H5929","events":[{"eventdate":"05\/26\/2016","type":"ENTER"}],"medication":"Xylocaine
+        (Cardiac) (PF)"}]],"nomedicationsreported":"false"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/medications?departmentid=1
+  recorded_at: Tue, 12 Jul 2016 11:27:07 GMT
+recorded_with: VCR 3.0.1
