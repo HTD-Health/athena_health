@@ -1,6 +1,6 @@
 module AthenaHealth
   class UserMedicationCollection < BaseModel
     attribute :lastupdated, String
-    attribute :medications, Array[Array[UserMedication]]
+    attribute :medications, Array[UserMedication]
   end
 end

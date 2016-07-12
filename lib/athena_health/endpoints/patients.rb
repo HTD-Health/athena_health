@@ -246,6 +246,8 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id)
         )
 
+        response['medications'] = response['medications'].flatten
+
         UserMedicationCollection.new(response)
       end
 

@@ -4,7 +4,7 @@ describe AthenaHealth::UserMedicationCollection do
   let(:user_medication_collection_attributes) do
     {
       'lastupdated': '06/03/2016',
-      'medications': [
+      'medications':
         [{
             'source': 'Kandi Haworth, MD',
             'orderingmode': 'PRESCRIBE',
@@ -32,7 +32,7 @@ describe AthenaHealth::UserMedicationCollection do
             'medication': 'Plavix 75 mg tablet',
             'unstructuredsig': 'Take 75 mg by oral route in the morning.'
         }]
-    ]}
+    }
   end
 
   subject { AthenaHealth::UserMedicationCollection.new(user_medication_collection_attributes) }
