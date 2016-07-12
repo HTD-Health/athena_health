@@ -540,6 +540,23 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#patient_medications' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of UserMedicationCollection' do
+      VCR.use_cassette('patient_medications') do
+        expect(client.patient_medications(parameters))
+          .to be_an_instance_of AthenaHealth::UserMedicationCollection
+      end
+    end
+  end
+
   describe '#add_patient_medication' do
     let(:parameters) do
       {
@@ -554,6 +571,23 @@ describe AthenaHealth::Endpoints::Patients do
       VCR.use_cassette('add_patient_medication') do
         expect(client.add_patient_medication(parameters))
           .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe '#patient_allergies' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of UserAllergyCollection' do
+      VCR.use_cassette('patient_allergies') do
+        expect(client.patient_allergies(parameters))
+          .to be_an_instance_of AthenaHealth::UserAllergyCollection
       end
     end
   end

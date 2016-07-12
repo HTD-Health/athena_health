@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 12 Jul 2016 10:38:57 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-115.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 12 Jul 2016 10:38:57 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/allergies?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Jul 2016 10:38:57 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 0eddebfc-e7cb-4149-9150-cf7b104a87e5
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-104.mashery.com
+      Content-Length:
+      - '744'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"lastupdated":"05\/26\/2016","nkda":"false","sectionnote":"test","allergies":[{"allergenname":"asparaginase","allergenid":"14041","reactions":[]},{"allergenname":"Aspercreme
+        with Aloe","allergenid":"24640","reactions":[]},{"allergenname":"Daily Vite
+        W\/Minerals","allergenid":"55555","reactions":[{"reactionname":"anaphylaxis","snomedcode":"39579001"}]},{"allergenname":"wasp
+        venom","allergenid":"18035","reactions":[]},{"allergenname":"weed pollen","onsetdate":"01\/01\/2010","allergenid":"92193","reactions":[{"reactionname":"chest
+        pain","snomedcode":"29857009"}],"note":"about this allergy"},{"allergenname":"deleted\/unknown","allergenid":"213123","reactions":[]},{"allergenname":"deleted\/unknown","allergenid":"3123123","reactions":[]}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/allergies?departmentid=1
+  recorded_at: Tue, 12 Jul 2016 10:38:57 GMT
+recorded_with: VCR 3.0.1
