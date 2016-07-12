@@ -680,4 +680,21 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#update_patient_photo' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        patient_id: 1,
+        image: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_photo') do
+        expect(client.update_patient_photo(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
 end
