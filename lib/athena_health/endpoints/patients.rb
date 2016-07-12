@@ -308,6 +308,14 @@ module AthenaHealth
 
         InsuranceCollection.new(response)
       end
+
+      def update_patient_photo(practice_id:, patient_id:, image:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/photo",
+          method: :post,
+          body: params.merge!(image: image)
+        )
+      end
     end
   end
 end
