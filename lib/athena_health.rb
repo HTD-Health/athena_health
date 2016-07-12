@@ -63,6 +63,9 @@ require 'athena_health/insurance'
 require 'athena_health/insurance_collection'
 require 'athena_health/appointment_reminder'
 require 'athena_health/appointment_reminder_collection'
+require 'athena_health/reaction'
+require 'athena_health/user_allergy'
+require 'athena_health/user_allergy_collection'
 
 module AthenaHealth
 end
