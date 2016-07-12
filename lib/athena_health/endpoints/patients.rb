@@ -247,6 +247,16 @@ module AthenaHealth
         )
       end
 
+      def patient_allergies(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/#{patient_id}/allergies",
+          method: :get,
+          params: params.merge!(departmentid: department_id)
+        )
+
+        UserAllergyCollection.new(response)
+      end
+
       def update_patient_allergies(practice_id:, department_id:, patient_id:, allergies:)
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/allergies",

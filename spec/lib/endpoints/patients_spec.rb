@@ -558,6 +558,23 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#patient_allergies' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1
+      }
+    end
+
+    it 'returns instance of UserAllergyCollection' do
+      VCR.use_cassette('patient_allergies') do
+        expect(client.patient_allergies(parameters))
+          .to be_an_instance_of AthenaHealth::UserAllergyCollection
+      end
+    end
+  end
+
   describe '#update_patient_allergies' do
     let(:parameters) do
       {
