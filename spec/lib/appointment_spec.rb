@@ -116,7 +116,7 @@ describe AthenaHealth::Appointment do
   describe 'full_time' do
     it 'returns properly formated time' do
       expect(subject.full_time)
-        .to eq DateTime.strptime("#{subject.date} #{subject.starttime}", '%m/%d/%Y %H:%M')
+        .to eq "#{subject.date} #{subject.starttime}"
     end
   end
 end

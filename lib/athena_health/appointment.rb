@@ -37,8 +37,7 @@ module AthenaHealth
     end
 
     def full_time
-      appointment_time = "#{date} #{starttime}"
-      DateTime.strptime(appointment_time, '%m/%d/%Y %H:%M')
+      "#{date} #{starttime}"
     end
   end
 end
