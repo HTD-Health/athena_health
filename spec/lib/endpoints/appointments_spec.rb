@@ -164,6 +164,23 @@ describe AthenaHealth::Endpoints::Appointments do
     end
   end
 
+  describe 'check_in' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        appointment_id: 150_397
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('check_in') do
+        expect(client.check_in(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
+
   describe 'reschedule_appointment' do
     let(:attributes) do
       {
