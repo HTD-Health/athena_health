@@ -10,5 +10,7 @@ module AthenaHealth
     attribute :note,           String
     attribute :valuestatus,    String
     attribute :referencerange, String
+    attribute :resultstatus,   String
+    attribute :abnormalflag,   String
   end
 end

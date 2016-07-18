@@ -12,7 +12,9 @@ describe AthenaHealth::Analyte do
       'description': 'description',
       'note': 'note',
       'valuestatus': 'Value status',
-      'referencerange': 'Reference range of values'
+      'referencerange': 'Reference range of values',
+      'resultstatus': 'final',
+      'abnormalflag': 'normal'
     }
   end
 
@@ -32,7 +34,9 @@ describe AthenaHealth::Analyte do
       description: 'description',
       note: 'note',
       valuestatus: 'Value status',
-      referencerange: 'Reference range of values'
+      referencerange: 'Reference range of values',
+      resultstatus: 'final',
+      abnormalflag: 'normal'
     )
   end
 end
