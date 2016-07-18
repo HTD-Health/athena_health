@@ -15,7 +15,8 @@ describe AthenaHealth::LabResult do
           'analytedate': '09\/17\/2010'
         }
       ],
-      'description': 'lab result'
+      'description': 'lab result',
+      'orderid': '305'
     }
   end
 
@@ -28,7 +29,8 @@ describe AthenaHealth::LabResult do
       labresultdate: '04\/21\/2011',
       labresultnote: 'sample note',
       labresultid: 3265,
-      description: 'lab result'
+      description: 'lab result',
+      orderid: 305
     )
 
     expect(subject.analytes.map(&:class)).to eq [AthenaHealth::Analyte]

@@ -5,5 +5,6 @@ module AthenaHealth
     attribute :labresultid,        Integer
     attribute :analytes,           Array[Analyte]
     attribute :description,        String
+    attribute :orderid,            Integer
   end
 end
