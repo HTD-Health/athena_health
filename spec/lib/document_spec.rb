@@ -17,7 +17,8 @@ describe AthenaHealth::Document do
       'encounterdate': '05\/20\/2015',
       'encounterid': '1',
       'lastmodifieddatetime': '2015-05-20T13:39:21-04:00',
-      'documentsubclass': 'PRESCRIPTION_RENEWAL'
+      'documentsubclass': 'PRESCRIPTION_RENEWAL',
+      'orderid': '120'
     }
   end
 
@@ -41,7 +42,8 @@ describe AthenaHealth::Document do
       lastmodifieddatetime: '2015-05-20T13:39:21-04:00',
       documentsubclass: 'PRESCRIPTION_RENEWAL',
       providerid: 1,
-      encounterid: 1
+      encounterid: 1,
+      orderid: 120
     )
   end
 end
