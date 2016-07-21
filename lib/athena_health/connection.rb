@@ -38,6 +38,10 @@ module AthenaHealth
         return call(endpoint: endpoint, method: method, second_call: true, body: body, params: params)
       end
 
+      if response.response_code == 403 && !second_call
+        return call(endpoint: endpoint, method: method, second_call: true, body: body, params: params)
+      end
+
       body = response.response_body
 
       if [400, 409].include? response.response_code
