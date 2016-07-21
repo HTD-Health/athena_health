@@ -174,6 +174,14 @@ module AthenaHealth
 
         InsuranceCollection.new(response)
       end
+
+      def create_appointment_subscription(practice_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/changed/subscription",
+          method: :post,
+          params: params
+        )
+      end
     end
   end
 end

@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 16 Feb 2016 12:43:23 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-106.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Tue, 16 Feb 2016 12:43:24 GMT
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 21 Jul 2016 16:38:06 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 9a7e7c5a-7508-4516-a78f-8bfa20fd745e
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-107.mashery.com
+      Content-Length:
+      - '18'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":"true"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+  recorded_at: Thu, 21 Jul 2016 16:38:06 GMT
+recorded_with: VCR 3.0.1

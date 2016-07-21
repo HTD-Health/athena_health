@@ -298,4 +298,14 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#create_appointment_subscription' do
+    it "returns success => true" do
+      VCR.use_cassette('appointment_subscription') do
+        expect(client.create_appointment_subscription(
+          practice_id: 195_900
+        )).to eq 'success' => 'true'
+      end
+    end
+  end
 end
