@@ -16,5 +16,6 @@ module AthenaHealth
     attribute :lastmodifieddatetime, String
     attribute :documentsubclass,     String
     attribute :orderid,              Integer
+    attribute :labresultid,          Integer
   end
 end
