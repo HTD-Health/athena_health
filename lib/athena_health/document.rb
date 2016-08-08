@@ -17,5 +17,6 @@ module AthenaHealth
     attribute :documentsubclass,     String
     attribute :orderid,              Integer
     attribute :labresultid,          Integer
+    attribute :observations,         Array[Analyte]
   end
 end
