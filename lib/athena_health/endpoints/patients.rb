@@ -83,6 +83,15 @@ module AthenaHealth
         LabResultCollection.new(response)
       end
 
+      def patient_lab_result_document(practice_id:, patient_id:, lab_result_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/labresult/#{lab_result_id}",
+          method: :get
+        ).first
+
+        Document.new(response)
+      end
+
       def patient_medical_history(practice_id:, department_id:, patient_id:)
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/medicalhistory",
