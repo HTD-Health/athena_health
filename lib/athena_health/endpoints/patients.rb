@@ -21,6 +21,16 @@ module AthenaHealth
         Patient.new(response.first)
       end
 
+      def find_bestmatch_patients(practice_id:, date_of_birth:, first_name:, last_name:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/enhancedbestmatch",
+          method: :get,
+          params: params.merge!(firstname: first_name, lastname: last_name, dob: date_of_birth)
+        )
+
+        PatientCollection.new(response)
+      end
+
       def create_patient(practice_id:, department_id:, params: {})
         @api.call(
           endpoint: "#{practice_id}/patients",

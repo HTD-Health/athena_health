@@ -67,6 +67,28 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
+      def multidepartment_booked_appointments(practice_id:, department_id:, start_date:, end_date:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/booked/multidepartment",
+          method: :get,
+          params: params.merge!(
+            departmentid: department_id,
+            startdate: start_date,
+            enddate: end_date
+          )
+        )
+
+        AppointmentCollection.new(response)
+      end
+
+      def cancel_appointment(practice_id:, appointment_id:, patient_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/cancel",
+          method: :put,
+          params: params.merge!(patientid: patient_id)
+        )
+      end
+
       def appointment_notes(practice_id:, appointment_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}/notes",
@@ -88,6 +110,13 @@ module AthenaHealth
       def start_check_in(practice_id:, appointment_id:)
         @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}/startcheckin",
+          method: :post
+        )
+      end
+
+      def cancel_check_in(practice_id:, appointment_id:)
+        @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/cancelcheckin",
           method: :post
         )
       end
