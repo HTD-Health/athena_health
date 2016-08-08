@@ -18,7 +18,8 @@ describe AthenaHealth::Document do
       'encounterid': '1',
       'lastmodifieddatetime': '2015-05-20T13:39:21-04:00',
       'documentsubclass': 'PRESCRIPTION_RENEWAL',
-      'orderid': '120'
+      'orderid': '120',
+      'observations': [{'analyteid': 1}]
     }
   end
 
@@ -45,5 +46,7 @@ describe AthenaHealth::Document do
       encounterid: 1,
       orderid: 120
     )
+
+    expect(subject.observations.map(&:class)).to eq [AthenaHealth::Analyte]
   end
 end

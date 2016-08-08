@@ -236,6 +236,23 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#patient_lab_result_document' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        lab_result_id: 306,
+        patient_id: 23
+      }
+    end
+
+    it 'returns instance of Document' do
+      VCR.use_cassette('patient_lab_result_document') do
+        expect(client.patient_lab_result_document(attributes))
+          .to be_an_instance_of AthenaHealth::Document
+      end
+    end
+  end
+
   describe '#patient_medical_history' do
     let(:attributes) do
       {
