@@ -28,7 +28,7 @@ module AthenaHealth
           params: params.merge!(firstname: first_name, lastname: last_name, dob: date_of_birth)
         )
 
-        PatientCollection.new(response)
+        response.map{ |patient| Patient.new(patient) }
       end
 
       def create_patient(practice_id:, department_id:, params: {})

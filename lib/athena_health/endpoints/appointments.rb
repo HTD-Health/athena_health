@@ -33,19 +33,17 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
-      def create_appointment_slot(practice_id:, department_id:, appointment_date:, appointment_time:, provider_id:, params: {})
-        response = @api.call(
+      def create_appointment_slot(practice_id:, department_id:, appointment_date:, appointment_time:, provider_id:, body: {})
+        @api.call(
           endpoint: "#{practice_id}/appointments/open",
           method: :post,
-          params: params.merge(
+          body: body.merge(
             departmentid: department_id,
             appointmentdate: appointment_date,
             appointmenttime: appointment_time,
             providerid: provider_id
           )
         )
-
-        Appointment.new(response)
       end
 
       def book_appointment(practice_id:, appointment_id:, patient_id:, params: {})
@@ -82,9 +80,9 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
-      def multidepartment_booked_appointments(practice_id:, department_id:, start_date:, end_date:, params: {})
+      def multipledepartment_booked_appointments(practice_id:, department_id:, start_date:, end_date:, params: {})
         response = @api.call(
-          endpoint: "#{practice_id}/appointments/booked/multidepartment",
+          endpoint: "#{practice_id}/appointments/booked/multipledepartment",
           method: :get,
           params: params.merge!(
             departmentid: department_id,
@@ -96,11 +94,11 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
-      def cancel_appointment(practice_id:, appointment_id:, patient_id:, params: {})
-        response = @api.call(
+      def cancel_appointment(practice_id:, appointment_id:, patient_id:, body: {})
+        @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}/cancel",
           method: :put,
-          params: params.merge!(patientid: patient_id)
+          body: body.merge!(patientid: patient_id)
         )
       end
 

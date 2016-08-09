@@ -33,6 +33,24 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#find_bestmatch_patients' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        date_of_birth: '01/01/1950',
+        first_name: 'Test',
+        last_name: 'Patient'
+      }
+    end
+
+    it 'returns instance of Array' do
+      VCR.use_cassette('find_bestmatch_patients') do
+        expect(client.find_bestmatch_patients(attributes))
+          .to be_an_instance_of Array
+      end
+    end
+  end
+
   describe '#create_patient' do
     context 'with correct data' do
       let(:attributes) do

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195917/appointments/404629/cancelcheckin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer h9tfm4t55e2dnmx6eef2y295
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2016 19:22:21 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - ec604057-e4ac-46c9-9693-8f07ccf4c5f1
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      Content-Length:
+      - '18'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":"true"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195917/appointments/404629/cancelcheckin
+  recorded_at: Tue, 09 Aug 2016 19:22:21 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/appointments/open
+    body:
+      encoding: US-ASCII
+      string: reasonid=563&departmentid=1&appointmentdate=08/27/2016&appointmenttime=08:00&providerid=86
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer nx8cecm2rzc5u44rbyswruck
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2016 18:00:14 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 8b536b1c-5ea2-4a2b-98a9-433cb4729228
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"appointmentids":{"702724":"08:00"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open
+  recorded_at: Tue, 09 Aug 2016 18:00:14 GMT
+recorded_with: VCR 3.0.3

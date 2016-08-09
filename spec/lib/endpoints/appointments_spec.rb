@@ -21,6 +21,51 @@ describe AthenaHealth::Endpoints::Appointments do
     end
   end
 
+  describe '#create_appointment_slot' do
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          department_id: 1,
+          appointment_date: '08/27/2016',
+          appointment_time: '08:00',
+          provider_id: 86,
+          body: { reasonid: 563 }
+        }
+      end
+
+      it 'returns a newly created appointment id' do
+        VCR.use_cassette('create_appointment_slot') do
+          expect(client.create_appointment_slot(attributes))
+            .to be_an_instance_of Hash
+        end
+      end
+    end
+
+    context 'with no reason id or appointment type id' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          department_id: 1,
+          appointment_date: '08/27/2016',
+          appointment_time: '08:00',
+          provider_id: 86
+        }
+      end
+      it 'raise AthenaHealth::ValidationError error' do
+        VCR.use_cassette('create_appointment_slot_no_reason_id_or_appointment_type_id') do
+          expect { client.create_appointment_slot(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              'detailedmessage' => 'An appointment type or reason must be provided.',
+              'error' => 'Additional fields are required.'
+            )
+          }
+        end
+      end
+    end
+  end
+
   describe '#book_appointment' do
     context 'with wrong appointment id' do
       let(:attributes) do
@@ -60,6 +105,61 @@ describe AthenaHealth::Endpoints::Appointments do
           expect(client.book_appointment(attributes))
             .to be_an_instance_of AthenaHealth::Appointment
         end
+      end
+    end
+  end
+
+  describe '#multipledepartment_booked_appointments' do
+    context 'multiple departments' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          department_id: '1,2,3',
+          start_date: '04/30/2016',
+          end_date: '04/30/2016'
+        }
+      end
+
+      it 'returns instance of AppointmentCollection' do
+        VCR.use_cassette('multipledepartment_booked_appointments') do
+          expect(client.multipledepartment_booked_appointments(attributes))
+            .to be_an_instance_of AthenaHealth::AppointmentCollection
+        end
+      end
+    end
+
+    context 'single department' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          department_id: 1,
+          start_date: '04/30/2016',
+          end_date: '04/30/2016'
+        }
+      end
+
+      it 'returns instance of AppointmentCollection' do
+        VCR.use_cassette('multipledepartment_booked_appointments_single_department') do
+          expect(client.multipledepartment_booked_appointments(attributes))
+            .to be_an_instance_of AthenaHealth::AppointmentCollection
+        end
+      end
+    end
+  end
+
+  describe '#cancel_appointment' do
+    let(:attributes) do
+      {
+        practice_id: 195_917,
+        appointment_id: 404627,
+        patient_id: 2695,
+      }
+    end
+
+    it 'returns a canceled appointment status' do
+      VCR.use_cassette('cancel_appointment') do
+        expect(client.cancel_appointment(attributes))
+          .to be_an_instance_of Hash
       end
     end
   end
@@ -159,6 +259,22 @@ describe AthenaHealth::Endpoints::Appointments do
     it 'returns success => true' do
       VCR.use_cassette('start_check_in') do
         expect(client.start_check_in(attributes))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
+  describe '#cancel_check_in' do
+    let(:attributes) do
+      {
+        practice_id: 195_917,
+        appointment_id: 404_629
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('cancel_check_in') do
+        expect(client.cancel_check_in(attributes))
           .to eq 'success' => 'true'
       end
     end

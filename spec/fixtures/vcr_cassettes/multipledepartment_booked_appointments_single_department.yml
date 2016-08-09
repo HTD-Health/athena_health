@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/appointments/booked/multipledepartment?departmentid=1&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer nx8cecm2rzc5u44rbyswruck
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2016 18:32:21 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - e67323f6-cf62-4ff2-9d47-86ad17c39818
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-119.mashery.com
+      Content-Length:
+      - '12917'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":20,"appointments":[{"date":"04\/30\/2016","appointmentid":"659585","patientlocationid":"21","starttime":"08:15","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32978","startcheckin":"04\/29\/2016
+        07:49:21","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        07:49:24","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        07:49:24","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        07:49:24","scheduleddatetime":"04\/29\/2016 06:22:41","coordinatorenterprise":"false","templateappointmentid":"659585","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"660091","starttime":"08:45","departmentid":"1","appointmentstatus":"f","scheduledby":"API-1999","patientid":"2269","duration":"60","templateappointmenttypeid":"82","lastmodifiedby":"API-1999","copay":0,"appointmenttypeid":"6","lastmodified":"04\/27\/2016
+        09:23:05","appointmenttype":"Surgery","providerid":"71","scheduleddatetime":"04\/27\/2016
+        09:23:05","coordinatorenterprise":"false","templateappointmentid":"660091","patientappointmenttypename":"Surgery
+        (time is not correct)"},{"date":"04\/30\/2016","appointmentid":"661089","patientlocationid":"21","starttime":"09:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32979","startcheckin":"04\/29\/2016
+        08:26:12","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        08:26:15","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        08:26:15","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        08:26:15","scheduleddatetime":"04\/29\/2016 08:02:34","coordinatorenterprise":"false","templateappointmentid":"661089","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"661090","patientlocationid":"21","starttime":"09:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32980","startcheckin":"04\/29\/2016
+        09:20:13","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        09:25:52","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        09:25:52","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        09:25:52","scheduleddatetime":"04\/29\/2016 08:36:37","coordinatorenterprise":"false","templateappointmentid":"661090","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"661095","starttime":"09:45","departmentid":"1","appointmentstatus":"f","scheduledby":"API-2834","patientid":"22645","duration":"15","encounterid":"32982","startcheckin":"04\/29\/2016
+        09:52:54","templateappointmenttypeid":"82","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        09:52:54","appointmenttype":"Any 15","providerid":"71","scheduleddatetime":"04\/29\/2016
+        09:43:51","coordinatorenterprise":"false","templateappointmentid":"661095","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"661596","starttime":"10:15","departmentid":"1","appointmentstatus":"f","scheduledby":"API-2811","patientid":"21829","duration":"15","templateappointmenttypeid":"82","lastmodifiedby":"API-2811","copay":0,"appointmenttypeid":"82","lastmodified":"03\/15\/2016
+        08:59:44","appointmenttype":"Any 15","providerid":"71","scheduleddatetime":"03\/15\/2016
+        08:59:44","coordinatorenterprise":"false","templateappointmentid":"661596","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"662092","starttime":"10:45","departmentid":"1","appointmentstatus":"f","scheduledby":"API-2834","patientid":"22645","duration":"15","templateappointmenttypeid":"82","lastmodifiedby":"API-2834","copay":0,"appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        10:08:02","appointmenttype":"Any 15","providerid":"71","scheduleddatetime":"04\/29\/2016
+        10:08:02","coordinatorenterprise":"false","templateappointmentid":"662092","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"662101","patientlocationid":"21","starttime":"10:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32981","startcheckin":"04\/29\/2016
+        09:30:29","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        09:33:43","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        09:33:43","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        09:33:43","scheduleddatetime":"04\/29\/2016 09:29:29","coordinatorenterprise":"false","templateappointmentid":"662101","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"662595","starttime":"11:15","departmentid":"1","appointmentstatus":"f","scheduledby":"API-1999","patientid":"22635","duration":"30","templateappointmenttypeid":"82","lastmodifiedby":"API-1999","copay":0,"appointmenttypeid":"8","lastmodified":"04\/28\/2016
+        11:18:17","appointmenttype":"New Patient Appointment","providerid":"71","scheduleddatetime":"04\/28\/2016
+        11:18:17","coordinatorenterprise":"false","templateappointmentid":"662595","patientappointmenttypename":"New
+        Patient Appointment"},{"date":"04\/30\/2016","appointmentid":"663347","patientlocationid":"21","starttime":"12:00","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32983","startcheckin":"04\/29\/2016
+        10:09:15","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        10:09:16","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        10:09:16","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        10:09:16","scheduleddatetime":"04\/29\/2016 10:08:55","coordinatorenterprise":"false","templateappointmentid":"663347","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"663605","starttime":"12:15","departmentid":"1","appointmentstatus":"f","scheduledby":"API-1999","patientid":"22637","duration":"30","templateappointmenttypeid":"82","lastmodifiedby":"API-1999","copay":0,"appointmenttypeid":"8","lastmodified":"04\/28\/2016
+        12:06:24","appointmenttype":"New Patient Appointment","providerid":"71","scheduleddatetime":"04\/28\/2016
+        12:06:24","coordinatorenterprise":"false","templateappointmentid":"663605","patientappointmenttypename":"New
+        Patient Appointment"},{"date":"04\/30\/2016","appointmentid":"664107","patientlocationid":"21","starttime":"12:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32984","startcheckin":"04\/29\/2016
+        10:25:03","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        10:29:21","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        10:29:21","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        10:29:21","scheduleddatetime":"04\/29\/2016 10:24:05","coordinatorenterprise":"false","templateappointmentid":"664107","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"664118","patientlocationid":"21","starttime":"12:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32986","startcheckin":"04\/29\/2016
+        10:40:30","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        10:40:31","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        10:40:31","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        10:40:31","scheduleddatetime":"04\/29\/2016 10:34:18","coordinatorenterprise":"false","templateappointmentid":"664118","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"664867","patientlocationid":"21","starttime":"13:30","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32985","startcheckin":"04\/29\/2016
+        10:33:22","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        10:33:24","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        10:33:24","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        10:33:24","scheduleddatetime":"04\/29\/2016 10:30:37","coordinatorenterprise":"false","templateappointmentid":"664867","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"665115","starttime":"13:45","departmentid":"1","appointmentstatus":"f","scheduledby":"API-2789","patientid":"1","duration":"30","templateappointmenttypeid":"82","lastmodifiedby":"API-2789","copay":0,"appointmenttypeid":"1","lastmodified":"04\/28\/2016
+        16:03:36","appointmenttype":"Follow Up","providerid":"71","scheduleddatetime":"04\/28\/2016
+        16:03:36","coordinatorenterprise":"false","templateappointmentid":"665115","patientappointmenttypename":"Follow
+        Up Appointment"},{"date":"04\/30\/2016","appointmentid":"665622","patientlocationid":"21","starttime":"14:15","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32991","startcheckin":"04\/30\/2016
+        12:47:33","templateappointmenttypeid":"82","checkindatetime":"04\/30\/2016
+        12:47:36","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/30\/2016
+        12:47:36","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/30\/2016
+        12:47:36","scheduleddatetime":"04\/29\/2016 11:00:43","coordinatorenterprise":"false","templateappointmentid":"665622","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"665866","starttime":"14:30","departmentid":"1","appointmentstatus":"f","scheduledby":"API-2834","patientid":"3873","duration":"15","templateappointmenttypeid":"82","lastmodifiedby":"API-2834","copay":0,"appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        11:00:26","appointmenttype":"Any 15","providerid":"71","scheduleddatetime":"04\/29\/2016
+        11:00:26","coordinatorenterprise":"false","templateappointmentid":"665866","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"665879","patientlocationid":"21","starttime":"14:30","departmentid":"1","appointmentstatus":"2","scheduledby":"API-2834","patientid":"3873","duration":"15","encounterid":"32987","startcheckin":"04\/29\/2016
+        11:03:09","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        11:03:11","lastmodifiedby":"API-2834","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        11:03:11","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        11:03:11","scheduleddatetime":"04\/29\/2016 11:00:59","coordinatorenterprise":"false","templateappointmentid":"665879","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"666127","patientlocationid":"21","starttime":"14:45","departmentid":"1","appointmentstatus":"2","scheduledby":"API-1700","patientid":"22568","duration":"15","encounterid":"32989","startcheckin":"04\/29\/2016
+        15:48:38","templateappointmenttypeid":"82","checkindatetime":"04\/29\/2016
+        15:49:55","lastmodifiedby":"API-1700","copay":0,"renderingproviderid":"71","appointmenttypeid":"82","lastmodified":"04\/29\/2016
+        15:49:55","appointmenttype":"Any 15","encounterstatus":"READYFORSTAFF","providerid":"71","stopcheckin":"04\/29\/2016
+        15:49:55","scheduleddatetime":"04\/29\/2016 14:34:26","coordinatorenterprise":"false","templateappointmentid":"666127","patientappointmenttypename":"Established
+        Patient"},{"date":"04\/30\/2016","appointmentid":"667128","starttime":"15:45","departmentid":"1","appointmentstatus":"f","scheduledby":"API-3119","patientid":"22063","duration":"15","templateappointmenttypeid":"82","lastmodifiedby":"API-3119","copay":0,"appointmenttypeid":"82","lastmodified":"03\/30\/2016
+        05:17:37","appointmenttype":"Any 15","providerid":"71","scheduleddatetime":"03\/30\/2016
+        05:17:37","coordinatorenterprise":"false","templateappointmentid":"667128","patientappointmenttypename":"Established
+        Patient"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/booked/multipledepartment?departmentid=1&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
+  recorded_at: Tue, 09 Aug 2016 18:32:21 GMT
+recorded_with: VCR 3.0.3

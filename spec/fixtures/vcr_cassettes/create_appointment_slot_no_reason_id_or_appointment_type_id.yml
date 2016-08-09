@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/appointments/open
+    body:
+      encoding: US-ASCII
+      string: departmentid=1&appointmentdate=08/27/2016&appointmenttime=08:00&providerid=86
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer nx8cecm2rzc5u44rbyswruck
+      Expect:
+      - ''
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2016 18:14:28 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 94e6a504-b331-4b3c-a362-b723b28cba3b
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-127.mashery.com
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+
+        {"detailedmessage":"An appointment type or reason must be provided.","error":"Additional fields are required."}
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open
+  recorded_at: Tue, 09 Aug 2016 18:14:28 GMT
+recorded_with: VCR 3.0.3
