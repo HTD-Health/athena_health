@@ -3,7 +3,7 @@ def client_attributes
     version: 'preview1',
     key: 'test_key',
     secret: 'test_secret',
-    token: nil
+    token: 'test_access_token'
   }
 end
 

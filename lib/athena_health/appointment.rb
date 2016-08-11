@@ -24,6 +24,7 @@ module AthenaHealth
     attribute :scheduleddatetime,           String
     attribute :starttime,                   String
     attribute :templateappointmentid,       Integer
+    attribute :urgent,                      Boolean
 
     def appointment_status
         {

@@ -33,6 +33,19 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
+      def create_appointment_slot(practice_id:, department_id:, appointment_date:, appointment_time:, provider_id:, body: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/open",
+          method: :post,
+          body: body.merge(
+            departmentid: department_id,
+            appointmentdate: appointment_date,
+            appointmenttime: appointment_time,
+            providerid: provider_id
+          )
+        )
+      end
+
       def book_appointment(practice_id:, appointment_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}",
@@ -67,6 +80,28 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
+      def multipledepartment_booked_appointments(practice_id:, department_id:, start_date:, end_date:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/appointments/booked/multipledepartment",
+          method: :get,
+          params: params.merge!(
+            departmentid: department_id,
+            startdate: start_date,
+            enddate: end_date
+          )
+        )
+
+        AppointmentCollection.new(response)
+      end
+
+      def cancel_appointment(practice_id:, appointment_id:, patient_id:, body: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/cancel",
+          method: :put,
+          body: body.merge!(patientid: patient_id)
+        )
+      end
+
       def appointment_notes(practice_id:, appointment_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}/notes",
@@ -88,6 +123,13 @@ module AthenaHealth
       def start_check_in(practice_id:, appointment_id:)
         @api.call(
           endpoint: "#{practice_id}/appointments/#{appointment_id}/startcheckin",
+          method: :post
+        )
+      end
+
+      def cancel_check_in(practice_id:, appointment_id:)
+        @api.call(
+          endpoint: "#{practice_id}/appointments/#{appointment_id}/cancelcheckin",
           method: :post
         )
       end

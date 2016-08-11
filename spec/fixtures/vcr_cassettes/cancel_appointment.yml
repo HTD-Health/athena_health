@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.athenahealth.com/preview1/195917/appointments/404627/cancel
+    body:
+      encoding: US-ASCII
+      string: patientid=2695
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer h9tfm4t55e2dnmx6eef2y295
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2016 18:55:25 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - d1565859-610b-46ee-9907-71bdd4bdd2fb
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      Content-Length:
+      - '14'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"x"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195917/appointments/404627/cancel
+  recorded_at: Tue, 09 Aug 2016 18:55:26 GMT
+recorded_with: VCR 3.0.3
