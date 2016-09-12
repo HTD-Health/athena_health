@@ -27,7 +27,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns instance of Encounter' do
       VCR.use_cassette('encounter_orders') do
-        expect(client.encounter_orders(attributes))
+        expect(client.encounter_orders(attributes).first)
           .to be_an_instance_of AthenaHealth::OrderCollection
       end
     end

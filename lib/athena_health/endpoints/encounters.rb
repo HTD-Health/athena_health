@@ -15,8 +15,10 @@ module AthenaHealth
           endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/orders",
           method: :get
         )
+        orders_collection = []
+        response.each {|x| orders_collection << OrderCollection.new(x)}
 
-        OrderCollection.new(response.first)
+        orders_collection
       end
 
       def encounter_order(practice_id:, encounter_id:, order_id:)
