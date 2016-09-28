@@ -5,16 +5,17 @@ module AthenaHealth
     BASE_URL    = 'https://api.athenahealth.com'.freeze
     AUTH_PATH   = { 'v1' => 'oauth', 'preview1' => 'oauthpreview', 'openpreview1' => 'oauthopenpreview' }
 
-    def initialize(version:, key:, secret:, token: nil)
+    def initialize(version:, key:, secret:, token: nil, base_url: BASE_URL)
       @version = version
       @key = key
       @secret = secret
       @token = token
+      @base_url = base_url
     end
 
     def authenticate
       response = Typhoeus.post(
-        "#{BASE_URL}/#{AUTH_PATH[@version]}/token",
+        "#{@base_url}/#{AUTH_PATH[@version]}/token",
         userpwd: "#{@key}:#{@secret}",
         body: { grant_type: 'client_credentials' }
       ).response_body
@@ -26,7 +27,7 @@ module AthenaHealth
       authenticate if @token.nil?
 
       response = Typhoeus::Request.new(
-        "#{BASE_URL}/#{@version}/#{endpoint}",
+        "#{@base_url}/#{@version}/#{endpoint}",
         method: method,
         headers: { "Authorization" => "Bearer #{@token}"},
         params: params,

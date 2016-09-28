@@ -16,6 +16,37 @@ describe AthenaHealth::Connection do
       .to eq 'https://api.athenahealth.com'
   end
 
+  context 'when base_url is not defined' do
+    let(:connection_attributes) do
+      {
+        version: 'v1',
+        key: 'test_key',
+        secret: 'test_secret'
+      }
+    end
+
+    it 'base_url defaults to constant BASE_URL' do
+      expect(connection.instance_variable_get(:@base_url))
+        .to eq AthenaHealth::Connection::BASE_URL
+    end
+  end
+
+  context 'when base_url is defined' do
+    let(:connection_attributes) do
+      {
+        version: 'v1',
+        key: 'test_key',
+        secret: 'test_secret',
+        base_url: 'https://apitest.athenahealth.com'
+      }
+    end
+
+    it 'base_url overrides constant BASE_URL' do
+      expect(connection.instance_variable_get(:@base_url))
+        .to eq 'https://apitest.athenahealth.com'
+    end
+  end
+
   it 'has defined AUTH_PATH constant' do
     expect(AthenaHealth::Connection::AUTH_PATH)
       .to eq(
