@@ -98,7 +98,7 @@ module AthenaHealth
     attribute :guarantoremployerid,                  Integer
     attribute :employername,                         String
     attribute :employeraddress,                      String
-    attribute :score,                                Boolean
+    attribute :score,                                Integer
 
     def fullname
       "#{firstname} #{middlename} #{lastname}"
