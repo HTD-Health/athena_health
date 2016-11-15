@@ -19,6 +19,7 @@ module AthenaHealth
     attribute :patientappointmenttypename,  String
     attribute :patientid,                   Integer
     attribute :providerid,                  Integer
+    attribute :renderingproviderid,         Integer
     attribute :rescheduledappointmentid,    Integer
     attribute :scheduledby,                 String
     attribute :scheduleddatetime,           String
