@@ -288,11 +288,11 @@ module AthenaHealth
         UserAllergyCollection.new(response)
       end
 
-      def update_patient_allergies(practice_id:, department_id:, patient_id:, allergies:)
+      def update_patient_allergies(practice_id:, department_id:, patient_id:, allergies:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/allergies",
           method: :put,
-          params: { departmentid: department_id, allergies: allergies.to_json }
+          params: params.merge!(departmentid: department_id, allergies: allergies.to_json)
         )
       end
 
