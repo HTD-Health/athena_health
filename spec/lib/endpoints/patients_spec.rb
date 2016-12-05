@@ -637,6 +637,18 @@ describe AthenaHealth::Endpoints::Patients do
       }
     end
 
+    context 'with extra parameters' do
+      it 'returns success => true' do
+        parameters.merge!({params: {
+            nkda: true
+        }})
+        VCR.use_cassette('update_patient_allergies_with_extra_parameters') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
     it 'returns success => true' do
       VCR.use_cassette('update_patient_allergies') do
         expect(client.update_patient_allergies(parameters))
