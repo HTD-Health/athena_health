@@ -278,6 +278,14 @@ module AthenaHealth
         )
       end
 
+      def update_patient_medications(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+            endpoint: "#{practice_id}/chart/#{patient_id}/medications",
+            method: :put,
+            body: params.merge!(departmentid: department_id)
+        )
+      end
+
       def patient_allergies(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/allergies",
