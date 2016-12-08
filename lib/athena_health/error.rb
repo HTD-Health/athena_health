@@ -1,12 +1,16 @@
 module AthenaHealth
   class BaseError                 < StandardError; end
   
-  class UnauthorizedError         < BaseError; end
-  class IncorrectPermissionsError < BaseError; end
-  class ForbiddenError            < BaseError; end
-  class NotFoundError             < BaseError; end
-  class InternalServerError       < BaseError; end
-  class ServiceUnavailableError   < BaseError; end
+  class ClientError               < BaseError; end
+  class ServerError               < BaseError; end
+  
+  class UnauthorizedError         < ClientError; end
+  class IncorrectPermissionsError < ClientError; end
+  class ForbiddenError            < ClientError; end
+  class NotFoundError             < ClientError; end
+  
+  class InternalServerError       < ServerError; end
+  class ServiceUnavailableError   < ServerError; end
 
   class ValidationError < BaseError
     attr_reader :details
