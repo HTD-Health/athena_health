@@ -49,4 +49,20 @@ describe AthenaHealth::Endpoints::Encounters do
       end
     end
   end
+
+  describe '#encouter_summary' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        encounter_id: 28302
+      }
+    end
+
+    it 'returns instance of EncounterSummary' do
+      VCR.use_cassette('encounter_summary') do
+        expect(client.encounter_summary(attributes))
+          .to be_an_instance_of AthenaHealth::EncounterSummary
+      end
+    end
+  end
 end
