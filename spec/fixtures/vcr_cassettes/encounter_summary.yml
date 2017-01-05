@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/encounters/28302/summary
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer b92qx68auu4rzatxcyknncwz
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2017 14:42:54 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 1609a9a5-3b4c-4e98-847e-9a3e3d7e05e2
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-127.mashery.com
+      Content-Length:
+      - '7569'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"summaryhtml":"<html><div class=\"clinicalsummary\" id=\"SUMMARYCONTAINER\"
+        sectionname=\"Patient\"><div id=\"SUMMARYHEADER\"><span class=\"clinicalsubsubheading\">Patient<\/span><\/div><div
+        class=\"\" id=\"SUMMARYCONTENT\" sectionname=\"Patient\"><a id=\"Patient_Summary\"
+        name=\"Patient_Summary\"><\/a><table class=\"clinicalsummary\" style=\"table-layout:
+        fixed;\"><tr><th>Name <td>KNARR, ALAN (27yo, F) ID# 1 <th>Appt. Date\/Time
+        <td>03\/18\/2015 08:30AM <tr><th>DOB <td>01\/01\/1990 <th>Service Dept. <td>ST
+        FRANCIS SURGERY <tr><th>Provider <td colspan=\"3\">KANDI HAWORTH, MD <tr><th>Insurance
+        <td colspan=\"3\"><div class=\"itemcontainer\" style=\"font-size: 12px; padding-left:
+        15px;\"><div class=\"item\">Med Primary: CIGNA HEALTHCARE (HMO)<br \/> Insurance
+        # : 1 <\/div><div class=\"item\">Med Secondary: HUMANA (PPO)<br \/> Insurance
+        # : 123456789 <\/div><div class=\"item\">Med Payment plan: PAYMENT PLAN #262<br
+        \/> Insurance # : 123456789 <\/div><div class=\"item\">Med Payment plan: PAYMENT
+        PLAN #583 <\/div><\/div><\/td><\/th><\/tr><\/td><\/th><\/tr><\/td><\/th><\/td><\/th><\/tr><\/td><\/th><\/td><\/th><\/tr><\/table><\/div><\/div><div
+        class=\"clinicalsummary\" id=\"SUMMARYCONTAINER\" sectionname=\"EncounterReason\"><div
+        id=\"SUMMARYHEADER\"><span class=\"clinicalsubsubheading\">Chief Complaint<\/span><\/div><div
+        class=\"clinicalsummarybox\" id=\"SUMMARYCONTENT\" sectionname=\"EncounterReason\"><a
+        id=\"EncounterReason_Summary\" name=\"EncounterReason_Summary\"><\/a><span
+        id=\"emptysummary\">None recorded.<\/span><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"Vitals\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Vitals<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"Vitals\"><a id=\"Vitals_Summary\" name=\"Vitals_Summary\"><\/a><span
+        id=\"emptysummary\">None recorded.<\/span><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"ProblemList\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Problems<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"ProblemList\"><a id=\"ProblemList_Summary\"
+        name=\"ProblemList_Summary\"><\/a><ul class=\"problemlist\"><li class=\"problembullet\"><span
+        class=\"problemitem\">Diabetes mellitus - Onset: 10\/12\/2016<\/span><li class=\"problembullet\"><span
+        class=\"problemitem\">Type 2 diabetes mellitus - Onset: 10\/12\/2016<\/span><li
+        class=\"problembullet\"><span class=\"problemitem\">Type 1 diabetes mellitus
+        - Onset: 10\/12\/2016<\/span><li class=\"problembullet\"><span class=\"problemitem\">Carpal
+        tunnel syndrome<\/span><li class=\"problembullet\"><span class=\"problemitem\">Carpal
+        tunnel syndrome<\/span><li class=\"problembullet\"><span class=\"problemitem\">Carpal
+        tunnel syndrome<\/span><li class=\"problembullet\"><span class=\"problemitem\">Carpal
+        tunnel syndrome, Right - www<\/span><\/ul><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"PastMedicalHistory\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Past Medical History<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"PastMedicalHistory\"><a id=\"PastMedicalHistory_Summary\"
+        name=\"PastMedicalHistory_Summary\"><\/a>Overactive Thyroid: <strong>Y<\/strong><br
+        \/> TIA: <strong>Y<\/strong><br \/><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"SurgicalHistoryList\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Surgical History<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"SurgicalHistoryList\"><a id=\"SurgicalHistoryList_Summary\"
+        name=\"SurgicalHistoryList_Summary\"><\/a><ul class=\"surgicalhxlist\"><li
+        class=\"surgicalhxbullet\"><span class=\"surgicalhxitem\" title=\"Px: 42820\">Remove
+        tonsils and adenoids - 11\/17\/2016 - Check it out.<\/span><li class=\"surgicalhxbullet\"><span
+        class=\"surgicalhxitem\" title=\"Px: 49600\">Repair umbilical lesion - 11\/17\/2016
+        - Check it out.<\/span><li class=\"surgicalhxbullet\"><span class=\"surgicalhxitem\"
+        title=\"Px: 49600\">Repair umbilical lesion - 03\/17\/2016 - Check it out.<\/span><li
+        class=\"surgicalhxbullet\"><span class=\"surgicalhxitem\" title=\"Px: 42820\">Remove
+        tonsils and adenoids - 03\/17\/2016 - Check it out.<\/span><li class=\"surgicalhxbullet\"><span
+        class=\"surgicalhxitem\" title=\"Px: 23450\">Appendectomy - 02\/17\/2014 -
+        Teresas test note.<\/span><\/ul><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"FamilyHistoryList\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Family History<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"FamilyHistoryList\"><a id=\"FamilyHistoryList_Summary\"
+        name=\"FamilyHistoryList_Summary\"><\/a><table class=\"familyhxtable\"><tr><td>Father
+        <\/td><td class=\"paddedhang\">- Dementia (onset age: 70) <tr><td>&nbsp; <\/td><td
+        class=\"paddedhang\">- Dementia <tr><td>Mother <\/td><td class=\"paddedhang\">-
+        Arthritis (onset age: 70) <tr><td>&nbsp; <\/td><td class=\"paddedhang\">-
+        Asthma (onset age: 20) <tr><td>&nbsp; <\/td><td class=\"paddedhang\">- Arthritis
+        <tr><td>&nbsp; <\/td><td class=\"paddedhang\">- Asthma <tr><td colspan=\"2\">FH
+        <\/td><\/tr><\/td><\/tr><\/td><\/tr><\/td><\/tr><\/td><\/tr><\/td><\/tr><\/td><\/tr><\/table><\/div><\/div><div
+        class=\"clinicalsummary\" id=\"SUMMARYCONTAINER\" sectionname=\"ReviewOfSystems\"><div
+        id=\"SUMMARYHEADER\"><span class=\"clinicalsubsubheading\">ROS<\/span><\/div><div
+        class=\"clinicalsummarybox\" id=\"SUMMARYCONTENT\" sectionname=\"ReviewOfSystems\"><a
+        id=\"ReviewOfSystems_Summary\" name=\"ReviewOfSystems_Summary\"><\/a><span
+        id=\"emptysummary\">None recorded.<\/span><\/div><\/div><div class=\"clinicalsummary\"
+        id=\"SUMMARYCONTAINER\" sectionname=\"PhysicalExam\"><div id=\"SUMMARYHEADER\"><span
+        class=\"clinicalsubsubheading\">Physical Exam<\/span><\/div><div class=\"clinicalsummarybox\"
+        id=\"SUMMARYCONTENT\" sectionname=\"PhysicalExam\"><a id=\"PhysicalExam_Summary\"
+        name=\"PhysicalExam_Summary\"><\/a><span id=\"emptysummary\">None recorded.<\/span><\/div><\/div><div
+        class=\"clinicalsummary\" id=\"SUMMARYCONTAINER\" sectionname=\"AssessmentPlan\"><div
+        id=\"SUMMARYHEADER\"><span class=\"clinicalsubsubheading\">Assessment \/ Plan<\/span><\/div><div
+        class=\"clinicalsummarybox\" id=\"SUMMARYCONTENT\" sectionname=\"AssessmentPlan\"><a
+        id=\"AssessmentPlan_Summary\" name=\"AssessmentPlan_Summary\"><\/a><div class=\"boldblack\"><div
+        blockname=\"diagnosisorders\"><div class=\"dxheadingsummary\"><strong>1. Carpal
+        tunnel syndrome<\/strong><div class=\"diagnosisicdtext\" style=\"text-indent:0\">354.0:
+        Carpal tunnel syndrome <\/div><ul><li class=\"dxorderssummary\">ANKLE BRACE
+        - <ul>&nbsp; &nbsp; &nbsp; &nbsp; Qty: 1 Unit &nbsp; &nbsp; Refills: 0 &nbsp;
+        &nbsp; Supplier: N\/A <\/ul><l><\/l><\/ul><\/div><br \/><\/div><br \/><span
+        class=\"clinicalsubsubheading\">Return to Office<\/span><br \/><div blockname=\"returntooffice\"
+        class=\"dxheadingsummary\"><span class=\"mediumleftpadding\">None recorded.<\/span><\/div><\/div><\/div><\/div><div
+        class=\"clinicalsummary\" id=\"SUMMARYCONTAINER\" sectionname=\"SignOff\"><div
+        id=\"SUMMARYHEADER\"><span class=\"clinicalsubsubheading\">Encounter Sign-Off<\/span><\/div><div
+        class=\"\" id=\"SUMMARYCONTENT\" sectionname=\"SignOff\"><a id=\"SignOff_Summary\"
+        name=\"SignOff_Summary\"><\/a><div class=\"mediumleftpadding\">Encounter not
+        closed. <\/div><\/div><\/div><\/html>"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/encounters/28302/summary
+  recorded_at: Thu, 05 Jan 2017 14:42:56 GMT
+recorded_with: VCR 3.0.3
