@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/misc/patientlocations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer rtn5e3hahxupud7udrx6tc5s
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 09 Jan 2017 18:47:38 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 2d742f1c-cadd-4600-9dcf-ee12afde14a5
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-123.mashery.com
+      Content-Length:
+      - '139'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"patientlocationid":"2","name":"Office 2"},{"patientlocationid":"1","name":"Office
+        1"},{"patientlocationid":"21","name":"Patient Rm. 1"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/misc/patientlocations
+  recorded_at: Mon, 09 Jan 2017 18:47:39 GMT
+recorded_with: VCR 3.0.3

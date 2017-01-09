@@ -17,5 +17,6 @@ module AthenaHealth
     include Endpoints::InsurancePackages
     include Endpoints::Encounters
     include Endpoints::Configurations
+    include Endpoints::Misc
   end
 end
