@@ -381,7 +381,7 @@ describe AthenaHealth::Endpoints::Patients do
         patient_id: 1,
         params: {
           documentsubclass: 'ADMIN_BILLING',
-          attachmentcontents: File.open('spec/fixtures/file.pdf', 'r')
+          attachmentcontents: 'file.pdf'
         }
       }
     end
