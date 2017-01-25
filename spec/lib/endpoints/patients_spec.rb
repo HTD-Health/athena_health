@@ -628,6 +628,28 @@ describe AthenaHealth::Endpoints::Patients do
             .to eq 'success' => 'true'
       end
     end
+
+    context 'with empty params' do
+      it 'returns success => true' do
+        parameters.merge!({params: {}})
+
+        VCR.use_cassette('update_patient_medications_with_empty_params') do
+          expect(client.update_patient_medications(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'with nomedicationsreported as nil' do
+      it 'returns success => true' do
+        parameters.merge!({params: {nomedicationsreported: nil}})
+
+        VCR.use_cassette('update_patient_medications_with_nil_params') do
+          expect(client.update_patient_medications(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
   end
 
   describe '#patient_allergies' do
@@ -657,11 +679,53 @@ describe AthenaHealth::Endpoints::Patients do
       }
     end
 
+    context 'without any allergies' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: []})
+
+        VCR.use_cassette('update_patient_allergies_with_allergies_empty_parameter') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'without any allergies and with nkda' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: [], params: { nkda: true }})
+
+        VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'without any allergies and with nkda set to false' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: [], params: { nkda: false }})
+
+        VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda_false') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'with empty allergies and empty parameters' do
+      it 'returns success => true' do
+        parameters.merge!(allergies: [], params: {})
+
+        VCR.use_cassette('update_patient_allergies_with_empty_allergies_and_parameters') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
     context 'with extra parameters' do
       it 'returns success => true' do
-        parameters.merge!({params: {
-            nkda: true
-        }})
+        parameters.merge!({params: {nkda: true}})
         VCR.use_cassette('update_patient_allergies_with_extra_parameters') do
           expect(client.update_patient_allergies(parameters))
               .to eq 'success' => 'true'

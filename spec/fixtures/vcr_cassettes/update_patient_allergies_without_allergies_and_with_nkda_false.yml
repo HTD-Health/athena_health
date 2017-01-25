@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=false&departmentid=1&allergies=%5B%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer yvkxjcvz65tdphapu7apbbaa
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Jan 2017 15:41:39 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - b800d7dd-f4f4-450a-89b3-86dc9c5ad3e8
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      Content-Length:
+      - '18'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":"true"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=false&departmentid=1&allergies=%5B%5D
+  recorded_at: Wed, 25 Jan 2017 15:41:40 GMT
+recorded_with: VCR 3.0.3
