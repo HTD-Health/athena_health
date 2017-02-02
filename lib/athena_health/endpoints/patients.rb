@@ -336,6 +336,14 @@ module AthenaHealth
         )
       end
 
+      def update_patient_insurance_card_image(practice_id:, patient_id:, insurance_package_id:, image_in_b64:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_package_id}/image",
+          method: :put,
+          params: params.merge!(image: image_in_b64)
+        )
+      end
+
       def record_payment(practice_id:, department_id:, patient_id:, payment_method:, amount:, params: {})
         @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/recordpayment",

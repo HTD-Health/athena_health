@@ -782,6 +782,24 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#update_patient_insurance_card_image' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        patient_id: 1,
+        insurance_package_id: 21084,
+        image_in_b64: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_insurance_card_image') do
+        expect(client.update_patient_insurance_card_image(parameters))
+          .to eq 'success' => 'true'
+      end
+    end
+  end
+
   describe '#update_patient_photo' do
     let(:parameters) do
       {
