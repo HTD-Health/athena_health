@@ -787,8 +787,8 @@ describe AthenaHealth::Endpoints::Patients do
       {
         practice_id: 195_900,
         patient_id: 1,
-        insurance_package_id: 21084,
-        image_in_b64: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
+        insurance_id: 21084,
+        image: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
       }
     end
 
