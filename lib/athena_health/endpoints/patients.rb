@@ -313,11 +313,12 @@ module AthenaHealth
       end
 
       def create_patient_insurance(practice_id:, patient_id:, insurance_package_id:, sequence_number:, params: {})
-        @api.call(
+        response = @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
           method: :post,
           body: params.merge!(insurancepackageid: insurance_package_id, sequencenumber: sequence_number)
         )
+        Insurance.new(response[0])
       end
 
       def update_patient_insurance(practice_id:, patient_id:, sequence_number:, params: {})
@@ -337,12 +338,11 @@ module AthenaHealth
       end
 
       def update_patient_insurance_card_image(practice_id:, patient_id:, insurance_id:, image:, params: {})
-        response = @api.call(
-          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image",
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image", 
           method: :put,
           params: params.merge!(image: image)
         )
-        Insurance.new(response)
       end
 
       def record_payment(practice_id:, department_id:, patient_id:, payment_method:, amount:, params: {})

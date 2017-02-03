@@ -771,7 +771,7 @@ describe AthenaHealth::Endpoints::Patients do
     it 'returns success => true' do
       VCR.use_cassette('create_patient_insurance') do
         expect(client.create_patient_insurance(parameters))
-          .to eq 'success' => 'true'
+          .to be_an_instance_of AthenaHealth::Insurance
       end
     end
   end
@@ -859,7 +859,7 @@ describe AthenaHealth::Endpoints::Patients do
     it 'returns success => true' do
       VCR.use_cassette('update_patient_insurance_card_image') do
         expect(client.update_patient_insurance_card_image(parameters))
-          .to be_an_instance_of AthenaHealth::Insurance
+          .to eq 'success' => 'true'
       end
     end
   end
