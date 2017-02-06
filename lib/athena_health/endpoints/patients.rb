@@ -341,7 +341,7 @@ module AthenaHealth
         @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image", 
           method: :put,
-          params: params.merge!(image: image)
+          body: {image: image}
         )
       end
 

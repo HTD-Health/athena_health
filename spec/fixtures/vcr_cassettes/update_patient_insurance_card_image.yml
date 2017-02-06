@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/patients/1/insurances/21084/image?image=iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4%2F%2F8%2Fw38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg%3D%3D
+    uri: https://api.athenahealth.com/preview1/195900/patients/1/insurances/21084/image
     body:
       encoding: US-ASCII
-      string: ''
+      string: image=iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
-      - Bearer 3sv74t6cy8cw5ydjtt4nar28
+      - Bearer 83e4hkz49n8dg8zv56s8pcnn
       Expect:
       - ''
   response:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 02 Feb 2017 10:28:29 GMT
+      - Mon, 06 Feb 2017 12:51:15 GMT
       Expires:
       - Mon, 06 Jan 1975 16:00:00 GMT
       nnCoection:
@@ -35,9 +35,9 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 3c33633d-a163-4c1f-9429-b69b7bab2f2a
+      - 7414cb5b-6674-45b5-b04b-ea62ad4fdfcb
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
+      - prod-j-worker-us-east-1d-122.mashery.com
       Content-Length:
       - '18'
       Connection:
@@ -47,6 +47,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/insurances/21084/image?image=iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4%2F%2F8%2Fw38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg%3D%3D
-  recorded_at: Thu, 02 Feb 2017 10:28:29 GMT
+      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/insurances/21084/image
+  recorded_at: Mon, 06 Feb 2017 12:51:16 GMT
 recorded_with: VCR 3.0.3
