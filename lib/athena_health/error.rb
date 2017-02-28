@@ -17,6 +17,7 @@ module AthenaHealth
 
     def initialize(details)
       @details = details
+      super(details)
     end
   end
 
