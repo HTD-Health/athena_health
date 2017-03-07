@@ -10,6 +10,16 @@ module AthenaHealth
 
         InsurancePackageCollection.new(response)
       end
+
+      def common_insurance_packages(practice_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/misc/commoninsurancepackages",
+          method: :get,
+          params: params
+        )
+
+        InsurancePackageCollection.new(response)
+      end
     end
   end
 end
