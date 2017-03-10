@@ -17,6 +17,10 @@ For some examples of how to use this library, check out [the project wiki](https
  - Check out the repository
  - Ensure you have Ruby and the Bundler gem installed
  - Install the gem dependencies with `bundle`
+ - Setup Environment Variables before testing new endpoints, you'll need the following:
+  - ATHENA_TEST_KEY
+  - ATHENA_TEST_SECRET
+  - ATHENA_TEST_ACCESS_TOKEN
 
 #### Testing
 
