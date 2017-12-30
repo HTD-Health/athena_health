@@ -50,7 +50,7 @@ module AthenaHealth
       end
 
       if response.response_code != 200
-        AthenaHealth::Error.new(code: response.response_code).render
+        AthenaHealth::Error.new(code: response.response_code, message: json_response(body)).render
       end
 
       json_response(body)
