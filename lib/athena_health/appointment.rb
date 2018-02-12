@@ -5,6 +5,7 @@ module AthenaHealth
     attribute :appointmentstatus,           String
     attribute :appointmenttype,             String
     attribute :appointmenttypeid,           Integer
+    attribute :reasonid,                    Array
     attribute :cancelleddatetime,           String
     attribute :cancelreasonname,            String
     attribute :cancelreasonnoshow,          Boolean
