@@ -22,7 +22,6 @@ describe AthenaHealth::AppointmentWaitlist do
   it_behaves_like 'a model'
 
   it 'have proper attributes' do
-    p subject
     expect(subject).to have_attributes(
                           allowanydepartment: true,
                           appointmentid: 663560,

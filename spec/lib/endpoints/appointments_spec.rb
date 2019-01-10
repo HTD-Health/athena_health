@@ -474,6 +474,7 @@ describe AthenaHealth::Endpoints::Appointments do
           }
         }
       end
+
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('create_appointment_slot_no_department_id_or_patient_id') do
           expect { client.create_appointment_waitlist(attributes) }.to raise_error { |error|
