@@ -394,6 +394,24 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#update_patient_drivers_license' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        patient_id: 1,
+        department_id: 1,
+        image: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
+      }
+    end
+
+    it 'returns success' do
+      VCR.use_cassette('update_patient_drivers_license') do
+        expect(client.update_patient_drivers_license(attributes))
+          .to eq('success' => true)
+      end
+    end
+  end
+
   describe '#patient_default_pharmacy' do
     let(:attributes) do
       {

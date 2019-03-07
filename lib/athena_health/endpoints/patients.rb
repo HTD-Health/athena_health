@@ -374,6 +374,14 @@ module AthenaHealth
           body: params.merge!(image: image)
         )
       end
+
+      def update_patient_drivers_license(practice_id:, patient_id:, department_id:, image:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/driverslicense",
+          method: :post,
+          body: params.merge!(departmentid: department_id, image: image)
+        )
+      end
     end
   end
 end
