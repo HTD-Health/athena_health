@@ -1,0 +1,55 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.athenahealth.com/preview1/195900/patients/1/driverslicense
+      body:
+        encoding: US-ASCII
+        string: departmentid=1&image=iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==
+      headers:
+        User-Agent:
+          - Typhoeus - https://github.com/typhoeus/typhoeus
+        Authorization:
+          - Bearer coolkey
+        Expect:
+          - ""
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Cache-Control:
+          - no-cache, no-store
+        Cneonction:
+          - close
+        Content-Type:
+          - application/json; charset=UTF-8
+        Date:
+          - Thu, 07 Mar 2019 19:20:50 GMT
+        Expires:
+          - Mon, 06 Jan 1975 16:00:00 GMT
+        Pragma:
+          - No-cache
+        Server:
+          - Apache
+        Set-Cookie:
+          - dtCookie=10476DA186B19FF96431CD0C02F8E0FF|RUM+Default+Application|1; Path=/;
+            Domain=.athenahealth.com
+        Vary:
+          - Accept-Encoding
+        X-Mashery-Message-ID:
+          - cf2fb9e8-5418-4d70-9917-631b46c9c529
+        X-Mashery-Responder:
+          - prod-j-worker-us-east-1e-67.mashery.com
+        Content-Length:
+          - "16"
+        Connection:
+          - keep-alive
+      body:
+        encoding: UTF-8
+        string: '{"success":true}'
+      http_version: "1.1"
+      adapter_metadata:
+        effective_url: https://api.athenahealth.com/preview1/195900/patients/1/driverslicense
+    recorded_at: Thu, 07 Mar 2019 19:20:50 GMT
+recorded_with: VCR 3.0.3
