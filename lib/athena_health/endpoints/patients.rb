@@ -278,6 +278,14 @@ module AthenaHealth
         )
       end
 
+      def update_patient_medications(practice_id:, department_id:, patient_id:, params: {})
+        response = @api.call(
+            endpoint: "#{practice_id}/chart/#{patient_id}/medications",
+            method: :put,
+            body: params.merge!(departmentid: department_id)
+        )
+      end
+
       def patient_allergies(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/allergies",
@@ -288,11 +296,11 @@ module AthenaHealth
         UserAllergyCollection.new(response)
       end
 
-      def update_patient_allergies(practice_id:, department_id:, patient_id:, allergies:)
+      def update_patient_allergies(practice_id:, department_id:, patient_id:, allergies:, params: {})
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/allergies",
           method: :put,
-          params: { departmentid: department_id, allergies: allergies.to_json }
+          params: params.merge!(departmentid: department_id, allergies: allergies.to_json)
         )
       end
 
@@ -305,11 +313,12 @@ module AthenaHealth
       end
 
       def create_patient_insurance(practice_id:, patient_id:, insurance_package_id:, sequence_number:, params: {})
-        @api.call(
+        response = @api.call(
           endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
           method: :post,
           body: params.merge!(insurancepackageid: insurance_package_id, sequencenumber: sequence_number)
         )
+        Insurance.new(response[0])
       end
 
       def update_patient_insurance(practice_id:, patient_id:, sequence_number:, params: {})
@@ -325,6 +334,14 @@ module AthenaHealth
           endpoint: "#{practice_id}/patients/#{patient_id}/insurances",
           method: :delete,
           params: params.merge!(sequencenumber: sequence_number)
+        )
+      end
+
+      def update_patient_insurance_card_image(practice_id:, patient_id:, insurance_id:, image:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image", 
+          method: :put,
+          body: {image: image}
         )
       end
 

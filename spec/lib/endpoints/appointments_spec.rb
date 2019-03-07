@@ -435,4 +435,56 @@ describe AthenaHealth::Endpoints::Appointments do
       end
     end
   end
+
+  describe '#create_appointment_waitlist' do
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          params: {
+            dayofweekids: [1, 3, 5],
+            departmentid: 1,
+            hourfrom: 8,
+            hourto: 11,
+            note: 'I am asking for several calls, I have a hearing problem.',
+            priority: 'NORMAL',
+            patientid: 7
+          }
+        }
+      end
+
+      it 'returns a newly created waitlist id' do
+        VCR.use_cassette('create_appointment_waitlist') do
+          expect(client.create_appointment_waitlist(attributes))
+            .to be_an_instance_of Hash
+        end
+      end
+    end
+
+    context 'with no department id or patient id' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          params: {
+            dayofweekids: [1, 3, 5],
+            hourfrom: 8,
+            hourto: 11,
+            note: 'I am asking for several calls, I have a hearing problem.',
+            priority: 'NORMAL',
+          }
+        }
+      end
+
+      it 'raise AthenaHealth::ValidationError error' do
+        VCR.use_cassette('create_appointment_slot_no_department_id_or_patient_id') do
+          expect { client.create_appointment_waitlist(attributes) }.to raise_error { |error|
+            expect(error.details).to eq(
+              'missingfields' => %w[patientid departmentid],
+              'error' => 'Additional fields are required.'
+            )
+          }
+        end
+      end
+    end
+  end
 end

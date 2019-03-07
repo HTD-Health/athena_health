@@ -236,6 +236,14 @@ module AthenaHealth
 
         AppointmentCollection.new(response)
       end
+
+      def create_appointment_waitlist(practice_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/appointments/waitlist",
+          method: :post,
+          body: params
+        )
+      end
     end
   end
 end

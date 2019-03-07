@@ -29,6 +29,14 @@ module AthenaHealth
 
         Order.new(response)
       end
+
+      def encounter_summary(practice_id:, encounter_id:)
+        response = @api.call(
+          endpoint:  "#{practice_id}/chart/encounters/#{encounter_id}/summary",
+          method: :get
+        )
+        EncounterSummary.new(response)
+      end
     end
   end
 end

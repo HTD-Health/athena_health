@@ -381,7 +381,7 @@ describe AthenaHealth::Endpoints::Patients do
         patient_id: 1,
         params: {
           documentsubclass: 'ADMIN_BILLING',
-          attachmentcontents: File.open('spec/fixtures/file.pdf', 'r')
+          attachmentcontents: 'file.pdf'
         }
       }
     end
@@ -610,6 +610,48 @@ describe AthenaHealth::Endpoints::Patients do
     end
   end
 
+  describe '#update_patient_medications' do
+    let(:parameters) do
+      {
+          practice_id: 195_900,
+          department_id: 1,
+          patient_id: 1,
+          params: {
+              nomedicationsreported: false
+          }
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_medications') do
+        expect(client.update_patient_medications(parameters))
+            .to eq 'success' => 'true'
+      end
+    end
+
+    context 'with empty params' do
+      it 'returns success => true' do
+        parameters.merge!({params: {}})
+
+        VCR.use_cassette('update_patient_medications_with_empty_params') do
+          expect(client.update_patient_medications(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'with nomedicationsreported as nil' do
+      it 'returns success => true' do
+        parameters.merge!({params: {nomedicationsreported: nil}})
+
+        VCR.use_cassette('update_patient_medications_with_nil_params') do
+          expect(client.update_patient_medications(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+  end
+
   describe '#patient_allergies' do
     let(:parameters) do
       {
@@ -635,6 +677,60 @@ describe AthenaHealth::Endpoints::Patients do
         patient_id: 1,
         allergies: [{ allergenid: 24_640, allergenname: 'Aspercreme with Aloe' }]
       }
+    end
+
+    context 'without any allergies' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: []})
+
+        VCR.use_cassette('update_patient_allergies_with_allergies_empty_parameter') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'without any allergies and with nkda' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: [], params: { nkda: true }})
+
+        VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'without any allergies and with nkda set to false' do
+      it 'returns success => true' do
+        parameters.merge!({allergies: [], params: { nkda: false }})
+
+        VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda_false') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'with empty allergies and empty parameters' do
+      it 'returns success => true' do
+        parameters.merge!(allergies: [], params: {})
+
+        VCR.use_cassette('update_patient_allergies_with_empty_allergies_and_parameters') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
+    end
+
+    context 'with extra parameters' do
+      it 'returns success => true' do
+        parameters.merge!({params: {nkda: true}})
+        VCR.use_cassette('update_patient_allergies_with_extra_parameters') do
+          expect(client.update_patient_allergies(parameters))
+              .to eq 'success' => 'true'
+        end
+      end
     end
 
     it 'returns success => true' do
@@ -675,7 +771,7 @@ describe AthenaHealth::Endpoints::Patients do
     it 'returns success => true' do
       VCR.use_cassette('create_patient_insurance') do
         expect(client.create_patient_insurance(parameters))
-          .to eq 'success' => 'true'
+          .to be_an_instance_of AthenaHealth::Insurance
       end
     end
   end
@@ -746,6 +842,24 @@ describe AthenaHealth::Endpoints::Patients do
       VCR.use_cassette('patient_insurances') do
         expect(client.patient_insurances(parameters))
           .to be_an_instance_of AthenaHealth::InsuranceCollection
+      end
+    end
+  end
+
+  describe '#update_patient_insurance_card_image' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        patient_id: 1,
+        insurance_id: 21084,
+        image: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
+      }
+    end
+
+    it 'returns success => true' do
+      VCR.use_cassette('update_patient_insurance_card_image') do
+        expect(client.update_patient_insurance_card_image(parameters))
+          .to eq 'success' => 'true'
       end
     end
   end

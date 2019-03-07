@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/misc/commoninsurancepackages?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Mar 2017 13:35:13 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 7d7105b1-afde-4827-9c4d-55d731f55ea6
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      Content-Length:
+      - '196'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"insurancepackages":[{"state":"KY","insurancepackageid":"31724","city":"LEXINGTON","address":"PO
+        BOX 14601","name":"HUMANA (PPO) [31724] ","phone":"(800) 558-4444","zip":"40512"}],"totalcount":1}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/misc/commoninsurancepackages?departmentid=1
+  recorded_at: Mon, 06 Mar 2017 13:35:13 GMT
+recorded_with: VCR 3.0.3
