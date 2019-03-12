@@ -70,4 +70,20 @@ describe AthenaHealth::Endpoints::Configurations do
       end
     end
   end
+
+  describe '#all_order_types' do
+    let(:parameters) do
+      {
+        practice_id: 195_900,
+        search_value: 'HIV'
+      }
+    end
+
+    it 'returns array of Allergy instances' do
+      VCR.use_cassette('all_order_types') do
+        order_types = client.all_order_types(parameters)
+        expect(order_types.map(&:class).uniq).to eq [AthenaHealth::OrderType]
+      end
+    end
+  end
 end

@@ -37,6 +37,14 @@ module AthenaHealth
         )
         EncounterSummary.new(response)
       end
+
+      def create_encounter_order_lab(practice_id:, encounter_id:, body: {})
+        @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/orders/lab",
+          method: :post,
+          body: body
+        )
+      end
     end
   end
 end

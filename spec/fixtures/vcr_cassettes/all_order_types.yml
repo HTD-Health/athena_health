@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/oauthpreview/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 11 Mar 2019 17:52:59 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-55.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"kcvgtsukxwquyufczy8b9wds","token_type":"bearer","expires_in":3600,"refresh_token":"bzbwxynf4z8rkdn5rehjqp5a"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/oauthpreview/token
+  recorded_at: Mon, 11 Mar 2019 17:52:59 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/reference/order/lab?searchvalue=HIV
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer kcvgtsukxwquyufczy8b9wds
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 11 Mar 2019 17:52:59 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=55A1A5A444BE31A58F399639F24A74C3|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 51e6cf5a-d4dd-4e4d-9922-728f05ef10d4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-59.mashery.com
+      Content-Length:
+      - '1437'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"ordertypeid":342158,"name":"HIV (1+2) Ab screen, serum"},{"ordertypeid":342102,"name":"HIV
+        (1+2) antibodies, EIA, serum, reflex HIV-1 western blot (WB)"},{"ordertypeid":350016,"name":"HIV
+        1+2 AB + HIV 1 p24 Ag, qualitative immunoassay, serum"},{"ordertypeid":351266,"name":"HIV
+        1+2 Ab + HIV1 p24 Ag, quantitative immunoassay, serum"},{"ordertypeid":342077,"name":"HIV-1
+        RNA, quantitative, PCR, serum or plasma"},{"ordertypeid":345401,"name":"HIV-1
+        Ab, serum"},{"ordertypeid":342250,"name":"HIV (1+O+2) Ab, serum"},{"ordertypeid":347279,"name":"HIV
+        (1+2) Ab, rapid, unspecified specimen"},{"ordertypeid":342085,"name":"HIV-1
+        Ab, rapid, serum\/plasma\/blood"},{"ordertypeid":351269,"name":"HIV 1 RNA,
+        viral load PCR detection limit = 50 copies\/mL, serum"},{"ordertypeid":342150,"name":"HIV-1
+        Ab screen, serum"},{"ordertypeid":345433,"name":"HIV (1+2) Ab, western blot,
+        serum"},{"ordertypeid":344511,"name":"HIV (1+2) Ab, serum (donor)"},{"ordertypeid":349916,"name":"HIV
+        1+O+2 Ab, quantitative, serum"},{"ordertypeid":347166,"name":"HIV-1, genotype
+        (genosure), plasma"},{"ordertypeid":353668,"name":"HIV (1+2) differentiation,
+        rapid immunoassay, serum"},{"ordertypeid":350085,"name":"HIV-1 RNA, quantitative,
+        plasma"},{"ordertypeid":342099,"name":"HIV-1 RNA genotype, PCR, serum or plasma"},{"ordertypeid":390419,"name":"obstetric
+        screen + HIV, serum or blood"},{"ordertypeid":354524,"name":"HIV (1+2) Ab,
+        qual, unspecified specimen"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/reference/order/lab?searchvalue=HIV
+  recorded_at: Mon, 11 Mar 2019 17:52:59 GMT
+recorded_with: VCR 3.0.3
