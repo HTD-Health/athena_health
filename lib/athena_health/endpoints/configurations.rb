@@ -52,7 +52,7 @@ module AthenaHealth
           params: { searchvalue: search_value }
         )
 
-        response.map {|ordertype| AthenaHealth::OrderType.new(ordertype) }
+        response.map { |ordertype| AthenaHealth::OrderType.new(ordertype) }
       end
     end
   end
