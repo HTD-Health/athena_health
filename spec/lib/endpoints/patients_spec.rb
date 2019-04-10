@@ -880,4 +880,58 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#create_patient_case' do
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          patient_id: 2,
+          params: {
+            documentsource: 'PATIENT',
+            documentsubclass: 'PATIENTCASE',
+            outboundonly: true,
+            providerid: 71,
+            departmentid: 1
+          }
+        }
+      end
+
+      it 'returns Hash with patientcaseid and success => true' do
+        VCR.use_cassette('create_patient_case') do
+          response = client.create_patient_case(attributes)
+          expect(response['success']).to eq true
+          expect(response.key?('patientcaseid')).to eq true
+        end
+      end
+    end
+
+    context 'with wrong documentsource or documentsubclass' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          patient_id: 2,
+          params: {
+            documentsource: 'patient',
+            documentsubclass: 'PATIENTCASE',
+            outboundonly: true,
+            providerid: 71,
+            departmentid: 1
+          }
+        }
+      end
+
+      it 'returns Hash with error information' do
+        VCR.use_cassette('create_patient_case_wrong_source') do
+          expect { client.create_patient_case(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              'detailedmessage' => "The value 'patient' did not match any of the enum values for SOURCE",
+              'error' => 'The data provided is invalid.'
+            )
+          }
+        end
+      end
+    end
+  end
 end

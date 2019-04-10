@@ -374,6 +374,14 @@ module AthenaHealth
           body: params.merge!(image: image)
         )
       end
+
+      def create_patient_case(practice_id:, patient_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/patientcase",
+          method: :post,
+          body: params
+        )
+      end
     end
   end
 end

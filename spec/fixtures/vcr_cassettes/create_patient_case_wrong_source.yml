@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/patients/2/documents/patientcase
+    body:
+      encoding: US-ASCII
+      string: documentsource=patient&documentsubclass=PATIENTCASE&outboundonly=true&providerid=71&departmentid=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+      Expect:
+      - ''
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 09:26:38 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=22B0360F4A5F2FDD8033C46E2C32F8A1|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 2aa58fb5-7e7d-494e-a4b3-b3cd56b50a3d
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-60.mashery.com
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+
+        {"detailedmessage":"The value 'patient' did not match any of the enum values for SOURCE","error":"The data provided is invalid."}
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/patients/2/documents/patientcase
+  recorded_at: Wed, 10 Apr 2019 09:26:38 GMT
+recorded_with: VCR 3.0.3

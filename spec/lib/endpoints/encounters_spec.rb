@@ -133,4 +133,70 @@ describe AthenaHealth::Endpoints::Encounters do
       end
     end
   end
+
+  describe '#create_order_group' do
+    let(:attributes) do
+      {
+        practice_id: 195_900,
+        patient_id: 2,
+        body: {
+          patientcaseid: 173696,
+          departmentid: 1
+        }
+      }
+    end
+
+    it 'returns Hash with encounterid and success => true' do
+      VCR.use_cassette('create_order_group') do
+        response = client.create_order_group(attributes)
+        expect(response['success']).to eq true
+        expect(response.key?('encounterid')).to eq true
+      end
+    end
+  end
+
+  describe '#create_encounter_diagnoses' do
+    context 'with correct data' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          encounter_id: 35840,
+          body: {
+            snomedcode: 174041007
+          }
+        }
+      end
+
+      it 'returns Hash with success => true' do
+        VCR.use_cassette('create_encounter_diagnoses') do
+          expect(client.create_encounter_diagnoses(attributes))
+            .to include('success' => true)
+        end
+      end
+    end
+
+    context 'with wrong snomedcode' do
+      let(:attributes) do
+        {
+          practice_id: 195_900,
+          encounter_id: 35840,
+          body: {
+            snomedcode: 77777777777
+          }
+        }
+      end
+
+      it 'returns Hash with error information' do
+        VCR.use_cassette('create_encounter_diagnoses_wrong_snomed_code') do
+          expect { client.create_encounter_diagnoses(attributes) }.to raise_error { |error|
+            expect(error).to be_a(AthenaHealth::ValidationError)
+            expect(error.details).to eq(
+              'detailedmessage' => 'SNOMED code not valid.',
+              'error' => 'The data provided is invalid.'
+            )
+          }
+        end
+      end
+    end
+  end
 end
