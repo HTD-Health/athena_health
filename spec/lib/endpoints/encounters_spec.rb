@@ -191,9 +191,9 @@ describe AthenaHealth::Endpoints::Encounters do
           expect { client.create_encounter_diagnoses(attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
-                                       'detailedmessage' => 'SNOMED code not valid.',
-                                       'error' => 'The data provided is invalid.'
-                                     )
+              'detailedmessage' => 'SNOMED code not valid.',
+              'error' => 'The data provided is invalid.'
+            )
           }
         end
       end
