@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/chart/2/ordergroups
+    body:
+      encoding: US-ASCII
+      string: patientcaseid=173696&departmentid=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer test_access_token
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 10 Apr 2019 09:35:36 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=1AC86C2715C65D9E85DB2423F72D24E0|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 5c26e825-9f3a-4452-9e44-44920c9fb756
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-67.mashery.com
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"encounterid":35840}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/2/ordergroups
+  recorded_at: Wed, 10 Apr 2019 09:35:36 GMT
+recorded_with: VCR 3.0.3
