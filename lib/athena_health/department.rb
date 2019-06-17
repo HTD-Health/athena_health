@@ -19,6 +19,7 @@ module AthenaHealth
     attribute :longitude,                    Float
     attribute :clinicals,                    String
     attribute :timezone,                     Fixnum
+    attribute :timezonename,                 String
     attribute :patientdepartmentname,        String
     attribute :name,                         String
     attribute :placeofservicetypename,       String
