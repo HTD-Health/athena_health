@@ -2,7 +2,7 @@ module AthenaHealth
   class Department < BaseModel
     attribute :creditcardtypes,              Array
     attribute :medicationhistoryconsent,     Boolean
-    attribute :timezoneoffset,               Fixnum
+    attribute :timezoneoffset,               Integer
     attribute :providergroupid,              Integer
     attribute :singleappointmentcontractmax, Integer
     attribute :state,                        String
@@ -18,7 +18,7 @@ module AthenaHealth
     attribute :placeofservicetypeid,         Integer
     attribute :longitude,                    Float
     attribute :clinicals,                    String
-    attribute :timezone,                     Fixnum
+    attribute :timezone,                     Integer
     attribute :patientdepartmentname,        String
     attribute :name,                         String
     attribute :placeofservicetypename,       String
