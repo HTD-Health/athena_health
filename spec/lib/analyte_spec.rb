@@ -27,7 +27,6 @@ describe AthenaHealth::Analyte do
       value: '80',
       analytename: 'HDL',
       analyteid: 402,
-      analytedate: '06\/18\/2010',
       loinc: 'Logical observations',
       units: 'units',
       analytedate: '06\/18\/2010',
