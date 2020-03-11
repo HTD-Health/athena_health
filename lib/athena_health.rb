@@ -12,6 +12,7 @@ require 'athena_health/endpoints/providers'
 require 'athena_health/endpoints/insurance_packages'
 require 'athena_health/endpoints/encounters'
 require 'athena_health/endpoints/configurations'
+require 'athena_health/endpoints/subscriptions'
 require 'athena_health/client'
 require 'athena_health/base_collection'
 require 'athena_health/base_model'
@@ -73,6 +74,7 @@ require 'athena_health/user_medication_event'
 require 'athena_health/user_medication_sig'
 require 'athena_health/user_medication'
 require 'athena_health/user_medication_collection'
+require 'athena_health/subscription'
 
 module AthenaHealth
 end
