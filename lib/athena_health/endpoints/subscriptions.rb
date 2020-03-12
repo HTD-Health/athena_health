@@ -39,6 +39,18 @@ module AthenaHealth
           path: 'prescriptions',
           name: 'prescription',
           plural_name: 'prescriptions'
+        },
+        {
+          collection_class: 'UserMedicationCollection',
+          path: 'chart/healthhistory/medication',
+          name: 'patient_medication',
+          plural_name: 'patient_medications'
+        },
+        {
+          collection_class: 'PrescriptionCollection',
+          path: 'prescriptions',
+          name: 'prescription',
+          plural_name: 'prescriptions'
         }
       ].freeze
 

@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer agruf6yb65s3w85h8x45xujx
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 12 Mar 2020 15:00:15 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=271319F529B7C5071278B96AEEA34876|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 6e6d9a24-0b10-4ff9-a079-b48b2076cb44
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-69.mashery.com
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":true}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed/subscription
+  recorded_at: Thu, 12 Mar 2020 15:00:14 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/123456/chart/healthhistory/medication/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer agruf6yb65s3w85h8x45xujx
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 12 Mar 2020 15:01:10 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=F8BA22CD9B4A5E1ACAE573819D1F54D2|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 0e4e7538-8404-4971-92da-a301f62d6fe8
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-69.mashery.com
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"INACTIVE","subscriptions":[]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/123456/chart/healthhistory/medication/changed/subscription
+  recorded_at: Thu, 12 Mar 2020 15:01:10 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer agruf6yb65s3w85h8x45xujx
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 12 Mar 2020 15:05:33 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=3477CA1E2C9360FF7D26752B7C5DDAD6|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - d674b972-088e-491e-ab8b-b7f636e55ecb
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-71.mashery.com
+      Content-Length:
+      - '33'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"medications":[],"totalcount":0}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed?departmentid=1
+  recorded_at: Thu, 12 Mar 2020 15:05:33 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer agruf6yb65s3w85h8x45xujx
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 12 Mar 2020 15:05:34 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=53320BBFC9788D48A2C264CCCC3F8E10|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 85a1690f-8779-44e8-83db-48007c38d9fd
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-61.mashery.com
+      Content-Length:
+      - '139'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"ACTIVE","subscriptions":[{"eventname":"MedicationHxAdd"},{"eventname":"MedicationHxUpdate"},{"eventname":"MedicationHxDelete"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/medication/changed/subscription
+  recorded_at: Thu, 12 Mar 2020 15:05:33 GMT
+recorded_with: VCR 3.0.3
