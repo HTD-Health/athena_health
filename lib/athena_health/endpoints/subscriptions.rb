@@ -51,6 +51,12 @@ module AthenaHealth
           path: 'prescriptions',
           name: 'prescription',
           plural_name: 'prescriptions'
+        },
+        {
+          collection_class: 'Claim::ClaimCollection',
+          path: 'claims',
+          name: 'claim',
+          plural_name: 'claims'
         }
       ].freeze
 
