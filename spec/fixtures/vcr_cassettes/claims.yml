@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/claims/301
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer fqeujzxvkqmac8637zr2djpb
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 12 Mar 2020 20:52:12 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      nnCoection:
+      - close
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=9E052243443A9BADCBCEFB317031CFB9|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - cbd4ab4f-ae0f-46ba-8b33-1d4e2c572006
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-61.mashery.com
+      Content-Length:
+      - '868'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"procedures":[{"chargeamount":"225","proceduredescription":"INITIAL
+        OFFICE VISIT LIMITED","transactionid":"2801","procedurecode":"99202"}],"claimcreateddate":"06\/22\/2016","transactiondetails":{"2801":"225"},"patientpayer":{"status":"CLOSED"},"billedproviderid":27,"claimid":"301","primaryinsurancepayer":{"primarypatientinsuranceid":1442,"status":"CLOSED"},"billedservicedate":"06\/22\/2016","departmentid":1,"diagnoses":[{"diagnosiscategory":"SYMPTOMS
+        AND SIGNS INVOLVING THE DIGESTIVE SYSTEM AND ABDOMEN (R10-R19)","diagnosisid":"728","diagnosisrawcode":"R10.13","diagnosiscodeset":"ICD10","diagnosisdescription":"Epigastric
+        pain","deleteddiagnosis":"false"}],"patientid":1,"secondaryinsurancepayer":{"secondarypatientinsuranceid":1562,"status":"CLOSED","note":"The
+        ''Current illness date'' has been set to 06\/22\/2016 based on the earliest
+        charge on the claim."}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/claims/301
+  recorded_at: Thu, 12 Mar 2020 20:52:11 GMT
+recorded_with: VCR 3.0.3
