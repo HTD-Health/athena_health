@@ -2,44 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 16 Feb 2016 12:43:23 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-106.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 16 Feb 2016 12:43:24 GMT
-- request:
-    method: post
-    uri: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -47,108 +10,7 @@ http_interactions:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
-      - Bearer test_access_token
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-cache, no-store
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 21 Jul 2016 16:38:06 GMT
-      Expires:
-      - Mon, 06 Jan 1975 16:00:00 GMT
-      nnCoection:
-      - close
-      Pragma:
-      - No-cache
-      Server:
-      - Apache
-      Vary:
-      - Accept-Encoding
-      X-Mashery-Message-ID:
-      - 9a7e7c5a-7508-4516-a78f-8bfa20fd745e
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-107.mashery.com
-      Content-Length:
-      - '18'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"success":"true"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
-  recorded_at: Thu, 21 Jul 2016 16:38:06 GMT
-- request:
-    method: get
-    uri: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 4af7sdzwrrck2et6j8rqs9sj
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-cache, no-store
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 11 Mar 2020 15:05:48 GMT
-      Expires:
-      - Mon, 06 Jan 1975 16:00:00 GMT
-      nnCoection:
-      - close
-      Pragma:
-      - No-cache
-      Server:
-      - Apache
-      Set-Cookie:
-      - dtCookie=B590F45CB6F648499E049DB523E99966|RUM+Default+Application|1; Path=/;
-        Domain=.athenahealth.com
-      Vary:
-      - Accept-Encoding
-      X-Mashery-Message-ID:
-      - 7089fb64-fdb5-4cc1-8903-5a845ac97318
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-58.mashery.com
-      Content-Length:
-      - '329'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"status":"ACTIVE","subscriptions":[{"eventname":"ScheduleAppointment"},{"eventname":"CheckIn"},{"eventname":"CheckOut"},{"eventname":"UpdateAppointment"},{"eventname":"CancelAppointment"},{"eventname":"FreezeAppointment"},{"eventname":"UnfreezeAppointment"},{"eventname":"DeleteAppointment"},{"eventname":"AddAppointmentSlot"}]}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
-  recorded_at: Wed, 11 Mar 2020 15:05:45 GMT
-- request:
-    method: get
-    uri: https://api.athenahealth.com/preview1/123/appointments/changed/subscription
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 4af7sdzwrrck2et6j8rqs9sj
+      - Bearer 6rq3c4my7v96e6m9wz93eknz
       Expect:
       - ''
   response:
@@ -163,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 11 Mar 2020 15:23:37 GMT
+      - Wed, 11 Mar 2020 23:54:35 GMT
       Expires:
       - Mon, 06 Jan 1975 16:00:00 GMT
       Pragma:
@@ -171,14 +33,170 @@ http_interactions:
       Server:
       - Apache
       Set-Cookie:
-      - dtCookie=76468D4A7881B862DA583E9BAF83F3CB|RUM+Default+Application|1; Path=/;
+      - dtCookie=E7ED04DF8AB8437677A8A006DF61F8C9|RUM+Default+Application|1; Path=/;
         Domain=.athenahealth.com
       Vary:
       - Accept-Encoding
       X-Mashery-Message-ID:
-      - 5525a45b-3820-4dcb-8043-c70995a7e4a2
+      - 7e254a92-e551-48f2-8303-3fe5f3fe5389
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-71.mashery.com
+      - prod-j-worker-us-east-1e-66.mashery.com
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"success":true}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+  recorded_at: Wed, 11 Mar 2020 23:54:34 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed?departmentid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 6rq3c4my7v96e6m9wz93eknz
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 11 Mar 2020 23:54:35 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=CB435ADD16DC0EB37EDD306FD2E74447|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - defaad27-ba65-4d38-b260-b01e93216b4f
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-62.mashery.com
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"totalcount":0,"allergies":[]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed?departmentid=1
+  recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 6rq3c4my7v96e6m9wz93eknz
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 11 Mar 2020 23:54:36 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=649D5F036DBAE4164A3B5FF154F6DBC4|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 1929eedf-4bd1-4735-a332-727194ad80f3
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-58.mashery.com
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"ACTIVE","subscriptions":[{"eventname":"AllergyUpdate"},{"eventname":"AllergyAdd"}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+  recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/123456/chart/healthhistory/allergies/changed/subscription
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 6rq3c4my7v96e6m9wz93eknz
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 11 Mar 2020 23:54:36 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=E5D18671DA622E6BC6B96C12064DAC1A|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - 896f5179-fdef-498d-b815-240cd4933467
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-69.mashery.com
       Content-Length:
       - '40'
       Connection:
@@ -188,6 +206,6 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123/appointments/changed/subscription
-  recorded_at: Wed, 11 Mar 2020 15:23:35 GMT
-recorded_with: VCR 3.0.1
+      effective_url: https://api.athenahealth.com/preview1/123456/chart/healthhistory/allergies/changed/subscription
+  recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
+recorded_with: VCR 3.0.3
