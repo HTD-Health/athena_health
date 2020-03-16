@@ -1,3 +1,3 @@
 module AthenaHealth
-  VERSION = '1.0.50'.freeze
+  VERSION = '1.0.51'.freeze
 end
