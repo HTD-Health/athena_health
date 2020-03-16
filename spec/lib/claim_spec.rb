@@ -30,9 +30,29 @@ describe AthenaHealth::Claim::Claim do
   it_behaves_like 'a model'
 
   it 'have proper attributes' do
-    pp subject
     expect(subject).to have_attributes(
-      claimid: 301
+      claimid: 301,
+    )
+    expect(subject.secondaryinsurancepayer).to have_attributes(
+      patientinsuranceid: 1562,
+      status: 'CLOSED'
+    )
+    expect(subject.primaryinsurancepayer).to have_attributes(
+      patientinsuranceid: 1442,
+      status: 'CLOSED'
+    )
+    expect(subject.patientpayer).to have_attributes(
+      patientinsuranceid: nil,
+      status: 'CLOSED'
+    )
+    expect(subject.diagnoses.first).to have_attributes(
+      diagnosisid: 728,
+    )
+    expect(subject.procedures.first).to have_attributes(
+      procedurecode: '99202',
+    )
+    expect(subject.transactiondetails['2801']).to eq(
+      '225'
     )
   end
 end
