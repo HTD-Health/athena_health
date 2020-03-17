@@ -1,0 +1,62 @@
+---
+- request:
+    method: get
+    uri: https://api.athenahealth.com/preview1/195900/customfields
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer z9ej66a2jeccpnr35bnbqy4c
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Cneonction:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 16 Mar 2020 15:17:53 GMT
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Pragma:
+      - No-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dtCookie=98223001917C6B6FD09C48A03603F239|RUM+Default+Application|1; Path=/;
+        Domain=.athenahealth.com
+      Vary:
+      - Accept-Encoding
+      X-Mashery-Message-ID:
+      - b2a733ef-f94a-4a57-a6ea-30b0ae8752a8
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-55.mashery.com
+      Content-Length:
+      - '1817'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"customfieldid":"323","disallowupdate":false,"ordering":"2","select":false,"casesensitive":false,"name":"Baystate
+        Patient","type":"TEXT"},{"customfieldid":"304","disallowupdate":true,"select":false,"casesensitive":false,"name":"AAM
+        CSC Test MRN","searchable":true,"length":"100","type":"TEXT"},{"customfieldid":"141","disallowupdate":false,"select":false,"casesensitive":false,"name":"Admitted","searchable":true,"type":"TEXT"},{"customfieldid":"222","disallowupdate":false,"select":false,"casesensitive":false,"name":"CCM
+        Enabled","type":"TEXT"},{"customfieldid":"223","disallowupdate":false,"select":true,"casesensitive":false,"name":"CCM
+        Enabled TEST","type":"DATE"},{"customfieldid":"263","disallowupdate":false,"select":false,"casesensitive":false,"name":"David_test","searchable":true,"type":"TEXT"},{"selectlist":[{"optionvalue":"Yes","optionid":"63"}],"customfieldid":"203","disallowupdate":false,"select":true,"casesensitive":false,"name":"Dental
+        Patient","type":"TEXT"},{"customfieldid":"283","disallowupdate":false,"select":false,"casesensitive":false,"name":"GUID","searchable":true,"type":"TEXT"},{"selectlist":[{"optionvalue":"Yes","optionid":"61"},{"optionvalue":"No","optionid":"62"}],"customfieldid":"162","disallowupdate":false,"select":true,"casesensitive":false,"name":"Healthkit
+        Enabled","type":"TEXT"},{"customfieldid":"181","disallowupdate":false,"select":true,"casesensitive":false,"name":"Hk","type":"TEXT"},{"customfieldid":"21","disallowupdate":false,"select":false,"casesensitive":false,"name":"Medical
+        Record Number","searchable":true,"type":"TEXT"},{"customfieldid":"242","disallowupdate":false,"select":false,"casesensitive":false,"name":"Mystical
+        Unicorn","type":"TEXT"},{"customfieldid":"201","disallowupdate":false,"select":false,"casesensitive":false,"name":"TEST","type":"TEXT"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.athenahealth.com/preview1/195900/customfields
+  recorded_at: Mon, 16 Mar 2020 15:17:53 GMT
+recorded_with: VCR 3.0.3

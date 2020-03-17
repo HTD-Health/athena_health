@@ -18,5 +18,7 @@ module AthenaHealth
     include Endpoints::Encounters
     include Endpoints::Configurations
     include Endpoints::Subscriptions
+    include Endpoints::Claims
+    include Endpoints::CustomFields
   end
 end
