@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       string: '{"success":true}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed/subscription
   recorded_at: Wed, 11 Mar 2020 18:27:51 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -102,11 +102,11 @@ http_interactions:
       string: '{"patients":[],"totalcount":0}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed?departmentid=1
   recorded_at: Wed, 11 Mar 2020 18:30:59 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -154,11 +154,11 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"AddPatient"},{"eventname":"DeletePatient"},{"eventname":"UpdatePatient"},{"eventname":"MergePatient"},{"eventname":"UpdatePatientCustomField"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/changed/subscription
   recorded_at: Wed, 11 Mar 2020 18:35:09 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123/patients/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123/patients/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -206,6 +206,6 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123/patients/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123/patients/changed/subscription
   recorded_at: Wed, 11 Mar 2020 18:40:54 GMT
 recorded_with: VCR 3.0.3

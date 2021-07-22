@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/enhancedbestmatch?firstname=Test&lastname=Patient&dob=01%2F01%2F1950
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/enhancedbestmatch?firstname=Test&lastname=Patient&dob=01%2F01%2F1950
     body:
       encoding: US-ASCII
       string: ''
@@ -47,6 +47,6 @@ http_interactions:
       string: '[{"departmentid":"1","portalaccessgiven":"false","driverslicense":"false","zip":"02453","guarantoraddresssameaspatient":"false","portaltermsonfile":"false","status":"active","lastname":"Patient","privacyinformationverified":"false","primarydepartmentid":"1","balances":[{"balance":0,"departmentlist":"1,21,102,145,148,150,157,162","providergroupid":"1","cleanbalance":"true"}],"patientphoto":"false","hasmobile":"false","firstname":"Test","guarantorcountrycode":"USA","patientid":"19844","dob":"01\/01\/1950","guarantorrelationshiptopatient":"1","score":"23","countrycode":"USA","consenttotext":"false","countrycode3166":"US","guarantorcountrycode3166":"US"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/enhancedbestmatch?firstname=Test&lastname=Patient&dob=01%2F01%2F1950
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/enhancedbestmatch?firstname=Test&lastname=Patient&dob=01%2F01%2F1950
   recorded_at: Tue, 09 Aug 2016 19:31:12 GMT
 recorded_with: VCR 3.0.3

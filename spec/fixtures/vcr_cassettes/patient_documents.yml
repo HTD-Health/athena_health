@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 12 Apr 2016 11:00:44 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-124.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"96b2nmadx8zdngqq96gm8hf4","token_type":"bearer","expires_in":3600,"refresh_token":"sejeq82cmnp2ndgegbzecn5v"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 12 Apr 2016 11:00:44 GMT
-- request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/1/documents?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/1/documents?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -2367,6 +2330,6 @@ http_interactions:
         case - Existing Patient Appointment Booked via maturbanski92 - localhost","providerid":"71","encounterdate":"04\/06\/2016","lastmodifieddatetime":"2016-04-06T06:09:54-04:00","documentsubclass":"PATIENTCASE_OTHER"}],"totalcount":1271}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/documents?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/1/documents?departmentid=1
   recorded_at: Tue, 12 Apr 2016 11:00:48 GMT
 recorded_with: VCR 3.0.1

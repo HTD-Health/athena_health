@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 03 May 2016 08:46:23 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-113.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"sek6bhzszxfrjbeud35rqcdg","token_type":"bearer","expires_in":3600,"refresh_token":"ggbrq854z8uu4f37xv39vr2v"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 03 May 2016 08:46:23 GMT
-- request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/labs/default?clinicalproviderid=11242674&departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/labs/default?clinicalproviderid=11242674&departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -82,6 +45,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/labs/default?clinicalproviderid=11242674&departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/labs/default?clinicalproviderid=11242674&departmentid=1
   recorded_at: Tue, 03 May 2016 08:46:29 GMT
 recorded_with: VCR 3.0.1

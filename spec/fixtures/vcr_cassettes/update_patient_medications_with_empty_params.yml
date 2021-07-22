@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/medications
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/medications
     body:
       encoding: US-ASCII
       string: departmentid=1
@@ -47,6 +47,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/medications
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/medications
   recorded_at: Wed, 25 Jan 2017 16:28:13 GMT
 recorded_with: VCR 3.0.3

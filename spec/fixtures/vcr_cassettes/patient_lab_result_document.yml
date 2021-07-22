@@ -1,47 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Mon, 08 Aug 2016 10:48:58 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Mon, 08 Aug 2016 10:48:58 GMT
-- request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/23/documents/labresult/306
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/23/documents/labresult/306
     body:
       encoding: US-ASCII
       string: ''
@@ -91,6 +52,6 @@ http_interactions:
         by Wojtek","documentsource":"UPLOAD","createddate":"07\/12\/2016","reportstatus":"partial","pages":[],"lastmodifieduser":"mzywno1","status":"REVIEW","observationdatetime":"2016-07-06T00:00:00-04:00","resultstatus":"partial","providerid":"1","externalaccessionid":"000111","encounterdate":"07\/06\/2016","providerusername":"arastinehad1","lastmodifieddatetime":"2016-07-18T09:14:02-04:00","labresultloinc":"7918-6","lastmodifieddate":"07\/18\/2016"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/23/documents/labresult/306
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/23/documents/labresult/306
   recorded_at: Mon, 08 Aug 2016 10:48:58 GMT
 recorded_with: VCR 3.0.1

@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.preview.platform.athenahealth.com/oauth2/v1/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials&scope=athena/service/Athenanet.MDP.*
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 22 Jul 2021 14:47:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      X-RateLimit-Limit:
+      - '5'
+      X-RateLimit-Remaining:
+      - '4'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token": "test_access_token", "expires_in": "3600"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/oauth2/v1/token
+  recorded_at: Thu, 22 Jul 2021 14:47:17 GMT
+recorded_with: VCR 3.0.3

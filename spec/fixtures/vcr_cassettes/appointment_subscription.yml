@@ -2,44 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 16 Feb 2016 12:43:23 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-106.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 16 Feb 2016 12:43:24 GMT
-- request:
-    method: post
-    uri: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/appointments/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -84,11 +47,11 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/appointments/changed/subscription
   recorded_at: Thu, 21 Jul 2016 16:38:06 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/appointments/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -136,11 +99,11 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"ScheduleAppointment"},{"eventname":"CheckIn"},{"eventname":"CheckOut"},{"eventname":"UpdateAppointment"},{"eventname":"CancelAppointment"},{"eventname":"FreezeAppointment"},{"eventname":"UnfreezeAppointment"},{"eventname":"DeleteAppointment"},{"eventname":"AddAppointmentSlot"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/appointments/changed/subscription
   recorded_at: Wed, 11 Mar 2020 15:05:45 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123/appointments/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123/appointments/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -188,6 +151,6 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123/appointments/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123/appointments/changed/subscription
   recorded_at: Wed, 11 Mar 2020 15:23:35 GMT
 recorded_with: VCR 3.0.1

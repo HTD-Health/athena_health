@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/claims/301
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/claims/301
     body:
       encoding: US-ASCII
       string: ''
@@ -55,6 +55,6 @@ http_interactions:
         charge on the claim."}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/claims/301
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/claims/301
   recorded_at: Thu, 12 Mar 2020 20:52:11 GMT
 recorded_with: VCR 3.0.3

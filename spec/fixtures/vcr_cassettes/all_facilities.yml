@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 19 Apr 2016 10:42:03 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-118.mashery.com
-      Content-Length:
-      - '126'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"qseyzkequ9nbaa7ykccexekf","token_type":"bearer","expires_in":3600,"refresh_token":"97pdpem2cmnxcbf923kvcuyw"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 19 Apr 2016 10:42:04 GMT
-- request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
     body:
       encoding: US-ASCII
       string: ''
@@ -171,6 +134,6 @@ http_interactions:
         888-1435","city":"NEW YORK","zipcode":"11209","phonenumber":"(212) 752-3043"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/configuration/facilities?name=New%20York&departmentid=1&ordertype=PRESCRIPTION
   recorded_at: Tue, 19 Apr 2016 10:42:07 GMT
 recorded_with: VCR 3.0.1

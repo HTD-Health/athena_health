@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 21 Apr 2016 08:09:00 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"a2mp2zteyhvysubxcc7tw7yu","token_type":"bearer","expires_in":3600,"refresh_token":"r7nfxc7ezt7e88tbsf6pknzz"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Thu, 21 Apr 2016 08:09:00 GMT
-- request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/pharmacies/default?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/pharmacies/default?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -83,6 +46,6 @@ http_interactions:
         Shishodia","address1":"645 10th Ave","faxnumber":"2122658900"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/pharmacies/default?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/pharmacies/default?departmentid=1
   recorded_at: Thu, 21 Apr 2016 08:09:01 GMT
 recorded_with: VCR 3.0.1

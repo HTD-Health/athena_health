@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 19 May 2016 09:44:08 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-122.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Thu, 19 May 2016 09:44:08 GMT
-- request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/socialhistory?departmentid=1&questions=%5B%7B%22key%22%3A%22SEXUALACTIVITY%22%2C%22answer%22%3A%22N%22%7D%5D
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/socialhistory?departmentid=1&questions=%5B%7B%22key%22%3A%22SEXUALACTIVITY%22%2C%22answer%22%3A%22N%22%7D%5D
     body:
       encoding: US-ASCII
       string: ''
@@ -82,6 +45,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/socialhistory?departmentid=1&questions=%5B%7B%22key%22%3A%22SEXUALACTIVITY%22%2C%22answer%22%3A%22N%22%7D%5D
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/socialhistory?departmentid=1&questions=%5B%7B%22key%22%3A%22SEXUALACTIVITY%22%2C%22answer%22%3A%22N%22%7D%5D
   recorded_at: Thu, 19 May 2016 09:44:08 GMT
 recorded_with: VCR 3.0.1

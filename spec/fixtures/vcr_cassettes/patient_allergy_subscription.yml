@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       string: '{"success":true}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed/subscription
   recorded_at: Wed, 11 Mar 2020 23:54:34 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -102,11 +102,11 @@ http_interactions:
       string: '{"totalcount":0,"allergies":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed?departmentid=1
   recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -154,11 +154,11 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"AllergyUpdate"},{"eventname":"AllergyAdd"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/allergies/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/allergies/changed/subscription
   recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123456/chart/healthhistory/allergies/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123456/chart/healthhistory/allergies/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -206,6 +206,6 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123456/chart/healthhistory/allergies/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123456/chart/healthhistory/allergies/changed/subscription
   recorded_at: Wed, 11 Mar 2020 23:54:35 GMT
 recorded_with: VCR 3.0.3
