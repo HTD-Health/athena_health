@@ -4,7 +4,7 @@ describe AthenaHealth::Connection do
   let(:connection_attributes) do
     {
       production: production,
-      key: 'test_key',
+      client_id: 'test_key',
       secret: 'test_secret'
     }
   end

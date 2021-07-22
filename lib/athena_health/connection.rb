@@ -6,8 +6,8 @@ module AthenaHealth
     PREVIEW_BASE_URL = 'https://api.preview.platform.athenahealth.com'.freeze
     API_VERSION = 'v1'.freeze
 
-    def initialize(key:, secret:, token: nil, production: )
-      @key = key
+    def initialize(client_id:, secret:, token: nil, production: )
+      @client_id = client_id
       @secret = secret
       @token = token
       @production = production
@@ -16,7 +16,7 @@ module AthenaHealth
     def authenticate
       response = Typhoeus.post(
         "#{base_url}/oauth2/#{API_VERSION}/token",
-        userpwd: "#{@key}:#{@secret}",
+        userpwd: "#{@client_id}:#{@secret}",
         body: { 
           grant_type: 'client_credentials', 
           scope: 'athena/service/Athenanet.MDP.*' 
