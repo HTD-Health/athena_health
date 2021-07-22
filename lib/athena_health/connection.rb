@@ -2,22 +2,25 @@ require 'json'
 
 module AthenaHealth
   class Connection
-    BASE_URL    = 'https://api.athenahealth.com'.freeze
-    AUTH_PATH   = { 'v1' => 'oauth', 'preview1' => 'oauthpreview', 'openpreview1' => 'oauthopenpreview' }
+    PRODUCTION_BASE_URL    = 'https://api.platform.athenahealth.com'.freeze
+    PREVIEW_BASE_URL = 'https://api.preview.platform.athenahealth.com'.freeze
+    API_VERSION = 'v1'.freeze
 
-    def initialize(version:, key:, secret:, token: nil, base_url: BASE_URL)
-      @version = version
+    def initialize(key:, secret:, token: nil, production: )
       @key = key
       @secret = secret
       @token = token
-      @base_url = base_url
+      @production = production
     end
 
     def authenticate
       response = Typhoeus.post(
-        "#{@base_url}/#{AUTH_PATH[@version]}/token",
+        "#{base_url}/oauth2/#{API_VERSION}/token",
         userpwd: "#{@key}:#{@secret}",
-        body: { grant_type: 'client_credentials' }
+        body: { 
+          grant_type: 'client_credentials', 
+          scope: 'athena/service/Athenanet.MDP.*' 
+        }
       ).response_body
 
       @token = JSON.parse(response)['access_token']
@@ -27,7 +30,7 @@ module AthenaHealth
       authenticate if @token.nil?
 
       response = Typhoeus::Request.new(
-        "#{@base_url}/#{@version}/#{endpoint}",
+        "#{base_url}/#{API_VERSION}/#{endpoint}",
         method: method,
         headers: { "Authorization" => "Bearer #{@token}"},
         params: params,
@@ -60,6 +63,10 @@ module AthenaHealth
 
     def json_response(body)
       JSON.parse(body)
+    end
+
+    def base_url
+      @base_url ||= @production ? PRODUCTION_BASE_URL : PREVIEW_BASE_URL
     end
   end
 end

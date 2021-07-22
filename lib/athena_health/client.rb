@@ -1,8 +1,8 @@
 module AthenaHealth
   class Client
-    def initialize(version:, key:, secret:, token: nil)
+    def initialize(production: false, key:, secret:, token: nil)
       @api = AthenaHealth::Connection.new(
-        version: version,
+        production: production,
         key: key,
         secret: secret,
         token: token,
