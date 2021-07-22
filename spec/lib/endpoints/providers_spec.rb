@@ -6,7 +6,7 @@ describe AthenaHealth::Endpoints::Providers do
 
     it 'returns instance of ProviderCollection' do
       VCR.use_cassette('all_providers') do
-        expect(client.all_providers(attributes))
+        expect(client.all_providers(**attributes))
           .to be_an_instance_of AthenaHealth::ProviderCollection
       end
     end
@@ -22,7 +22,7 @@ describe AthenaHealth::Endpoints::Providers do
 
     it 'returns instance of Provider' do
       VCR.use_cassette('find_provider') do
-        expect(client.find_provider(attributes))
+        expect(client.find_provider(**attributes))
           .to be_an_instance_of AthenaHealth::Provider
       end
     end

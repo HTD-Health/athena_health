@@ -5,7 +5,7 @@ describe AthenaHealth::Endpoints::InsurancePackages do
   describe '#top_insurance_packages' do
     it 'returns instance of InsurancePackageCollection' do
       VCR.use_cassette('top_insurance_packages') do
-        expect(client.top_insurance_packages(attributes))
+        expect(client.top_insurance_packages(**attributes))
           .to be_an_instance_of AthenaHealth::InsurancePackageCollection
       end
     end

@@ -11,7 +11,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of PatientCollection' do
       VCR.use_cassette('all_patients') do
-        expect(client.all_patients(attributes))
+        expect(client.all_patients(**attributes))
           .to be_an_instance_of AthenaHealth::PatientCollection
       end
     end
@@ -27,7 +27,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of Patient' do
       VCR.use_cassette('find_patient') do
-        expect(client.find_patient(attributes))
+        expect(client.find_patient(**attributes))
           .to be_an_instance_of AthenaHealth::Patient
       end
     end
@@ -45,7 +45,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of Array' do
       VCR.use_cassette('find_bestmatch_patients') do
-        expect(client.find_bestmatch_patients(attributes))
+        expect(client.find_bestmatch_patients(**attributes))
           .to be_an_instance_of Array
       end
     end
@@ -68,7 +68,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns patientid of updated Patient' do
         VCR.use_cassette('create_patient') do
-          expect(client.create_patient(attributes))
+          expect(client.create_patient(**attributes))
             .to eq [{ 'patientid' => '5309' }]
         end
       end
@@ -84,7 +84,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash of errors' do
         VCR.use_cassette('create_patient_with_wrong_data') do
-          expect { client.create_patient(attributes) }.to raise_error { |error|
+          expect { client.create_patient(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'invalidfields' => [],
@@ -111,7 +111,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_with_wrong_formatted_data') do
-          expect { client.create_patient(attributes) }.to raise_error { |error|
+          expect { client.create_patient(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'error' => 'Improper DOB.'
@@ -133,7 +133,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns patientid of updated Patient' do
       VCR.use_cassette('update_patient') do
-        expect(client.update_patient(attributes))
+        expect(client.update_patient(**attributes))
           .to eq [{ 'patientid' => '5309' }]
       end
     end
@@ -152,7 +152,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with success key equal to true' do
         VCR.use_cassette('create_patient_problem') do
-          expect(client.create_patient_problem(attributes))
+          expect(client.create_patient_problem(**attributes))
             .to eq 'success' => 'true'
         end
       end
@@ -170,7 +170,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_problem_with_missing_data') do
-          expect { client.create_patient_problem(attributes) }.to raise_error { |error|
+          expect { client.create_patient_problem(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'detailedmessage' => 'Expecting type integer, but value is ',
@@ -193,7 +193,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_problem_with_wrong_data') do
-          expect(client.create_patient_problem(attributes))
+          expect(client.create_patient_problem(**attributes))
             .to eq(
               'success' => 'false',
               'errormessage' => "Submitted snomedcode of '0' is not valid."
@@ -214,7 +214,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of PatientProblemCollection' do
       VCR.use_cassette('find_patient_problems') do
-        expect(client.find_patient_problems(attributes))
+        expect(client.find_patient_problems(**attributes))
           .to be_an_instance_of AthenaHealth::PatientProblemCollection
       end
     end
@@ -231,7 +231,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of EncounterCollection' do
       VCR.use_cassette('patient_encounters') do
-        expect(client.patient_encounters(attributes))
+        expect(client.patient_encounters(**attributes))
           .to be_an_instance_of AthenaHealth::EncounterCollection
       end
     end
@@ -248,7 +248,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of EncounterCollection' do
       VCR.use_cassette('patient_lab_results') do
-        expect(client.patient_lab_results(attributes))
+        expect(client.patient_lab_results(**attributes))
           .to be_an_instance_of AthenaHealth::LabResultCollection
       end
     end
@@ -265,7 +265,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of Document' do
       VCR.use_cassette('patient_lab_result_document') do
-        expect(client.patient_lab_result_document(attributes))
+        expect(client.patient_lab_result_document(**attributes))
           .to be_an_instance_of AthenaHealth::Document
       end
     end
@@ -282,7 +282,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of QuestionCollection' do
       VCR.use_cassette('patient_medical_history') do
-        expect(client.patient_medical_history(attributes))
+        expect(client.patient_medical_history(**attributes))
           .to be_an_instance_of AthenaHealth::QuestionCollection
       end
     end
@@ -300,7 +300,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_medical_history') do
-        expect(client.update_patient_medical_history(parameters))
+        expect(client.update_patient_medical_history(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -317,7 +317,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of PrescriptionCollection' do
       VCR.use_cassette('patient_prescriptions') do
-        expect(client.patient_prescriptions(attributes))
+        expect(client.patient_prescriptions(**attributes))
           .to be_an_instance_of AthenaHealth::PrescriptionCollection
       end
     end
@@ -334,7 +334,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of AnalyteCollection' do
       VCR.use_cassette('patient_analytes') do
-        expect(client.patient_analytes(attributes))
+        expect(client.patient_analytes(**attributes))
           .to be_an_instance_of AthenaHealth::AnalyteCollection
       end
     end
@@ -350,7 +350,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of AppointmentCollection' do
       VCR.use_cassette('patient_appointments') do
-        expect(client.patient_appointments(attributes))
+        expect(client.patient_appointments(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentCollection
       end
     end
@@ -367,7 +367,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of DocumentCollection' do
       VCR.use_cassette('patient_documents') do
-        expect(client.patient_documents(attributes))
+        expect(client.patient_documents(**attributes))
           .to be_an_instance_of AthenaHealth::DocumentCollection
       end
     end
@@ -388,7 +388,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns documentid' do
       VCR.use_cassette('create_patient_document') do
-        expect(client.create_patient_document(attributes))
+        expect(client.create_patient_document(**attributes))
           .to eq 'documentid' => '117707'
       end
     end
@@ -405,7 +405,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of Pharmacy' do
       VCR.use_cassette('patient_default_pharmacy') do
-        expect(client.patient_default_pharmacy(attributes))
+        expect(client.patient_default_pharmacy(**attributes))
           .to be_an_instance_of AthenaHealth::Pharmacy
       end
     end
@@ -425,7 +425,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns succes => true' do
       VCR.use_cassette('set_patient_default_pharmacy') do
-        expect(client.set_patient_default_pharmacy(attributes))
+        expect(client.set_patient_default_pharmacy(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -442,7 +442,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of PharmacyCollection' do
       VCR.use_cassette('patient_prefferred_pharmacies') do
-        expect(client.patient_preferred_pharmacies(attributes))
+        expect(client.patient_preferred_pharmacies(**attributes))
           .to be_an_instance_of AthenaHealth::PharmacyCollection
       end
     end
@@ -462,7 +462,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('add_patient_prefferred_pharmacy') do
-        expect(client.add_patient_preferred_pharmacy(attributes))
+        expect(client.add_patient_preferred_pharmacy(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -479,7 +479,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of Laboratory' do
       VCR.use_cassette('patient_default_laboratory') do
-        expect(client.patient_default_laboratory(attributes))
+        expect(client.patient_default_laboratory(**attributes))
           .to be_an_instance_of AthenaHealth::Laboratory
       end
     end
@@ -499,7 +499,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns succes => true' do
       VCR.use_cassette('set_patient_default_laboratory') do
-        expect(client.set_patient_default_laboratory(attributes))
+        expect(client.set_patient_default_laboratory(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -516,7 +516,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns array of Template instances' do
       VCR.use_cassette('patient_social_history_templates') do
-        templates = client.patient_social_history_templates(parameters)
+        templates = client.patient_social_history_templates(**parameters)
         expect(templates.map(&:class).uniq).to eq [AthenaHealth::Template]
       end
     end
@@ -534,7 +534,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('set_patient_social_history_templates') do
-        expect(client.set_patient_social_history_templates(parameters))
+        expect(client.set_patient_social_history_templates(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -552,7 +552,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_social_history') do
-        expect(client.update_patient_social_history(parameters))
+        expect(client.update_patient_social_history(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -569,7 +569,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of SocialHistory' do
       VCR.use_cassette('patient_social_history') do
-        expect(client.patient_social_history(parameters))
+        expect(client.patient_social_history(**parameters))
           .to be_an_instance_of AthenaHealth::SocialHistory
       end
     end
@@ -586,7 +586,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of UserMedicationCollection' do
       VCR.use_cassette('patient_medications') do
-        expect(client.patient_medications(parameters))
+        expect(client.patient_medications(**parameters))
           .to be_an_instance_of AthenaHealth::UserMedicationCollection
       end
     end
@@ -604,7 +604,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('add_patient_medication') do
-        expect(client.add_patient_medication(parameters))
+        expect(client.add_patient_medication(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -624,7 +624,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_medications') do
-        expect(client.update_patient_medications(parameters))
+        expect(client.update_patient_medications(**parameters))
             .to eq 'success' => 'true'
       end
     end
@@ -634,7 +634,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!({params: {}})
 
         VCR.use_cassette('update_patient_medications_with_empty_params') do
-          expect(client.update_patient_medications(parameters))
+          expect(client.update_patient_medications(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -645,7 +645,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!({params: {nomedicationsreported: nil}})
 
         VCR.use_cassette('update_patient_medications_with_nil_params') do
-          expect(client.update_patient_medications(parameters))
+          expect(client.update_patient_medications(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -663,7 +663,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of UserAllergyCollection' do
       VCR.use_cassette('patient_allergies') do
-        expect(client.patient_allergies(parameters))
+        expect(client.patient_allergies(**parameters))
           .to be_an_instance_of AthenaHealth::UserAllergyCollection
       end
     end
@@ -684,7 +684,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!({allergies: []})
 
         VCR.use_cassette('update_patient_allergies_with_allergies_empty_parameter') do
-          expect(client.update_patient_allergies(parameters))
+          expect(client.update_patient_allergies(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -695,7 +695,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!({allergies: [], params: { nkda: true }})
 
         VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda') do
-          expect(client.update_patient_allergies(parameters))
+          expect(client.update_patient_allergies(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -706,7 +706,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!({allergies: [], params: { nkda: false }})
 
         VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda_false') do
-          expect(client.update_patient_allergies(parameters))
+          expect(client.update_patient_allergies(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -717,7 +717,7 @@ describe AthenaHealth::Endpoints::Patients do
         parameters.merge!(allergies: [], params: {})
 
         VCR.use_cassette('update_patient_allergies_with_empty_allergies_and_parameters') do
-          expect(client.update_patient_allergies(parameters))
+          expect(client.update_patient_allergies(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -727,7 +727,7 @@ describe AthenaHealth::Endpoints::Patients do
       it 'returns success => true' do
         parameters.merge!({params: {nkda: true}})
         VCR.use_cassette('update_patient_allergies_with_extra_parameters') do
-          expect(client.update_patient_allergies(parameters))
+          expect(client.update_patient_allergies(**parameters))
               .to eq 'success' => 'true'
         end
       end
@@ -735,7 +735,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_allergies') do
-        expect(client.update_patient_allergies(parameters))
+        expect(client.update_patient_allergies(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -752,7 +752,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('verify_patient_privacy_information') do
-        expect(client.verify_patient_privacy_information(parameters))
+        expect(client.verify_patient_privacy_information(**parameters))
           .to eq [{ 'success' => 'true', 'patientid' => '1' }]
       end
     end
@@ -770,7 +770,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('create_patient_insurance') do
-        expect(client.create_patient_insurance(parameters))
+        expect(client.create_patient_insurance(**parameters))
           .to be_an_instance_of AthenaHealth::Insurance
       end
     end
@@ -787,7 +787,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_insurance') do
-        expect(client.update_patient_insurance(parameters))
+        expect(client.update_patient_insurance(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -804,7 +804,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('delete_patient_insurance') do
-        expect(client.delete_patient_insurance(parameters))
+        expect(client.delete_patient_insurance(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -824,7 +824,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('record_payment') do
-        expect(client.record_payment(parameters))
+        expect(client.record_payment(**parameters))
           .to eq [{ 'success' => 'true', 'paymentbatchid' => '5' }]
       end
     end
@@ -840,7 +840,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns instance of InsuranceCollection' do
       VCR.use_cassette('patient_insurances') do
-        expect(client.patient_insurances(parameters))
+        expect(client.patient_insurances(**parameters))
           .to be_an_instance_of AthenaHealth::InsuranceCollection
       end
     end
@@ -858,7 +858,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_insurance_card_image') do
-        expect(client.update_patient_insurance_card_image(parameters))
+        expect(client.update_patient_insurance_card_image(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -875,7 +875,7 @@ describe AthenaHealth::Endpoints::Patients do
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_photo') do
-        expect(client.update_patient_photo(parameters))
+        expect(client.update_patient_photo(**parameters))
           .to eq 'success' => 'true'
       end
     end
@@ -899,7 +899,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with patientcaseid and success => true' do
         VCR.use_cassette('create_patient_case') do
-          response = client.create_patient_case(attributes)
+          response = client.create_patient_case(**attributes)
           expect(response['success']).to eq true
           expect(response.key?('patientcaseid')).to eq true
         end
@@ -923,7 +923,7 @@ describe AthenaHealth::Endpoints::Patients do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_patient_case_wrong_source') do
-          expect { client.create_patient_case(attributes) }.to raise_error { |error|
+          expect { client.create_patient_case(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'detailedmessage' => "The value 'patient' did not match any of the enum values for SOURCE",

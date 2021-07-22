@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe AthenaHealth::CustomField do
-  subject { AthenaHealth::CustomField.new(attributes) }
+  subject { AthenaHealth::CustomField.new(**attributes) }
 
   let(:attributes) do
     { "selectlist": [{ "optionvalue": 'Yes', "optionid": '61' }, { "optionvalue": 'No', "optionid": '62' }], "customfieldid": '162', "disallowupdate": false, "select": true, "casesensitive": false, "name": 'Healthkit Enabled', "type": 'TEXT' }
