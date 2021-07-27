@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 09 Jun 2016 11:07:30 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-109.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Thu, 09 Jun 2016 11:07:30 GMT
-- request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/appointments/185721/reschedule?patientid=1&newappointmentid=204885
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/appointments/185721/reschedule?patientid=1&newappointmentid=204885
     body:
       encoding: US-ASCII
       string: ''
@@ -82,6 +45,6 @@ http_interactions:
       string: '[{"appointmentid":"204885","departmentid":"1","providerid":"","appointmentstatus":"f","duration":"5","patientid":"1","appointmenttypeid":"1"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/185721/reschedule?patientid=1&newappointmentid=204885
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/appointments/185721/reschedule?patientid=1&newappointmentid=204885
   recorded_at: Thu, 09 Jun 2016 11:07:31 GMT
 recorded_with: VCR 3.0.1

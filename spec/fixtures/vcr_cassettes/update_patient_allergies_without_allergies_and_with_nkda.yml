@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%5D
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%5D
     body:
       encoding: US-ASCII
       string: ''
@@ -47,6 +47,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%5D
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%5D
   recorded_at: Wed, 25 Jan 2017 15:40:44 GMT
 recorded_with: VCR 3.0.3

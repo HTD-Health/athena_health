@@ -15,7 +15,7 @@ describe AthenaHealth::Endpoints::Configurations do
 
     it 'returns array of Facility instances' do
       VCR.use_cassette('all_facilities') do
-        facilities = client.all_facilities(parameters)
+        facilities = client.all_facilities(**parameters)
         expect(facilities.map(&:class).uniq).to eq [AthenaHealth::Facility]
       end
     end
@@ -31,7 +31,7 @@ describe AthenaHealth::Endpoints::Configurations do
 
     it 'returns array of Medication instances' do
       VCR.use_cassette('all_medications') do
-        medications = client.all_medications(parameters)
+        medications = client.all_medications(**parameters)
         expect(medications.map(&:class).uniq).to eq [AthenaHealth::Medication]
       end
     end
@@ -47,7 +47,7 @@ describe AthenaHealth::Endpoints::Configurations do
 
     it 'returns array of Allergy instances' do
       VCR.use_cassette('all_allergies') do
-        allergies = client.all_allergies(parameters)
+        allergies = client.all_allergies(**parameters)
         expect(allergies.map(&:class).uniq).to eq [AthenaHealth::Allergy]
       end
     end
@@ -65,7 +65,7 @@ describe AthenaHealth::Endpoints::Configurations do
 
     it 'returns instance of InsuranceCollection' do
       VCR.use_cassette('all_insurances') do
-        expect(client.all_insurances(parameters))
+        expect(client.all_insurances(**parameters))
           .to be_an_instance_of AthenaHealth::InsuranceCollection
       end
     end
@@ -81,7 +81,7 @@ describe AthenaHealth::Endpoints::Configurations do
 
     it 'returns array of Allergy instances' do
       VCR.use_cassette('all_order_types') do
-        order_types = client.all_order_types(parameters)
+        order_types = client.all_order_types(**parameters)
         expect(order_types.map(&:class).uniq).to eq [AthenaHealth::OrderType]
       end
     end

@@ -4,7 +4,64 @@
 
 # AthenaHealth
 
-Ruby wrapper for [Athenahealth API](http://www.athenahealth.com/developer-portal).
+Ruby wrapper for [Athenahealth API](https://developer.api.athena.io/).
+
+## Updating from gem version 1 (Mashery API) to gem version 2 (https://developer.api.athena.io/ API)
+
+There is only one change needed to upgrade, and that is how you create a new client. 
+
+The new signature has 3 keywords:
+```AthenaHealth::Client.new(production:, client_id: secret:)```
+* `production:`
+  * `boolean` 
+  * default `false`
+  * this replaces the `version:` keyword
+  * indicates if you want to access the preview enviroment or the production enviroment.
+* `client_id:`
+  * `string`
+  * no default
+  * this replaces the `key:` keyword
+  * this should be your **Client ID** from the developer portal
+* `secret:`
+  * `string`
+  * no default
+  * this should be your **Secret** from the developer portal
+
+### Example
+#### Gem v1 code
+Preview: 
+```
+client = AthenaHealth::Client.new(
+  version: 'preview1',
+  key: "my_client_id",
+  secret: "my_secret"
+)
+```
+Production: 
+```
+client = AthenaHealth::Client.new(
+  version: 'v1',
+  key: "my_client_id",
+  secret: "my_secret"
+)
+```
+#### Gem v2 code
+Preview: 
+```
+client = AthenaHealth::Client.new(
+  production: false,
+  client_id: "my_client_id",
+  secret: "my_secret"
+)
+```
+Production: 
+```
+client = AthenaHealth::Client.new(
+  production: true,
+  client_id: "my_client_id",
+  secret: "my_secret"
+)
+```
 
 ## Examples
 
@@ -18,7 +75,7 @@ For some examples of how to use this library, check out [the project wiki](https
  - Ensure you have Ruby and the Bundler gem installed
  - Install the gem dependencies with `bundle`
  - Setup Environment Variables before testing new endpoints, you'll need the following:
-  - ATHENA_TEST_KEY
+  - ATHENA_TEST_CLIENT_ID
   - ATHENA_TEST_SECRET
   - ATHENA_TEST_ACCESS_TOKEN
 

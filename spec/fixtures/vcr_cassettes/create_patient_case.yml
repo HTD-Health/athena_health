@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients/2/documents/patientcase
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/2/documents/patientcase
     body:
       encoding: US-ASCII
       string: documentsource=PATIENT&documentsubclass=PATIENTCASE&outboundonly=true&providerid=71&departmentid=1
@@ -50,6 +50,6 @@ http_interactions:
       string: '{"success":true,"patientcaseid":173696}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/2/documents/patientcase
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/2/documents/patientcase
   recorded_at: Wed, 10 Apr 2019 09:22:45 GMT
 recorded_with: VCR 3.0.3

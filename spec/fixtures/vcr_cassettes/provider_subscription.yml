@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/providers/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       string: '{"success":true}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/providers/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed/subscription
   recorded_at: Wed, 11 Mar 2020 19:03:49 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/providers/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -101,11 +101,11 @@ http_interactions:
         {"error":"Changed messages require setup (subscription) that has not been done."}
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/providers/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed?departmentid=1
   recorded_at: Wed, 11 Mar 2020 19:03:49 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123456/providers/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123456/providers/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -153,11 +153,11 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123456/providers/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123456/providers/changed/subscription
   recorded_at: Wed, 11 Mar 2020 19:03:50 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/providers/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -205,11 +205,11 @@ http_interactions:
       string: '{"providers":[],"totalcount":0}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/providers/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed?departmentid=1
   recorded_at: Wed, 11 Mar 2020 19:08:08 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/providers/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -257,6 +257,6 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"ProviderAdd"},{"eventname":"ProviderUpdate"},{"eventname":"ProviderDelete"},{"eventname":"ProviderUndelete"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/providers/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/providers/changed/subscription
   recorded_at: Wed, 11 Mar 2020 19:18:01 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/appointments/open
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/appointments/open
     body:
       encoding: US-ASCII
       string: reasonid=563&departmentid=1&appointmentdate=08/27/2016&appointmenttime=08:00&providerid=86
@@ -47,6 +47,6 @@ http_interactions:
       string: '{"appointmentids":{"702724":"08:00"}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/open
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/appointments/open
   recorded_at: Tue, 09 Aug 2016 18:00:14 GMT
 recorded_with: VCR 3.0.3

@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 02 Dec 2016 08:13:09 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-108.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Fri, 02 Dec 2016 08:13:10 GMT
-- request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%7B%22allergenid%22%3A24640%2C%22allergenname%22%3A%22Aspercreme%20with%20Aloe%22%7D%5D
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%7B%22allergenid%22%3A24640%2C%22allergenname%22%3A%22Aspercreme%20with%20Aloe%22%7D%5D
     body:
       encoding: US-ASCII
       string: ''
@@ -82,6 +45,6 @@ http_interactions:
       string: '{"success":"true"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%7B%22allergenid%22%3A24640%2C%22allergenname%22%3A%22Aspercreme%20with%20Aloe%22%7D%5D
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/1/allergies?nkda=true&departmentid=1&allergies=%5B%7B%22allergenid%22%3A24640%2C%22allergenname%22%3A%22Aspercreme%20with%20Aloe%22%7D%5D
   recorded_at: Fri, 02 Dec 2016 08:13:10 GMT
 recorded_with: VCR 3.0.1

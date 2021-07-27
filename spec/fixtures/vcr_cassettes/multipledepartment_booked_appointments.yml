@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/appointments/booked/multipledepartment?departmentid=1%2C2%2C3&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/appointments/booked/multipledepartment?departmentid=1%2C2%2C3&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
     body:
       encoding: US-ASCII
       string: ''
@@ -130,6 +130,6 @@ http_interactions:
         Patient"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/appointments/booked/multipledepartment?departmentid=1%2C2%2C3&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/appointments/booked/multipledepartment?departmentid=1%2C2%2C3&startdate=04%2F30%2F2016&enddate=04%2F30%2F2016
   recorded_at: Tue, 09 Aug 2016 18:32:11 GMT
 recorded_with: VCR 3.0.3

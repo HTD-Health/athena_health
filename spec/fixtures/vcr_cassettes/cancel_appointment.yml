@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://api.athenahealth.com/preview1/195917/appointments/404627/cancel
+    uri: https://api.preview.platform.athenahealth.com/v1/195917/appointments/404627/cancel
     body:
       encoding: US-ASCII
       string: patientid=2695
@@ -47,6 +47,6 @@ http_interactions:
       string: '{"status":"x"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195917/appointments/404627/cancel
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195917/appointments/404627/cancel
   recorded_at: Tue, 09 Aug 2016 18:55:26 GMT
 recorded_with: VCR 3.0.3

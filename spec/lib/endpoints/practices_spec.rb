@@ -15,7 +15,7 @@ describe AthenaHealth::Endpoints::Practices do
 
     it 'returns instance of Practice' do
       VCR.use_cassette('find_practice') do
-        expect(client.find_practice(attributes))
+        expect(client.find_practice(**attributes))
           .to be_an_instance_of AthenaHealth::Practice
       end
     end

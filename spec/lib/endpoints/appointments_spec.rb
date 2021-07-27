@@ -15,7 +15,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of AppointmentCollection' do
       VCR.use_cassette('open_appointment_slots') do
-        expect(client.open_appointment_slots(attributes))
+        expect(client.open_appointment_slots(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentCollection
       end
     end
@@ -36,7 +36,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns a newly created appointment id' do
         VCR.use_cassette('create_appointment_slot') do
-          expect(client.create_appointment_slot(attributes))
+          expect(client.create_appointment_slot(**attributes))
             .to be_an_instance_of Hash
         end
       end
@@ -54,7 +54,7 @@ describe AthenaHealth::Endpoints::Appointments do
       end
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('create_appointment_slot_no_reason_id_or_appointment_type_id') do
-          expect { client.create_appointment_slot(attributes) }.to raise_error { |error|
+          expect { client.create_appointment_slot(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'detailedmessage' => 'An appointment type or reason must be provided.',
@@ -79,7 +79,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('book_appointment_with_wrong_appointment_id') do
-          expect { client.book_appointment(attributes) }.to raise_error { |error|
+          expect { client.book_appointment(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'detailedmessage' => 'The appointment ID is already booked or is not marked as being available to be scheduled via the API.',
@@ -102,7 +102,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns instance of Appointment' do
         VCR.use_cassette('book_appointment') do
-          expect(client.book_appointment(attributes))
+          expect(client.book_appointment(**attributes))
             .to be_an_instance_of AthenaHealth::Appointment
         end
       end
@@ -122,7 +122,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns instance of AppointmentCollection' do
         VCR.use_cassette('multipledepartment_booked_appointments') do
-          expect(client.multipledepartment_booked_appointments(attributes))
+          expect(client.multipledepartment_booked_appointments(**attributes))
             .to be_an_instance_of AthenaHealth::AppointmentCollection
         end
       end
@@ -140,7 +140,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns instance of AppointmentCollection' do
         VCR.use_cassette('multipledepartment_booked_appointments_single_department') do
-          expect(client.multipledepartment_booked_appointments(attributes))
+          expect(client.multipledepartment_booked_appointments(**attributes))
             .to be_an_instance_of AthenaHealth::AppointmentCollection
         end
       end
@@ -158,7 +158,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns a canceled appointment status' do
       VCR.use_cassette('cancel_appointment') do
-        expect(client.cancel_appointment(attributes))
+        expect(client.cancel_appointment(**attributes))
           .to be_an_instance_of Hash
       end
     end
@@ -175,7 +175,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of PatientAppointmentReasonCollection' do
       VCR.use_cassette('patient_appointment_reasons') do
-        expect(client.all_patient_appointment_reasons(attributes))
+        expect(client.all_patient_appointment_reasons(**attributes))
           .to be_an_instance_of AthenaHealth::PatientAppointmentReasonCollection
       end
     end
@@ -193,7 +193,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of PatientAppointmentCollection' do
       VCR.use_cassette('booked_appointments') do
-        expect(client.booked_appointments(attributes))
+        expect(client.booked_appointments(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentCollection
       end
     end
@@ -209,7 +209,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of AppointmentType' do
       VCR.use_cassette('appointment_type') do
-        expect(client.find_appointment_type(attributes))
+        expect(client.find_appointment_type(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentType
       end
     end
@@ -225,7 +225,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of NoteCollection' do
       VCR.use_cassette('appointment_notes') do
-        expect(client.appointment_notes(attributes))
+        expect(client.appointment_notes(**attributes))
           .to be_an_instance_of AthenaHealth::NoteCollection
       end
     end
@@ -242,7 +242,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('create_appointment_note') do
-        expect(client.create_appointment_note(attributes))
+        expect(client.create_appointment_note(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -258,7 +258,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('start_check_in') do
-        expect(client.start_check_in(attributes))
+        expect(client.start_check_in(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -274,7 +274,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('cancel_check_in') do
-        expect(client.cancel_check_in(attributes))
+        expect(client.cancel_check_in(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -290,7 +290,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('check_in') do
-        expect(client.check_in(attributes))
+        expect(client.check_in(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -309,7 +309,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of Appointment' do
       VCR.use_cassette('reschedule_appointment') do
-        expect(client.reschedule_appointment(attributes))
+        expect(client.reschedule_appointment(**attributes))
           .to be_an_instance_of AthenaHealth::Appointment
       end
     end
@@ -325,7 +325,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of Appointment' do
       VCR.use_cassette('find_appointment') do
-        expect(client.find_appointment(attributes))
+        expect(client.find_appointment(**attributes))
           .to be_an_instance_of AthenaHealth::Appointment
       end
     end
@@ -343,7 +343,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of AppointmentReminderCollection' do
       VCR.use_cassette('appointment_reminders') do
-        expect(client.appointment_reminders(attributes))
+        expect(client.appointment_reminders(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentReminderCollection
       end
     end
@@ -359,7 +359,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of AppointmentReminder' do
       VCR.use_cassette('find_appointment_reminder') do
-        expect(client.find_appointment_reminder(attributes))
+        expect(client.find_appointment_reminder(**attributes))
           .to be_an_instance_of AthenaHealth::AppointmentReminder
       end
     end
@@ -377,7 +377,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('create_appointment_reminder') do
-        expect(client.create_appointment_reminder(attributes))
+        expect(client.create_appointment_reminder(**attributes))
           .to eq 'success' => 'true', 'appointmentreminderid' => '14334'
       end
     end
@@ -393,7 +393,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns success => true' do
       VCR.use_cassette('delete_appointment_reminder') do
-        expect(client.delete_appointment_reminder(attributes))
+        expect(client.delete_appointment_reminder(**attributes))
           .to eq 'success' => 'true'
       end
     end
@@ -409,7 +409,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
     it 'returns instance of InsuranceCollection' do
       VCR.use_cassette('appointment_insurances') do
-        expect(client.appointment_insurances(parameters))
+        expect(client.appointment_insurances(**parameters))
           .to be_an_instance_of AthenaHealth::InsuranceCollection
       end
     end
@@ -434,7 +434,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'returns a newly created waitlist id' do
         VCR.use_cassette('create_appointment_waitlist') do
-          expect(client.create_appointment_waitlist(attributes))
+          expect(client.create_appointment_waitlist(**attributes))
             .to be_an_instance_of Hash
         end
       end
@@ -456,7 +456,7 @@ describe AthenaHealth::Endpoints::Appointments do
 
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('create_appointment_slot_no_department_id_or_patient_id') do
-          expect { client.create_appointment_waitlist(attributes) }.to raise_error { |error|
+          expect { client.create_appointment_waitlist(**attributes) }.to raise_error { |error|
             expect(error.details).to eq(
               'missingfields' => %w[patientid departmentid],
               'error' => 'Additional fields are required.'

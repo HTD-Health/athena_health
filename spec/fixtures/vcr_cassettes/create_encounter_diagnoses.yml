@@ -2,91 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/encounter/35840/diagnoses
-    body:
-      encoding: US-ASCII
-      string: snomedcode=174041007
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer dmg9hsj3a2nb9gbehyr944xh
-      Expect:
-      - ''
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Content-Type:
-      - text/xml
-      Date:
-      - Wed, 10 Apr 2019 09:44:57 GMT
-      Server:
-      - Mashery Proxy
-      WWW-Authenticate:
-      - Bearer realm="api.athenahealth.com", error="invalid_token"
-      X-Error-Detail-Header:
-      - Not Authorized
-      X-Mashery-Error-Code:
-      - ERR_403_NOT_AUTHORIZED
-      X-Mashery-Message-ID:
-      - d9f40429-6af3-4abc-891a-684bdc9b3766
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-68.mashery.com
-      Content-Length:
-      - '23'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<h1>Not Authorized</h1>"
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/encounter/35840/diagnoses
-  recorded_at: Wed, 10 Apr 2019 09:44:57 GMT
-- request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 10 Apr 2019 09:44:57 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-58.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Wed, 10 Apr 2019 09:44:57 GMT
-- request:
-    method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/encounter/35840/diagnoses
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/encounter/35840/diagnoses
     body:
       encoding: US-ASCII
       string: snomedcode=174041007
@@ -135,6 +51,6 @@ http_interactions:
         emergency appendectomy","supportslaterality":false}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/encounter/35840/diagnoses
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/encounter/35840/diagnoses
   recorded_at: Wed, 10 Apr 2019 09:44:59 GMT
 recorded_with: VCR 3.0.3

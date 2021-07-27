@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/claims/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       string: '{"success":true}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/claims/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed/subscription
   recorded_at: Mon, 16 Mar 2020 18:17:03 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/claims/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -102,11 +102,11 @@ http_interactions:
       string: '{"claims":[],"totalcount":0}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/claims/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed?departmentid=1
   recorded_at: Mon, 16 Mar 2020 18:17:04 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/claims/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -154,11 +154,11 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"UpdateClaim"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/claims/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/claims/changed/subscription
   recorded_at: Mon, 16 Mar 2020 18:17:04 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123456/claims/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123456/claims/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -206,6 +206,6 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123456/claims/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123456/claims/changed/subscription
   recorded_at: Mon, 16 Mar 2020 18:19:40 GMT
 recorded_with: VCR 3.0.3

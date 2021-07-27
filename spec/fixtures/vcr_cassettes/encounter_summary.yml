@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/encounters/28302/summary
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/encounters/28302/summary
     body:
       encoding: US-ASCII
       string: ''
@@ -133,6 +133,6 @@ http_interactions:
         closed. <\/div><\/div><\/div><\/html>"}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/encounters/28302/summary
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/encounters/28302/summary
   recorded_at: Thu, 05 Jan 2017 14:42:56 GMT
 recorded_with: VCR 3.0.3

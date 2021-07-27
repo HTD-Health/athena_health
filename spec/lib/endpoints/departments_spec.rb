@@ -6,7 +6,7 @@ describe AthenaHealth::Endpoints::Departments do
 
     it 'returns instance of DepartmentCollection' do
       VCR.use_cassette('all_departments') do
-        expect(client.all_departments(attributes))
+        expect(client.all_departments(**attributes))
           .to be_an_instance_of AthenaHealth::DepartmentCollection
       end
     end
@@ -22,7 +22,7 @@ describe AthenaHealth::Endpoints::Departments do
 
     it 'returns instance of Department' do
       VCR.use_cassette('find_department') do
-        expect(client.find_department(attributes))
+        expect(client.find_department(**attributes))
           .to be_an_instance_of AthenaHealth::Department
       end
     end

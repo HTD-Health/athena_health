@@ -2,44 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 17 Feb 2016 10:08:30 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-112.mashery.com
-      transfer-encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"test_access_token","token_type":"bearer","expires_in":3600,"refresh_token":"test_refresh_token"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Wed, 17 Feb 2016 10:08:31 GMT
-- request:
-    method: post
-    uri: https://api.athenahealth.com/preview1/195900/patients
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients
     body:
       encoding: US-ASCII
       string: firstname=Mateusz&lastname=U.&email=mat@u.com&dob=03/30/1992&departmentid=162
@@ -82,6 +45,6 @@ http_interactions:
       string: '[{"patientid":"5309"}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients
   recorded_at: Wed, 17 Feb 2016 10:08:32 GMT
 recorded_with: VCR 3.0.1

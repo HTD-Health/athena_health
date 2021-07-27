@@ -11,7 +11,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns instance of Encounter' do
       VCR.use_cassette('find_encounter') do
-        expect(client.find_encounter(attributes))
+        expect(client.find_encounter(**attributes))
           .to be_an_instance_of AthenaHealth::Encounter
       end
     end
@@ -27,7 +27,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns instance of Encounter' do
       VCR.use_cassette('encounter_orders') do
-        expect(client.encounter_orders(attributes).first)
+        expect(client.encounter_orders(**attributes).first)
           .to be_an_instance_of AthenaHealth::OrderCollection
       end
     end
@@ -44,7 +44,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns instance of Encounter' do
       VCR.use_cassette('encounter_order') do
-        expect(client.encounter_order(attributes))
+        expect(client.encounter_order(**attributes))
           .to be_an_instance_of AthenaHealth::Order
       end
     end
@@ -60,7 +60,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns instance of EncounterSummary' do
       VCR.use_cassette('encounter_summary') do
-        expect(client.encounter_summary(attributes))
+        expect(client.encounter_summary(**attributes))
           .to be_an_instance_of AthenaHealth::EncounterSummary
       end
     end
@@ -81,7 +81,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
       it 'returns a newly created documentid' do
         VCR.use_cassette('create_encounter_order_lab') do
-          expect(client.create_encounter_order_lab(attributes))
+          expect(client.create_encounter_order_lab(**attributes))
             .to be_an_instance_of Hash
         end
       end
@@ -100,7 +100,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('create_encounter_order_lab_no_order_type_id') do
-          expect { client.create_encounter_order_lab(attributes) }.to raise_error { |error|
+          expect { client.create_encounter_order_lab(**attributes) }.to raise_error { |error|
             expect(error.details).to eq(
               'detailedmessage' => 'You must specify which lab to order, either via the ordertypeid or a LOINC.',
               'error' => 'The data provided is invalid.'
@@ -123,7 +123,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
       it 'raise AthenaHealth::ValidationError error' do
         VCR.use_cassette('create_encounter_order_lab_no_diagnosis_snomed_code') do
-          expect { client.create_encounter_order_lab(attributes) }.to raise_error { |error|
+          expect { client.create_encounter_order_lab(**attributes) }.to raise_error { |error|
             expect(error.details).to eq(
               'detailedmessage' => 'The diagnosis was not found. Please specify an existing diagnosis or add it to the encounter first.',
               'error' => 'The data provided is invalid.'
@@ -148,7 +148,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
     it 'returns Hash with encounterid and success => true' do
       VCR.use_cassette('create_order_group') do
-        response = client.create_order_group(attributes)
+        response = client.create_order_group(**attributes)
         expect(response['success']).to eq true
         expect(response.key?('encounterid')).to eq true
       end
@@ -169,7 +169,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
       it 'returns Hash with success => true' do
         VCR.use_cassette('create_encounter_diagnoses') do
-          expect(client.create_encounter_diagnoses(attributes))
+          expect(client.create_encounter_diagnoses(**attributes))
             .to include('success' => true)
         end
       end
@@ -188,7 +188,7 @@ describe AthenaHealth::Endpoints::Encounters do
 
       it 'returns Hash with error information' do
         VCR.use_cassette('create_encounter_diagnoses_wrong_snomed_code') do
-          expect { client.create_encounter_diagnoses(attributes) }.to raise_error { |error|
+          expect { client.create_encounter_diagnoses(**attributes) }.to raise_error { |error|
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'detailedmessage' => 'SNOMED code not valid.',

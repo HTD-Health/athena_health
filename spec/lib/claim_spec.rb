@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe AthenaHealth::Claim::Claim do
-  subject { AthenaHealth::Claim::Claim.new(attributes) }
+  subject { AthenaHealth::Claim::Claim.new(**attributes) }
 
   let(:attributes) do
     { 'procedures' => [{ 'chargeamount' => '225', 'proceduredescription' => 'INITIAL OFFICE VISIT LIMITED', 'transactionid' => '2801', 'procedurecode' => '99202' }],

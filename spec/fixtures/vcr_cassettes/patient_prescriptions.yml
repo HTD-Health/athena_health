@@ -1,45 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.athenahealth.com/oauthpreview/token
-    body:
-      encoding: US-ASCII
-      string: grant_type=client_credentials
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Tue, 12 Apr 2016 11:01:25 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
-      Content-Length:
-      - '126'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"8brgmhkj4c7xmtstdpmzhsk6","token_type":"bearer","expires_in":3600,"refresh_token":"c7r5nzbfsqem3rbkwpc6qven"}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://api.athenahealth.com/oauthpreview/token
-  recorded_at: Tue, 12 Apr 2016 11:01:25 GMT
-- request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/patients/1/documents/prescription?departmentid=162
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/patients/1/documents/prescription?departmentid=162
     body:
       encoding: US-ASCII
       string: ''
@@ -83,6 +46,6 @@ http_interactions:
         - renewal","encounterdate":"05\/20\/2015","lastmodifieddatetime":"2015-05-20T13:39:21-04:00","documentsubclass":"PRESCRIPTION_RENEWAL"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/patients/1/documents/prescription?departmentid=162
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/patients/1/documents/prescription?departmentid=162
   recorded_at: Tue, 12 Apr 2016 11:01:26 GMT
 recorded_with: VCR 3.0.1

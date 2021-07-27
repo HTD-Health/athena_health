@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       string: '{"success":true}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed/subscription
   recorded_at: Wed, 11 Mar 2020 20:33:24 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/123456/chart/healthhistory/problems/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/123456/chart/healthhistory/problems/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -102,11 +102,11 @@ http_interactions:
       string: '{"status":"INACTIVE","subscriptions":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/123456/chart/healthhistory/problems/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/123456/chart/healthhistory/problems/changed/subscription
   recorded_at: Wed, 11 Mar 2020 20:33:25 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed?departmentid=1
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed?departmentid=1
     body:
       encoding: US-ASCII
       string: ''
@@ -154,11 +154,11 @@ http_interactions:
       string: '{"totalcount":0,"problems":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed?departmentid=1
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed?departmentid=1
   recorded_at: Wed, 11 Mar 2020 20:40:28 GMT
 - request:
     method: get
-    uri: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed/subscription
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed/subscription
     body:
       encoding: US-ASCII
       string: ''
@@ -206,6 +206,6 @@ http_interactions:
       string: '{"status":"ACTIVE","subscriptions":[{"eventname":"ProblemAdd"},{"eventname":"ProblemUpdate"}]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/healthhistory/problems/changed/subscription
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/healthhistory/problems/changed/subscription
   recorded_at: Wed, 11 Mar 2020 20:40:28 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.athenahealth.com/preview1/195900/chart/2/ordergroups
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/chart/2/ordergroups
     body:
       encoding: US-ASCII
       string: patientcaseid=173696&departmentid=1
@@ -50,6 +50,6 @@ http_interactions:
       string: '{"success":true,"encounterid":35840}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://api.athenahealth.com/preview1/195900/chart/2/ordergroups
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/chart/2/ordergroups
   recorded_at: Wed, 10 Apr 2019 09:35:36 GMT
 recorded_with: VCR 3.0.3
