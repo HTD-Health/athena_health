@@ -1,0 +1,32 @@
+name: Continuous integration
+on: push
+
+jobs:
+  verify:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.0
+
+      - name: Ruby gem cache
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Install gems
+        run: |
+          bundle install --jobs 4 --retry 3
+
+      - name: Run tests
+        env:
+          RACK_ENV: test
+        run: bundle exec rspec
