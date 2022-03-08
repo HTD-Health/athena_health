@@ -10,6 +10,15 @@ module AthenaHealth
         Encounter.new(response.first)
       end
 
+      def encounter_services(practice_id:, encounter_id:, params: {})
+        response = @api.call(
+          endpoint: "#{practice_id}/encounter/#{encounter_id}/services",
+          method: :get
+        )
+
+        EncounterService.new(response.first)
+      end
+
       def encounter_orders(practice_id:, encounter_id:)
         response = @api.call(
           endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/orders",
