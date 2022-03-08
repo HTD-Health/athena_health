@@ -16,7 +16,7 @@ module AthenaHealth
           method: :get
         )
 
-        EncounterService.new(response.first)
+        EncounterService.new(response)
       end
 
       def encounter_orders(practice_id:, encounter_id:)
