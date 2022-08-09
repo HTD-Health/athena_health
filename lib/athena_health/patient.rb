@@ -98,6 +98,9 @@ module AthenaHealth
     attribute :guarantoremployerid,                  Integer
     attribute :employername,                         String
     attribute :employeraddress,                      String
+    attribute :altfirstname,                         String
+    attribute :assignedsexatbirth,                   String
+    attribute :preferredpronouns,                    String
 
     def fullname
       "#{firstname} #{middlename} #{lastname}"

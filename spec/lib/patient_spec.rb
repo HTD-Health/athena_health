@@ -107,7 +107,10 @@ describe AthenaHealth::Patient do
       'guarantorsuffix': 'IV',
       'guarantoremployerid': '1',
       'employername': 'RAQUEL DOUGHTY',
-      'employeraddress': '8762 STONERIDGE CT'
+      'employeraddress': '8762 STONERIDGE CT',
+      'preferredpronouns': 'they/them',
+      'altfirstname': 'Nikki',
+      'assignedsexatbirth': 'F'
     }
   end
 
@@ -214,7 +217,10 @@ describe AthenaHealth::Patient do
       guarantorsuffix: 'IV',
       guarantoremployerid: 1,
       employername: 'RAQUEL DOUGHTY',
-      employeraddress: '8762 STONERIDGE CT'
+      employeraddress: '8762 STONERIDGE CT',
+      preferredpronouns: 'they/them',
+      altfirstname: 'Nikki',
+      assignedsexatbirth: 'F'
     )
 
     expect(subject.balances.map(&:class)).to eq [AthenaHealth::Balance]
