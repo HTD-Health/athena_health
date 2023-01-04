@@ -5,6 +5,7 @@ describe AthenaHealth::Appointment do
     {
       'appointmentconfirmationname': 'Confirmed',
       'appointmentid': '663560',
+      'encounterid': '33',
       'appointmentstatus': 'f',
       'appointmenttype': 'Any 15',
       'appointmenttypeid': '82',
@@ -37,6 +38,7 @@ describe AthenaHealth::Appointment do
     expect(subject).to have_attributes(
       appointmentconfirmationname: 'Confirmed',
       appointmentid: 663560,
+      encounterid: 33,
       appointmentstatus: 'f',
       appointmenttype: 'Any 15',
       appointmenttypeid: 82,
