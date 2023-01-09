@@ -1,45 +1,42 @@
 require 'spec_helper'
+require 'timecop'
 
 describe AthenaHealth::Connection do
   let(:connection_attributes) do
     {
-      production: production,
-      client_id: 'test_key',
-      secret: 'test_secret'
+      token: token,
+      base_url: AthenaHealth::Client.base_url(production: production),
+      api_version: AthenaHealth::Client::API_VERSION
     }
   end
 
-  let(:connection) { AthenaHealth::Connection.new(**connection_attributes) }
-
-  describe '#authenticate' do
-    context 'when production is true' do
-      let(:production) { true }
-
-      it 'returns token' do
-        VCR.use_cassette('production_authentication') do
-          expect(connection.authenticate).to eq 'prod_test_access_token'
-        end
-      end
-    end
-
-    context 'when production is false' do
-      let(:production) { false }
-
-      it 'returns token' do
-        VCR.use_cassette('preview_authentication') do
-          expect(connection.authenticate).to eq 'test_access_token'
-        end
-      end
-    end
-
-    
+  let(:token) do
+    AthenaHealth::AuthToken.new(
+      client_id: 'test_key',
+      secret: 'test_secret',
+      auth_token_hash: auth_token_hash,
+      base_url: AthenaHealth::Client.base_url(production: production),
+      api_version: AthenaHealth::Client::API_VERSION
+    )
   end
 
+  let(:production) { true }
+  let(:key_result) { 'unset key_result' }
+  let(:auth_token_hash) do
+    {
+      'access_token' => key_result,
+      'expires_at' => Time.now.to_i + 3600
+    }
+  end
+  let(:freeze_time) { Time.at(1_673_280_861) }
+
+  let(:connection) { AthenaHealth::Connection.new(**connection_attributes) }
+
   describe '#call' do
-    let(:production)       { false}
+    let(:production)       { false }
     let(:response_body) { '{"body":"value"}' }
     let(:request)       { instance_double(Typhoeus::Request) }
-
+    let(:key_result) { 'test_access_token' }
     let(:response) do
       instance_double(
         Typhoeus::Response,

@@ -3,6 +3,7 @@ require 'virtus'
 
 require 'athena_health/version'
 require 'athena_health/connection'
+require 'athena_health/auth_token'
 require 'athena_health/error'
 require 'athena_health/endpoints/practices'
 require 'athena_health/endpoints/departments'
