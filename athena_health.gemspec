@@ -1,13 +1,12 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'athena_health/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'athena_health'
   spec.version       = AthenaHealth::VERSION
-  spec.authors       = ["Mateusz Urbański"]
-  spec.email         = ['mateuszurbanski@yahoo.pl']
+  spec.authors       = ['Mateusz Urbański', 'Ben Jones']
+  spec.email         = ['mateuszurbanski@yahoo.pl', 'ben@benjones.io']
 
   spec.summary       = 'Ruby wrapper for Athenahealth API.'
   spec.description   = 'Ruby wrapper for Athenahealth API. See https://developer.athenahealth.com/io-docs for more details.'
@@ -25,4 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'vcr', '~> 3.0'
+  spec.add_development_dependency 'timecop', '~> 0.9.6'
+  spec.add_development_dependency 'rubocop', '~> 1.42'
 end
