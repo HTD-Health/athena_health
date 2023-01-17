@@ -16,6 +16,7 @@ module AthenaHealth
     attribute :entitytype,           String
     attribute :npi,                  Integer
     attribute :providertype,         String
+    attribute :otherprovideridlist,  Array[String]
 
     def fullname
       "#{firstname} #{lastname}"

@@ -17,7 +17,8 @@ describe AthenaHealth::Provider do
       'hideinportal': 'false',
       'entitytype': 'Person',
       'npi': '90635210',
-      'providertype': 'MD'
+      'providertype': 'MD',
+      'otherprovideridlist': ['209']
     }
   end
 
@@ -42,7 +43,8 @@ describe AthenaHealth::Provider do
       entitytype: 'Person',
       npi: 90635210,
       providertype: 'MD',
-      fullname: 'Terry Ahmad'
+      fullname: 'Terry Ahmad',
+      otherprovideridlist: ['209']
     )
   end
 end
