@@ -2,43 +2,23 @@ require 'json'
 
 module AthenaHealth
   class Connection
-    PRODUCTION_BASE_URL    = 'https://api.platform.athenahealth.com'.freeze
-    PREVIEW_BASE_URL = 'https://api.preview.platform.athenahealth.com'.freeze
-    API_VERSION = 'v1'.freeze
-
-    def initialize(client_id:, secret:, token: nil, production: )
-      @client_id = client_id
-      @secret = secret
+    def initialize(base_url:, api_version:, token:)
       @token = token
-      @production = production
-    end
-
-    def authenticate
-      response = Typhoeus.post(
-        "#{base_url}/oauth2/#{API_VERSION}/token",
-        userpwd: "#{@client_id}:#{@secret}",
-        body: { 
-          grant_type: 'client_credentials', 
-          scope: 'athena/service/Athenanet.MDP.*' 
-        }
-      ).response_body
-
-      @token = JSON.parse(response)['access_token']
+      @api_version = api_version
+      @base_url = base_url
     end
 
     def call(endpoint:, method:, params: {}, body: {}, second_call: false)
-      authenticate if @token.nil?
-
       response = Typhoeus::Request.new(
-        "#{base_url}/#{API_VERSION}/#{endpoint}",
+        "#{@base_url}/#{@api_version}/#{endpoint}",
         method: method,
-        headers: { "Authorization" => "Bearer #{@token}"},
+        headers: @token.auth_header,
         params: params,
         body: body
       ).run
 
       if response.response_code == 401 && !second_call
-        authenticate
+        @token.reset!
         return call(endpoint: endpoint, method: method, second_call: true, body: body, params: params)
       end
 
@@ -48,13 +28,9 @@ module AthenaHealth
 
       body = response.response_body
 
-      if [400, 409].include? response.response_code
-        fail AthenaHealth::ValidationError.new(json_response(body))
-      end
+      raise AthenaHealth::ValidationError, json_response(body) if [400, 409].include? response.response_code
 
-      if response.response_code != 200
-        AthenaHealth::Error.new(code: response.response_code).render
-      end
+      AthenaHealth::Error.new(code: response.response_code).render if response.response_code != 200
 
       json_response(body)
     end
@@ -63,10 +39,6 @@ module AthenaHealth
 
     def json_response(body)
       JSON.parse(body)
-    end
-
-    def base_url
-      @base_url ||= @production ? PRODUCTION_BASE_URL : PREVIEW_BASE_URL
     end
   end
 end
