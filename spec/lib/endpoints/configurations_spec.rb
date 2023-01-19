@@ -86,4 +86,52 @@ describe AthenaHealth::Endpoints::Configurations do
       end
     end
   end
+
+  describe '#all_gender_identities' do
+    let(:base_params) do
+      {
+        practice_id: 195_900
+      }
+    end
+
+    let(:extra_params) do
+      {}
+    end
+
+    let(:parameters) do
+      base_params.merge(extra_params)
+    end
+
+    it 'returns array of Allergy instances' do
+      VCR.use_cassette('all_gender_identities') do
+        gender_identities = client.all_gender_identities(**parameters)
+        expect(gender_identities.totalcount).to eq 6
+        expect(gender_identities.genderidentityfields)
+          .to match_array(
+            ['', 'Additional gender category or other',
+             'Choose not to disclose', 'Female',
+             'Genderqueer (neither exclusively male nor female)', 'Male']
+          )
+      end
+    end
+    context 'with show2015edcehrtvalues set to true' do
+      let(:extra_params) do
+        {
+          show2015edcehrtvalues: true
+        }
+      end
+      it 'returns array of Allergy instances' do
+        VCR.use_cassette('all_gender_identities') do
+          gender_identities = client.all_gender_identities(**parameters)
+          expect(gender_identities.genderidentityfields)
+            .to match_array(
+              ['', 'Additional gender category / other, please specify',
+               'Choose not to disclose', 'Gender non-conforming (neither exclusively male nor female)',
+               'Identifies as Female', 'Identifies as Male',
+               'Transgender Female/Male-to-Female (MTF)', 'Transgender Male/Female-to-Male (FTM)']
+            )
+        end
+      end
+    end
+  end
 end

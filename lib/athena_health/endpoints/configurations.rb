@@ -8,7 +8,7 @@ module AthenaHealth
           params: params.merge!(departmentid: department_id, ordertype: order_type)
         )
 
-        response.map {|facility| AthenaHealth::Facility.new(facility) }
+        response.map { |facility| AthenaHealth::Facility.new(facility) }
       end
 
       def all_medications(practice_id:, search_value:)
@@ -18,7 +18,7 @@ module AthenaHealth
           params: { searchvalue: search_value }
         )
 
-        response.map {|medication| AthenaHealth::Medication.new(medication) }
+        response.map { |medication| AthenaHealth::Medication.new(medication) }
       end
 
       def all_allergies(practice_id:, search_value:)
@@ -28,7 +28,7 @@ module AthenaHealth
           params: { searchvalue: search_value }
         )
 
-        response.map {|allergy| AthenaHealth::Allergy.new(allergy) }
+        response.map { |allergy| AthenaHealth::Allergy.new(allergy) }
       end
 
       def all_insurances(practice_id:, plan_name:, member_id:, state:, params: {})
@@ -53,6 +53,20 @@ module AthenaHealth
         )
 
         response.map { |ordertype| AthenaHealth::OrderType.new(ordertype) }
+      end
+
+      def all_gender_identities(practice_id:, show2015edcehrtvalues: nil, limit: nil, offset: nil)
+        params = {
+          show2015edcehrtvalues: show2015edcehrtvalues, limit: limit, offset: offset
+        }.reject { |_k, v| v.nil? }
+
+        GenderIdentityFieldCollection.new(
+          @api.call(
+            endpoint: "#{practice_id}/configuration/patients/genderidentity",
+            method: :get,
+            params: params
+          )
+        )
       end
     end
   end

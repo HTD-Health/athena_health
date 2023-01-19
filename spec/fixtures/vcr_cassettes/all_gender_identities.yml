@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/genderidentity
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer HpLpt1uP5GUlVeAErbwyCkg2XW3w
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2023 20:14:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49998'
+      X-Request-Id:
+      - rrt-4621100031569182568-d-gea1-22662-142450051-2
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalcount":6,"genderidentityfields":["Additional gender category
+        or other","Female","Male","Genderqueer (neither exclusively male nor female)","Choose
+        not to disclose",""]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/genderidentity
+  recorded_at: Thu, 19 Jan 2023 20:14:01 GMT
+- request:
+    method: get
+    uri: https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/genderidentity?show2015edcehrtvalues=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer HpLpt1uP5GUlVeAErbwyCkg2XW3w
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2023 20:18:37 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '313'
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49997'
+      X-Request-Id:
+      - rrt-1177408477840790065-b-gea1-7203-145319945-1
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalcount":8,"genderidentityfields":["","Identifies as Male","Identifies
+        as Female","Transgender Male\/Female-to-Male (FTM)","Transgender Female\/Male-to-Female
+        (MTF)","Gender non-conforming (neither exclusively male nor female)","Additional
+        gender category \/ other, please specify","Choose not to disclose"]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/genderidentity?show2015edcehrtvalues=true
+  recorded_at: Thu, 19 Jan 2023 20:18:37 GMT
+recorded_with: VCR 6.0.0
