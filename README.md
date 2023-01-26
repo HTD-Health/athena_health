@@ -3,7 +3,7 @@
 
 # AthenaHealth
 
-Ruby wrapper for [Athenahealth API](https://developer.api.athena.io/).
+Ruby wrapper for [Athenahealth API](https://docs.athenahealth.com/api/).
 
 ## Updating from gem version 1 (Mashery API) to gem version 2 (https://developer.api.athena.io/ API)
 
