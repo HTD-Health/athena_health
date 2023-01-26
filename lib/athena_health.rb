@@ -81,8 +81,8 @@ require 'athena_health/user_medication_sig'
 require 'athena_health/user_medication'
 require 'athena_health/user_medication_collection'
 require 'athena_health/subscription'
-require 'athena_health/claim/claim'
-require 'athena_health/claim/claim_collection'
+
+require 'athena_health/models/claim/claim'
 
 module AthenaHealth
 end
