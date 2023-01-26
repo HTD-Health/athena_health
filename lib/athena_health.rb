@@ -83,6 +83,7 @@ require 'athena_health/user_medication_collection'
 require 'athena_health/subscription'
 
 require 'athena_health/models/claim/claim'
+require 'athena_health/models/screening_questionnaire/screening_questionnaire'
 
 module AthenaHealth
 end
