@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer oMrnCrlMvNfEmk5U9nJwsDDeHUjv
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 26 Jan 2023 20:44:58 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '4987'
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49998'
+      X-Request-Id:
+      - rrt-871385933377322878-c-gea1-5741-169064498-2
+    body:
+      encoding: ASCII-8BIT
+      string: '{"questionnairescreeners":[{"metaquestions":[{"questiontext":"Finding"}],"templatetype":"CUSTOM","templateid":1,"questionnaireid":2610,"scoringstatus":"UNSCORED","sections":[{"headertext":"Over
+        the last two weeks, how often have you been bothered by any of the following
+        problems?","questionlist":[{"key":"LITTLEINTEREST","questionid":1,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Little
+        interest or pleasure in doing things"},{"key":"FEELINGDOWN","questionid":2,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Feeling
+        down, depressed, or hopeless"},{"key":"TROUBLESLEEPING","questionid":3,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Trouble
+        falling or staying asleep, or sleeping too much"},{"key":"FEELINGTIRED","questionid":4,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Feeling
+        tired or having little energy"},{"key":"POORAPPETITE","questionid":5,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Poor
+        appetite or overeating"},{"key":"TROUBLECONCENTRATING","questionid":7,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Trouble
+        concentrating on things, such as reading the newspaper or watching television"},{"key":"BETTEROFFDEAD","questionid":9,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Thoughts
+        that you would be better off dead or of hurting yourself in some way"},{"key":"MOVINGORSPEAKINGSLOW","questionid":8,"possibleanswers":["Not
+        at all","Several days","More than half the days","Nearly every day"],"question":"Moving
+        or speaking so slowly that other people could have noticed? Or the opposite
+        - being so fidgety or restless that you have been moving around a lot more
+        than usual"},{"key":"FEELINGBAD","questionid":6,"possibleanswers":["Not at
+        all","Several days","More than half the days","Nearly every day"],"question":"Feeling
+        bad about yourself - or that you are a failure or have let yourself or your
+        family down"}]},{"questionlist":[{"key":"HOWDIFFICULT","questionid":10,"possibleanswers":["Not
+        difficult at all","Somewhat difficult","Very difficult","Extremely difficult"],"question":"If
+        you checked off any problems, how difficult have these problems made it for
+        you to do your work, take care of things at home, or get along with other
+        people?"}]}],"documentids":[],"name":"PHQ-2\/PHQ-9"},{"templatetype":"CUSTOM","templateid":2,"scoreddate":"2023-01-23T10:08:38-05:00","questionnaireid":2590,"scoringstatus":"BEENSCORED","scoredby":"API-13361","sections":[{"headertext":"Over
+        the last two weeks, how often have you been bothered by the following problems?","questionlist":[{"key":"TROUBLERELAXING","questionid":14,"answer":"More
+        than half the days","possibleanswers":["Not at all","Several days","More than
+        half the days","Nearly every day"],"question":"Trouble relaxing"},{"key":"FEELINGAFRAID","questionid":17,"answer":"More
+        than half the days","possibleanswers":["Not at all","Several days","More than
+        half the days","Nearly every day"],"question":"Feeling afraid as if something
+        awful might happen"},{"key":"FEELINGNERVOUS","questionid":11,"answer":"More
+        than half the days","possibleanswers":["Not at all","Several days","More than
+        half the days","Nearly every day"],"question":"Feeling nervous, anxious or
+        on edge"},{"key":"UNCONTROLLEDWORRYING","questionid":12,"answer":"More than
+        half the days","possibleanswers":["Not at all","Several days","More than half
+        the days","Nearly every day"],"question":"Not being able to stop or control
+        worrying"},{"key":"EASILYANNOYED","questionid":16,"answer":"More than half
+        the days","possibleanswers":["Not at all","Several days","More than half the
+        days","Nearly every day"],"question":"Becoming easily annoyed or irritable"},{"key":"TOOMUCHWORRYING","questionid":13,"answer":"More
+        than half the days","possibleanswers":["Not at all","Several days","More than
+        half the days","Nearly every day"],"question":"Worrying too much about different
+        things"},{"key":"SORESTLESS","questionid":15,"answer":"More than half the
+        days","possibleanswers":["Not at all","Several days","More than half the days","Nearly
+        every day"],"question":"Being so restless that it is hard to sit still"}]}],"documentids":["205920"],"name":"GAD-7","score":327},{"templatetype":"SCOREONLY","templateid":66,"scoreddate":"2023-01-23T10:08:35-05:00","questionnaireid":2591,"scoringstatus":"BEENSCORED","scoredby":"API-13361","sections":[],"documentids":["205917"],"name":"Opioid
+        Risk","score":77},{"templatetype":"SCOREONLY","templateid":95,"scoreddate":"2022-12-13T14:59:18-05:00","questionnaireid":2592,"scoringstatus":"BEENSCORED","scoredby":"API-13361","sections":[],"documentids":["205920"],"name":"CHADS2","score":327}],"totalcount":4}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+  recorded_at: Thu, 26 Jan 2023 20:44:58 GMT
+recorded_with: VCR 6.0.0

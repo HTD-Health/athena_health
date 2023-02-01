@@ -16,7 +16,7 @@ module AthenaHealth
           method: :get
         )
         orders_collection = []
-        response.each {|x| orders_collection << OrderCollection.new(x)}
+        response.each { |x| orders_collection << OrderCollection.new(x) }
 
         orders_collection
       end
@@ -32,7 +32,7 @@ module AthenaHealth
 
       def encounter_summary(practice_id:, encounter_id:)
         response = @api.call(
-          endpoint:  "#{practice_id}/chart/encounters/#{encounter_id}/summary",
+          endpoint: "#{practice_id}/chart/encounters/#{encounter_id}/summary",
           method: :get
         )
         EncounterSummary.new(response)
@@ -60,6 +60,20 @@ module AthenaHealth
           method: :post,
           body: body
         )
+      end
+
+      def encounter_screening_questionnaires(practice_id:, encounter_id:, limit: nil, offset: nil)
+        params = {
+          limit: limit, offset: offset
+        }.reject { |_k, value| value.nil? }
+
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/questionnairescreeners",
+          params: params,
+          method: :get
+        )
+
+        ScreeningQuestionaire::ScreeningQuestionaireCollection.new(response)
       end
     end
   end

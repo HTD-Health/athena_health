@@ -5,7 +5,7 @@ describe AthenaHealth::Endpoints::Encounters do
     let(:attributes) do
       {
         practice_id: 195_900,
-        encounter_id: 28302
+        encounter_id: 28_302
       }
     end
 
@@ -21,7 +21,7 @@ describe AthenaHealth::Endpoints::Encounters do
     let(:attributes) do
       {
         practice_id: 195_900,
-        encounter_id: 28302
+        encounter_id: 28_302
       }
     end
 
@@ -37,8 +37,8 @@ describe AthenaHealth::Endpoints::Encounters do
     let(:attributes) do
       {
         practice_id: 195_900,
-        encounter_id: 28302,
-        order_id: 116881
+        encounter_id: 28_302,
+        order_id: 116_881
       }
     end
 
@@ -54,7 +54,7 @@ describe AthenaHealth::Endpoints::Encounters do
     let(:attributes) do
       {
         practice_id: 195_900,
-        encounter_id: 28302
+        encounter_id: 28_302
       }
     end
 
@@ -71,10 +71,10 @@ describe AthenaHealth::Endpoints::Encounters do
       let(:attributes) do
         {
           practice_id: 195_900,
-          encounter_id: 35713,
+          encounter_id: 35_713,
           body: {
-            diagnosissnomedcode: 284196006,
-            ordertypeid: 387225
+            diagnosissnomedcode: 284_196_006,
+            ordertypeid: 387_225
           }
         }
       end
@@ -91,9 +91,9 @@ describe AthenaHealth::Endpoints::Encounters do
       let(:attributes) do
         {
           practice_id: 195_900,
-          encounter_id: 35713,
+          encounter_id: 35_713,
           body: {
-            diagnosissnomedcode: 284196006
+            diagnosissnomedcode: 284_196_006
           }
         }
       end
@@ -114,9 +114,9 @@ describe AthenaHealth::Endpoints::Encounters do
       let(:attributes) do
         {
           practice_id: 195_900,
-          encounter_id: 35713,
+          encounter_id: 35_713,
           body: {
-            ordertypeid: 387225
+            ordertypeid: 387_225
           }
         }
       end
@@ -140,7 +140,7 @@ describe AthenaHealth::Endpoints::Encounters do
         practice_id: 195_900,
         patient_id: 2,
         body: {
-          patientcaseid: 173696,
+          patientcaseid: 173_696,
           departmentid: 1
         }
       }
@@ -160,9 +160,9 @@ describe AthenaHealth::Endpoints::Encounters do
       let(:attributes) do
         {
           practice_id: 195_900,
-          encounter_id: 35840,
+          encounter_id: 35_840,
           body: {
-            snomedcode: 174041007
+            snomedcode: 174_041_007
           }
         }
       end
@@ -179,9 +179,9 @@ describe AthenaHealth::Endpoints::Encounters do
       let(:attributes) do
         {
           practice_id: 195_900,
-          encounter_id: 35840,
+          encounter_id: 35_840,
           body: {
-            snomedcode: 77777777777
+            snomedcode: 77_777_777_777
           }
         }
       end
@@ -196,6 +196,43 @@ describe AthenaHealth::Endpoints::Encounters do
             )
           }
         end
+      end
+    end
+  end
+
+  describe '#encounter_screening_questionnaires' do
+    before(:each) do
+      VCR.insert_cassette('encounter_screening_questionnaires')
+    end
+    after(:each) do
+      VCR.eject_cassette
+    end
+    # VCR.use_cassette('encounter_screening_questionnaires')
+    let(:attributes) do
+      {
+        practice_id: 19_598_472,
+        encounter_id: 42_917
+      }
+    end
+
+    let(:result) do
+      client.encounter_screening_questionnaires(**attributes)
+    end
+
+    it 'returns a ScreeningQuestionaireCollection' do
+      expect(result)
+        .to be_an_instance_of AthenaHealth::ScreeningQuestionaire::ScreeningQuestionaireCollection
+    end
+
+    it 'has 3 screeners' do
+      expect(result.questionnairescreeners.count)
+        .to eq 4
+    end
+
+    4.times do |i|
+      it "#{i} returns a ScreeningQuestionaireCollection" do
+        expect(result.questionnairescreeners[i])
+          .to be_an_instance_of AthenaHealth::ScreeningQuestionaire::ScreeningQuestionaire
       end
     end
   end
