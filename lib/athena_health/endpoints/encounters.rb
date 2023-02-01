@@ -107,6 +107,31 @@ module AthenaHealth
           method: :put
         )
       end
+
+      def update_screening_questionnaire(
+        practice_id:,
+        encounter_id:,
+        questionnaire_id:,
+        questions:,
+        score:,
+        document_ids:,
+        guidelines: nil,
+        state: nil,
+        note: nil
+      )
+
+        body = {
+          questionnaireid: questionnaire_id,
+          documentids: document_ids, guidelines: guidelines,
+          state: state, questions: questions, score: score, note: note
+        }.reject { |_k, value| value.nil? }
+
+        @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/questionnairescreeners",
+          body: body,
+          method: :put
+        )
+      end
     end
   end
 end
