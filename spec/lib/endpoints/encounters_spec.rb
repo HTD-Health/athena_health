@@ -275,4 +275,50 @@ describe AthenaHealth::Endpoints::Encounters do
       end
     end
   end
+
+  describe '#update_screening_questionnaire_score_only' do
+    before(:each) do
+      VCR.insert_cassette('update_screening_questionnaire_score_only',
+                          match_requests_on: %i[method uri body])
+    end
+    after(:each) do
+      VCR.eject_cassette
+    end
+
+    let(:questionnaire_id) { 2591 }
+    let(:score) { 1 }
+    let(:note) { nil }
+    let(:document_ids) { 205_917 }
+
+    let(:attributes) do
+      {
+        practice_id: 19_598_472,
+        encounter_id: 42_917,
+        questionnaire_id: questionnaire_id,
+        score: score,
+        document_ids: document_ids,
+        note: note
+      }
+    end
+
+    let(:result) do
+      client.update_screening_questionnaire_score_only(**attributes)
+    end
+
+    it 'completes sucessfully' do
+      expect(result).to eq({ 'success' => true })
+    end
+    context 'bad template id' do
+      let(:questionnaire_id) { 123 }
+      it 'completes sucessfully' do
+        expect { result }.to raise_error do |error|
+          expect(error).to be_a(AthenaHealth::ValidationError)
+          expect(error.details).to eq(
+            'detailedmessage' => 'The questionnaire screener cannot be found.',
+            'error' => 'The data provided is invalid.'
+          )
+        end
+      end
+    end
+  end
 end

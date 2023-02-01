@@ -85,6 +85,28 @@ module AthenaHealth
           method: :post
         )
       end
+
+      def update_screening_questionnaire_score_only(
+        practice_id:,
+        encounter_id:,
+        questionnaire_id:,
+        score:,
+        document_ids:,
+        note: nil
+      )
+
+        body = {
+          questionnaireid: questionnaire_id,
+          documentids: document_ids,
+          score: score, note: note
+        }.reject { |_k, value| value.nil? }
+
+        @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/questionnairescreeners/scoreonly",
+          body: body,
+          method: :put
+        )
+      end
     end
   end
 end
