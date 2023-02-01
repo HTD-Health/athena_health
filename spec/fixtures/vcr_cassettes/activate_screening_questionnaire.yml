@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+    body:
+      encoding: US-ASCII
+      string: templateid=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer OJh7qAxci2ARfPBxDEHc9FRJLzJb
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Feb 2023 18:40:51 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49995'
+      X-Request-Id:
+      - rrt-1177408477840790065-b-gea1-3215-194503855-2
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":true}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+  recorded_at: Wed, 01 Feb 2023 18:40:51 GMT
+- request:
+    method: post
+    uri: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+    body:
+      encoding: US-ASCII
+      string: templateid=12333233233
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer OJh7qAxci2ARfPBxDEHc9FRJLzJb
+      Expect:
+      - ''
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 01 Feb 2023 18:41:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49994'
+      X-Request-Id:
+      - rrt-3814893112006529594-c-gea1-27577-193275158-1
+    body:
+      encoding: ASCII-8BIT
+      string: |2-
+
+
+        {"detailedmessage":"The template ID for the questionnaire is not eligible for this encounter.","error":"The data provided is invalid."}
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+  recorded_at: Wed, 01 Feb 2023 18:41:30 GMT
+recorded_with: VCR 3.0.3

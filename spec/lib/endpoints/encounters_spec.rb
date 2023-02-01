@@ -236,4 +236,43 @@ describe AthenaHealth::Endpoints::Encounters do
       end
     end
   end
+
+  describe '#activate_screening_questionnaire' do
+    before(:each) do
+      VCR.insert_cassette('activate_screening_questionnaire', record: :new_episodes,
+                                                              match_requests_on: %i[method uri body])
+    end
+    after(:each) do
+      VCR.eject_cassette
+    end
+
+    let(:template_id) { 1 }
+    let(:attributes) do
+      {
+        practice_id: 19_598_472,
+        encounter_id: 42_917,
+        template_id: template_id
+      }
+    end
+
+    let(:result) do
+      client.activate_screening_questionnaire(**attributes)
+    end
+
+    it 'completes sucessfully' do
+      expect(result).to eq({ 'success' => true })
+    end
+    context 'bad template id' do
+      let(:template_id) { 12_333_233_233 }
+      it 'completes sucessfully' do
+        expect { result }.to raise_error do |error|
+          expect(error).to be_a(AthenaHealth::ValidationError)
+          expect(error.details).to eq(
+            'detailedmessage' => 'The template ID for the questionnaire is not eligible for this encounter.',
+            'error' => 'The data provided is invalid.'
+          )
+        end
+      end
+    end
+  end
 end

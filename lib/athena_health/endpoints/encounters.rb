@@ -75,6 +75,16 @@ module AthenaHealth
 
         ScreeningQuestionaire::ScreeningQuestionaireCollection.new(response)
       end
+
+      def activate_screening_questionnaire(practice_id:, encounter_id:, template_id:)
+        @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/questionnairescreeners",
+          body: {
+            templateid: template_id
+          },
+          method: :post
+        )
+      end
     end
   end
 end
