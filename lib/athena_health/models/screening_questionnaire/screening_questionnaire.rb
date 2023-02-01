@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'screening_questionnaire_collection'
 require_relative 'question'
 require_relative 'meta_question'
 require_relative 'section'
@@ -19,11 +18,11 @@ module AthenaHealth
     # The user will be able to retrieve the list of screening questionnaires for a specific
     # encounter. Screeners can be structured or score-only.
     class ScreeningQuestionaire < BaseModel
-      attribute :declinedreason, DeclinedReason
+      model_attribute(field_name: 'declinedreason', klass: DeclinedReason)
       attribute :documentids, Array[String]
       attribute :guidelines, String
       attribute :maximumscore, Integer
-      attribute :metaquestions, Array[MetaQuestion]
+      model_attribute(field_name: 'metaquestions', klass: MetaQuestion, array: true)
       attribute :name, String
       attribute :note, String
       attribute :questionnaireid, Integer
@@ -31,7 +30,7 @@ module AthenaHealth
       attribute :scoredby, String
       attribute :scoreddate, String
       attribute :scoringstatus, String
-      attribute :sections, Array[Section]
+      model_attribute(field_name: 'sections', klass: Section, array: true)
       attribute :templateid, Integer
       attribute :templatetype, String
     end

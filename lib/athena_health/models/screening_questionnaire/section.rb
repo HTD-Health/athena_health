@@ -5,7 +5,7 @@ module AthenaHealth
     # The section of a screening questionaire
     class Section < BaseModel
       attribute :headertext, String
-      attribute :questionlist, Array[Question]
+      model_attribute(field_name: 'questionlist', klass: Question, array: true)
     end
   end
 end
