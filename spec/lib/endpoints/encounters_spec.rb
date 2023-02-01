@@ -239,8 +239,8 @@ describe AthenaHealth::Endpoints::Encounters do
 
   describe '#activate_screening_questionnaire' do
     before(:each) do
-      VCR.insert_cassette('activate_screening_questionnaire', record: :new_episodes,
-                                                              match_requests_on: %i[method uri body])
+      VCR.insert_cassette('activate_screening_questionnaire',
+                          match_requests_on: %i[method uri body])
     end
     after(:each) do
       VCR.eject_cassette
