@@ -1,5 +1,6 @@
+require_relative 'base_model'
 module AthenaHealth
-  class BaseCollection
+  class BaseCollection < BaseModel
     include Virtus.model
 
     attribute :totalcount, Integer

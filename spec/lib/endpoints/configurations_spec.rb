@@ -87,6 +87,27 @@ describe AthenaHealth::Endpoints::Configurations do
     end
   end
 
+  describe '#available_screening_questionaires' do
+    let(:parameters) do
+      {
+        practice_id: 195_900
+      }
+    end
+
+    it 'returns a collection of the available questionaires' do
+      VCR.use_cassette('available_screening_questionaires') do
+        questionaires = client.available_screening_questionaires(**parameters)
+
+        expect(questionaires.totalcount).to eq 352
+
+        phq9 = questionaires.questionnairescreeners.first
+        expect(phq9.name).to eq('PHQ-2/PHQ-9')
+        expect(phq9.templatetype).to eq('CUSTOM')
+        expect(phq9.templateid).to eq(1)
+      end
+    end
+  end
+
   describe '#all_gender_identities' do
     let(:base_params) do
       {

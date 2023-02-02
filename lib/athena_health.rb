@@ -84,6 +84,7 @@ require 'athena_health/subscription'
 
 require 'athena_health/models/claim/claim'
 require 'athena_health/models/screening_questionnaire/screening_questionnaire_collection'
+require 'athena_health/models/screening_questionnaire/screening_questionnaire_template_collection'
 
 module AthenaHealth
 end
