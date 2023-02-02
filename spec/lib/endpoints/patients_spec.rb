@@ -88,7 +88,7 @@ describe AthenaHealth::Endpoints::Patients do
             expect(error).to be_a(AthenaHealth::ValidationError)
             expect(error.details).to eq(
               'invalidfields' => [],
-              'missingfields' => %w(lastname dob firstname),
+              'missingfields' => %w[lastname dob firstname],
               'error' => 'Additional fields are required.'
             )
           }
@@ -613,40 +613,40 @@ describe AthenaHealth::Endpoints::Patients do
   describe '#update_patient_medications' do
     let(:parameters) do
       {
-          practice_id: 195_900,
-          department_id: 1,
-          patient_id: 1,
-          params: {
-              nomedicationsreported: false
-          }
+        practice_id: 195_900,
+        department_id: 1,
+        patient_id: 1,
+        params: {
+          nomedicationsreported: false
+        }
       }
     end
 
     it 'returns success => true' do
       VCR.use_cassette('update_patient_medications') do
         expect(client.update_patient_medications(**parameters))
-            .to eq 'success' => 'true'
+          .to eq 'success' => 'true'
       end
     end
 
     context 'with empty params' do
       it 'returns success => true' do
-        parameters.merge!({params: {}})
+        parameters.merge!({ params: {} })
 
         VCR.use_cassette('update_patient_medications_with_empty_params') do
           expect(client.update_patient_medications(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
 
     context 'with nomedicationsreported as nil' do
       it 'returns success => true' do
-        parameters.merge!({params: {nomedicationsreported: nil}})
+        parameters.merge!({ params: { nomedicationsreported: nil } })
 
         VCR.use_cassette('update_patient_medications_with_nil_params') do
           expect(client.update_patient_medications(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
@@ -681,33 +681,33 @@ describe AthenaHealth::Endpoints::Patients do
 
     context 'without any allergies' do
       it 'returns success => true' do
-        parameters.merge!({allergies: []})
+        parameters.merge!({ allergies: [] })
 
         VCR.use_cassette('update_patient_allergies_with_allergies_empty_parameter') do
           expect(client.update_patient_allergies(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
 
     context 'without any allergies and with nkda' do
       it 'returns success => true' do
-        parameters.merge!({allergies: [], params: { nkda: true }})
+        parameters.merge!({ allergies: [], params: { nkda: true } })
 
         VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda') do
           expect(client.update_patient_allergies(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
 
     context 'without any allergies and with nkda set to false' do
       it 'returns success => true' do
-        parameters.merge!({allergies: [], params: { nkda: false }})
+        parameters.merge!({ allergies: [], params: { nkda: false } })
 
         VCR.use_cassette('update_patient_allergies_without_allergies_and_with_nkda_false') do
           expect(client.update_patient_allergies(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
@@ -718,17 +718,17 @@ describe AthenaHealth::Endpoints::Patients do
 
         VCR.use_cassette('update_patient_allergies_with_empty_allergies_and_parameters') do
           expect(client.update_patient_allergies(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
 
     context 'with extra parameters' do
       it 'returns success => true' do
-        parameters.merge!({params: {nkda: true}})
+        parameters.merge!({ params: { nkda: true } })
         VCR.use_cassette('update_patient_allergies_with_extra_parameters') do
           expect(client.update_patient_allergies(**parameters))
-              .to eq 'success' => 'true'
+            .to eq 'success' => 'true'
         end
       end
     end
@@ -851,7 +851,7 @@ describe AthenaHealth::Endpoints::Patients do
       {
         practice_id: 195_900,
         patient_id: 1,
-        insurance_id: 21084,
+        insurance_id: 21_084,
         image: 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
       }
     end
