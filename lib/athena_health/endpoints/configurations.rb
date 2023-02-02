@@ -68,6 +68,20 @@ module AthenaHealth
           )
         )
       end
+
+      def available_screening_questionaires(practice_id:, limit: nil, offset: nil)
+        params = {
+          limit: limit, offset: offset
+        }.reject { |_k, v| v.nil? }
+
+        AthenaHealth::ScreeningQuestionaire::ScreeningQuestionaireTemplateCollection.new(
+          @api.call(
+            endpoint: "#{practice_id}/chart/questionnairescreeners",
+            method: :get,
+            params: params
+          )
+        )
+      end
     end
   end
 end

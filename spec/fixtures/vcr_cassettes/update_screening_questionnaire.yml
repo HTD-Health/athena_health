@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+    body:
+      encoding: US-ASCII
+      string: |-
+        questionnaireid=2590&documentids=205917&questions=[{
+                  "key": "TROUBLERELAXING",
+                  "questionid": 14,
+                  "answer": "More than half the days",
+                  "question": "Trouble relaxing"
+              }]&score=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer wNhr4434nC84tZqixRJ1ucPJ7r7f
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Feb 2023 20:32:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Expires:
+      - Mon, 06 Jan 1975 16:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49982'
+      X-Request-Id:
+      - rrt-4589625218441729431-d-gea1-26579-50163989-2
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":true}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+  recorded_at: Wed, 01 Feb 2023 20:32:17 GMT
+- request:
+    method: put
+    uri: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+    body:
+      encoding: US-ASCII
+      string: |-
+        questionnaireid=123&documentids=205917&questions=[{
+                  "key": "TROUBLERELAXING",
+                  "questionid": 14,
+                  "answer": "More than half the days",
+                  "question": "Trouble relaxing"
+              }]&score=1
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer wNhr4434nC84tZqixRJ1ucPJ7r7f
+      Expect:
+      - ''
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 01 Feb 2023 20:32:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Pragma:
+      - No-cache
+      Accept-CH:
+      - Sec-CH-UA-Platform-Version
+      Vary:
+      - Accept-Encoding
+      Cneonction:
+      - close
+      X-RateLimit-Limit:
+      - '50000'
+      X-RateLimit-Remaining:
+      - '49982'
+      X-Request-Id:
+      - rrt-4589625218441729431-d-gea1-26579-50163989-3
+    body:
+      encoding: ASCII-8BIT
+      string: |2-
+
+
+        {"detailedmessage":"The questionnaire screener cannot be found.","error":"The data provided is invalid."}
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://api.preview.platform.athenahealth.com/v1/19598472/chart/encounter/42917/questionnairescreeners
+  recorded_at: Wed, 01 Feb 2023 20:32:18 GMT
+recorded_with: VCR 3.0.3

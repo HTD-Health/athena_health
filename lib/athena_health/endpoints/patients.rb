@@ -28,7 +28,7 @@ module AthenaHealth
           params: params.merge!(firstname: first_name, lastname: last_name, dob: date_of_birth)
         )
 
-        response.map{ |patient| Patient.new(patient) }
+        response.map { |patient| Patient.new(patient) }
       end
 
       def create_patient(practice_id:, department_id:, params: {})
@@ -141,13 +141,13 @@ module AthenaHealth
       end
 
       def patient_appointments(practice_id:, patient_id:, params: {})
-          response = @api.call(
-            endpoint: "#{practice_id}/patients/#{patient_id}/appointments",
-            method: :get,
-            params: params
-          )
+        response = @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/appointments",
+          method: :get,
+          params: params
+        )
 
-          AppointmentCollection.new(response)
+        AppointmentCollection.new(response)
       end
 
       def patient_documents(practice_id:, department_id:, patient_id:, params: {})
@@ -166,6 +166,20 @@ module AthenaHealth
           method: :post,
           body: params.merge!(departmentid: department_id.to_s)
         )
+      end
+
+      def create_patient_encounter_document(practice_id:, department_id:, patient_id:, document_subclass:,
+                                            attachment_contents: nil, encounter_id: nil, params: {})
+        body = params.merge({
+          departmentid: department_id.to_s, documentsubclass: document_subclass,
+          attachmentcontents: attachment_contents, encounterid: encounter_id
+        }.reject { |_k, v| v.nil? })
+
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/encounterdocument",
+          method: :post,
+          body: body
+        )['encounterdocumentid']
       end
 
       def patient_default_pharmacy(practice_id:, department_id:, patient_id:)
@@ -229,7 +243,7 @@ module AthenaHealth
           params: { departmentid: department_id }
         )
 
-        response.map {|template| AthenaHealth::Template.new(template) }
+        response.map { |template| AthenaHealth::Template.new(template) }
       end
 
       def set_patient_social_history_templates(practice_id:, department_id:, patient_id:, template_ids: [])
@@ -280,9 +294,9 @@ module AthenaHealth
 
       def update_patient_medications(practice_id:, department_id:, patient_id:, params: {})
         response = @api.call(
-            endpoint: "#{practice_id}/chart/#{patient_id}/medications",
-            method: :put,
-            body: params.merge!(departmentid: department_id)
+          endpoint: "#{practice_id}/chart/#{patient_id}/medications",
+          method: :put,
+          body: params.merge!(departmentid: department_id)
         )
       end
 
@@ -339,9 +353,9 @@ module AthenaHealth
 
       def update_patient_insurance_card_image(practice_id:, patient_id:, insurance_id:, image:, params: {})
         @api.call(
-          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image", 
+          endpoint: "#{practice_id}/patients/#{patient_id}/insurances/#{insurance_id}/image",
           method: :put,
-          body: {image: image}
+          body: { image: image }
         )
       end
 

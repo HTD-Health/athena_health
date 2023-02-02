@@ -1,0 +1,4 @@
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false

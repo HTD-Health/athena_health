@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require 'athena_health/claim/diagnosis'
-require 'athena_health/claim/payer'
-require 'athena_health/claim/procedure'
+require_relative 'diagnosis'
+require_relative 'payer'
+require_relative 'procedure'
+require_relative 'claim_collection'
 module AthenaHealth
   module Claim
     class Claim < BaseModel
