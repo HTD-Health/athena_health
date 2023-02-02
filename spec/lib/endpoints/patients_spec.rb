@@ -934,4 +934,27 @@ describe AthenaHealth::Endpoints::Patients do
       end
     end
   end
+
+  describe '#create_patient_encounter_document' do
+    let(:attributes) do
+      {
+        practice_id: 19_598_472,
+        department_id: 150,
+        patient_id: 5840,
+        document_subclass: 'PATIENTHISTORY',
+        attachment_contents: File.open('spec/fixtures/sample_doc.pdf', 'rb'),
+        encounter_id: 42_917,
+        params: {
+          internalnote: 'test note'
+        }
+      }
+    end
+
+    it 'returns documentid' do
+      VCR.use_cassette('create_patient_encounter_document') do
+        expect(client.create_patient_encounter_document(**attributes))
+          .to eq 205_959
+      end
+    end
+  end
 end
