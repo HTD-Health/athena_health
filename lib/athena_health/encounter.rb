@@ -12,5 +12,6 @@ module AthenaHealth
     attribute :encounterid,        Integer
     attribute :lastupdated,        String
     attribute :patientstatus,      String
+    attribute :providerid,         Integer
   end
 end
