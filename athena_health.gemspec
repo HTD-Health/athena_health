@@ -5,12 +5,12 @@ require 'athena_health/version'
 Gem::Specification.new do |spec|
   spec.name          = 'athena_health'
   spec.version       = AthenaHealth::VERSION
-  spec.authors       = ['Mateusz Urbański', 'Ben Jones']
-  spec.email         = ['mateuszurbanski@yahoo.pl', 'ben@benjones.io']
+  spec.authors       = ['Mateusz Urbański', 'Ben Jones', 'Michael Giovinco']
+  spec.email         = ['mateuszurbanski@yahoo.pl', 'ben@benjones.io', 'mike@nile.health']
 
   spec.summary       = 'Ruby wrapper for Athenahealth API.'
   spec.description   = 'Ruby wrapper for Athenahealth API. See https://developer.athenahealth.com/io-docs for more details.'
-  spec.homepage      = 'https://github.com/zywy/athena_health'
+  spec.homepage      = 'https://github.com/Nile-Health/athena_health'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
