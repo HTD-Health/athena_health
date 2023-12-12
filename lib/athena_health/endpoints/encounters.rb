@@ -38,6 +38,25 @@ module AthenaHealth
         EncounterReasonCollection.new(response)
       end
 
+      def encounter_diagnoses(practice_id:, encounter_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/diagnoses",
+          method: :get
+        )
+        diagnoses_collection = []
+        response.each { |x| diagnoses_collection << DiagnosisCollection.new(x) }
+
+        diagnoses_collection
+      end
+
+      def encounter_patient_goals(practice_id:, encounter_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/patientgoals",
+          method: :get
+        )
+        PatientGoal.new(response)
+      end
+
       def encounter_summary(practice_id:, encounter_id:)
         response = @api.call(
           endpoint: "#{practice_id}/chart/encounters/#{encounter_id}/summary",
